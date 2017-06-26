@@ -80,6 +80,11 @@ namespace LeaderAnalytics.Web
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
+            {
+                ClientId = Configuration["Authentication:Microsoft:ClientId"],
+                ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"]
+            });
 
             app.UseMvc(routes =>
             {
