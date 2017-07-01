@@ -13,6 +13,8 @@ using LeaderAnalytics.Web.Data;
 using LeaderAnalytics.Web.Models;
 using LeaderAnalytics.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace LeaderAnalytics.Web
 {
@@ -74,18 +76,32 @@ namespace LeaderAnalytics.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseDefaultFiles(); // must be before UseStaticFiles
             app.UseStaticFiles();
 
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
-            app.UseMvc(routes =>
+            ServeFromDirectory(app, env, "node_modules");
+
+            
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+        }
+
+        public void ServeFromDirectory(IApplicationBuilder app, IHostingEnvironment env, string path)
+        {
+            app.UseStaticFiles(new StaticFileOptions
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, path)
+                ),
+                RequestPath = "/" + path
             });
         }
     }
