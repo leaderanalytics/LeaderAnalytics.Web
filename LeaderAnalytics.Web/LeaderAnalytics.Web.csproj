@@ -10,6 +10,8 @@
 
   <PropertyGroup>
     <UserSecretsId>aspnet-LeaderAnalytics.Web-dcb49e61-80e5-4318-8951-d19b647c36e4</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +33,7 @@
     <Content Include="wwwroot\systemjs.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="1.1.2" />
@@ -52,6 +54,9 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.1" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
