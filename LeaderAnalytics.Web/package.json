@@ -20,7 +20,8 @@
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
-    "typescript": "2.4.0"
+    "typescript": "2.4.0",
+    "webpack": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

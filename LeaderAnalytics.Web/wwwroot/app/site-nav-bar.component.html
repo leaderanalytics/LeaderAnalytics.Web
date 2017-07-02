@@ -1,0 +1,72 @@
+﻿<div class="app-bar darcula shadow" data-role="appbar">
+    <a class="app-bar-element" href="#">Home</a>
+    <span class="app-bar-divider"></span>
+    
+    <ul class="app-bar-menu small-dropdown">
+        <li>
+            <a href="#" class="dropdown-toggle">Products and Services</a>
+            <ul class="d-menu shadow" data-role="dropdown">
+                <li><a href="#">Vintages</a></li>
+                <li><a href="#">Custom Software Development</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Custom Integrations and Reporting</a></li>
+                <li><a href="#">Desktop Software Development</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+
+    <ul class="app-bar-menu small-dropdown">
+        <li>
+            <a href="#" class="dropdown-toggle">Support</a>
+            <ul class="d-menu shadow" data-role="dropdown">
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Downloads</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <a class="app-bar-element" href="#">About us</a>
+
+    <a class="app-bar-element" href="#">Contact us</a>
+
+    
+    <div class="app-bar-element place-right">
+        <a class="dropdown-toggle fg-white"><span class="mif-enter"></span> Log in</a>
+        <div class="app-bar-drop-container bg-white fg-dark place-right" data-role="dropdown" data-no-close="true">
+            <div class="padding20">
+                <form>
+                    <h4 class="text-light">Login to service...</h4>
+                    <div class="input-control text">
+                        <span class="mif-user prepend-icon"></span>
+                        <input type="text">
+                    </div>
+                    <div class="input-control text">
+                        <span class="mif-lock prepend-icon"></span>
+                        <input type="password">
+                    </div>
+                    <label class="input-control checkbox small-check">
+                        <input type="checkbox">
+                        <span class="check"></span>
+                        <span class="caption">Remember me</span>
+                    </label>
+                    <div class="form-actions">
+                        <button class="button">Login</button>
+                        <button class="button link">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div data-role="dialog" data-close-button="true" data-type="info" id="dialog" class="shadow" >
+    <div>
+        <p>this is the content</p>
+    </div>
+</div>
+<button onclick="metroDialog.open('#dialog')">Show Window</button>

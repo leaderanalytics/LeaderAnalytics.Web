@@ -8,11 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
     <link rel="stylesheet" href="styles.css">
-
-    <!-- load bootstrap 3 styles -->
-    <link href="xhttps://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-
+    <script src="js/site.js"></script>
+    <link href="node_modules/metro-dist/css/metro.css" rel="stylesheet" />
+    <link href="node_modules/metro-dist/css/metro-colors.css" rel="stylesheet" />
+    <link href="node_modules/metro-dist/css/metro-icons.css" rel="stylesheet" />
+    <link href="node_modules/metro-dist/css/metro-responsive.css" rel="stylesheet" />
+    <link href="node_modules/metro-dist/css/metro-schemes.css" rel="stylesheet" />
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/metro-dist/js/metro.js" ></script>
+    
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
@@ -25,7 +30,9 @@
     </script>
 
 </head>
-<body>
-    <my-app><div style="width:50%;top:50%;text-align:center;margin:auto;border:2px blue solid">Loading</div></my-app>
+<body class="metro">
+    <div class="container" style="padding:0px;width:100%;">
+        <my-app><div style="width:50%;top:50%;text-align:center;margin:auto;border:2px blue solid">Loading</div></my-app>
+    </div>
 </body>
 </html>

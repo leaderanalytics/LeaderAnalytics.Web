@@ -20,8 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\app\app.component.html" />
     <Content Include="wwwroot\app\app.component.ts" />
     <Content Include="wwwroot\app\app.module.ts" />
+    <Content Include="wwwroot\app\site-nav-bar.component.html" />
+    <Content Include="wwwroot\app\site-nav-bar.component.ts" />
+    <Content Include="wwwroot\app\site-nav-bar.html" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\main.ts" />
     <Content Include="wwwroot\systemjs.config.js" />

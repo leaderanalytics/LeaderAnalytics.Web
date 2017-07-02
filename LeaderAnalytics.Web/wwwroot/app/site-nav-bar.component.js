@@ -7,16 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var SiteNavBar = (function () {
+    function SiteNavBar() {
     }
-    return AppComponent;
+    SiteNavBar.prototype.ngOnInit = function () {
+        showDialog();
+    };
+    return SiteNavBar;
 }());
-AppComponent = __decorate([
+SiteNavBar = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app/app.component.html' // relative to app.module.ts
+        selector: 'site-nav',
+        templateUrl: './app/site-nav-bar.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], SiteNavBar);
+exports.SiteNavBar = SiteNavBar;
+//# sourceMappingURL=site-nav-bar.component.js.map
