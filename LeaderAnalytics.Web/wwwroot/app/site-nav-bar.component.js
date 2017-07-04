@@ -13,13 +13,13 @@ var SiteNavBar = (function () {
     SiteNavBar.prototype.ngOnInit = function () {
         showDialog();
     };
+    SiteNavBar = __decorate([
+        core_1.Component({
+            selector: 'site-nav',
+            templateUrl: './app/site-nav-bar.component.html'
+        })
+    ], SiteNavBar);
     return SiteNavBar;
 }());
-SiteNavBar = __decorate([
-    core_1.Component({
-        selector: 'site-nav',
-        templateUrl: './app/site-nav-bar.component.html'
-    })
-], SiteNavBar);
 exports.SiteNavBar = SiteNavBar;
 //# sourceMappingURL=site-nav-bar.component.js.map

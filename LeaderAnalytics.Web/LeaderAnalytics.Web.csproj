@@ -33,19 +33,12 @@
     <Content Include="wwwroot\app\main.js" />
     <Content Include="wwwroot\app\main.js.map" />
     <Content Include="wwwroot\app\main.ts" />
-    <Content Include="wwwroot\app\site.js" />
     <Content Include="wwwroot\app\site-nav-bar.component.html" />
     <Content Include="wwwroot\app\site-nav-bar.component.ts" />
-    <Content Include="wwwroot\app\site-nav-bar.html" />
     <Content Include="wwwroot\dist\bundle.js" />
-    <Content Include="wwwroot\index - Copy.html" />
     <Content Include="wwwroot\index-webpack.html" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\js\site.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\js\utilities.js" />
-    <Content Include="wwwroot\main.ts" />
     <Content Include="wwwroot\systemjs.config.js" />
     <Content Include="wwwroot\webpack\site.js" />
     <Content Include="wwwroot\webpack\webpack.common.js" />
