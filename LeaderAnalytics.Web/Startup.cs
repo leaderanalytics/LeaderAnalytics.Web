@@ -99,13 +99,13 @@ namespace LeaderAnalytics.Web
 
         public void ServeFromDirectory(IApplicationBuilder app, IHostingEnvironment env, string path)
         {
-            if (env.EnvironmentName == "Development")
+            string fullPath = Path.Combine(env.ContentRootPath, path);
+
+            if (Directory.Exists(fullPath))
             {
                 app.UseStaticFiles(new StaticFileOptions
                 {
-                    FileProvider = new PhysicalFileProvider(
-                        Path.Combine(env.ContentRootPath, path)
-                    ),
+                    FileProvider = new PhysicalFileProvider(fullPath),
                     RequestPath = "/" + path
                 });
             }
