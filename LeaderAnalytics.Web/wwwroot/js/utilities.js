@@ -1,5 +1,5 @@
-﻿// Write your Javascript code.
-(function (window) {
+﻿
+(function ($) {
     window.showDialog = function () {
         $("#createWindow").on('click', function () {
             alert('boo');
@@ -12,4 +12,4 @@
             });
         });
     }
-})(window)
+})($)

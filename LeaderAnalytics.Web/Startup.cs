@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 
+
 namespace LeaderAnalytics.Web
 {
     public class Startup
@@ -69,16 +70,11 @@ namespace LeaderAnalytics.Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-                app.UseBrowserLink();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            app.UseDeveloperExceptionPage();
+            app.UseDatabaseErrorPage();
+            app.UseBrowserLink();
+
+
             app.UseDefaultFiles(); // must be before UseStaticFiles
             app.UseStaticFiles();
 
@@ -93,9 +89,6 @@ namespace LeaderAnalytics.Web
 
             ServeFromDirectory(app, env, "node_modules");
 
-            
-
-
             //app.UseMvc(routes =>
             //{
             //    routes.MapRoute(
@@ -106,13 +99,16 @@ namespace LeaderAnalytics.Web
 
         public void ServeFromDirectory(IApplicationBuilder app, IHostingEnvironment env, string path)
         {
-            app.UseStaticFiles(new StaticFileOptions
+            if (env.EnvironmentName == "Development")
             {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(env.ContentRootPath, path)
-                ),
-                RequestPath = "/" + path
-            });
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    FileProvider = new PhysicalFileProvider(
+                        Path.Combine(env.ContentRootPath, path)
+                    ),
+                    RequestPath = "/" + path
+                });
+            }
         }
     }
 }

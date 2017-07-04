@@ -11,7 +11,7 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-LeaderAnalytics.Web-dcb49e61-80e5-4318-8951-d19b647c36e4</UserSecretsId>
     <ApplicationInsightsResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsResourceId>
-    <ApplicationInsightsAnnotationResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsAnnotationResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourceGroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,15 +22,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot/app\polyfills.js" />
+    <Content Remove="wwwroot/app\polyfills.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\app\app.component.html" />
     <Content Include="wwwroot\app\app.component.ts" />
     <Content Include="wwwroot\app\app.module.ts" />
+    <Content Include="wwwroot\app\main.js" />
+    <Content Include="wwwroot\app\main.js.map" />
+    <Content Include="wwwroot\app\main.ts" />
+    <Content Include="wwwroot\app\site.js" />
     <Content Include="wwwroot\app\site-nav-bar.component.html" />
     <Content Include="wwwroot\app\site-nav-bar.component.ts" />
     <Content Include="wwwroot\app\site-nav-bar.html" />
+    <Content Include="wwwroot\dist\bundle.js" />
+    <Content Include="wwwroot\index - Copy.html" />
+    <Content Include="wwwroot\index-webpack.html" />
     <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\js\site.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\js\utilities.js" />
     <Content Include="wwwroot\main.ts" />
     <Content Include="wwwroot\systemjs.config.js" />
+    <Content Include="wwwroot\webpack\site.js" />
+    <Content Include="wwwroot\webpack\webpack.common.js" />
+    <Content Include="wwwroot\webpack\webpack.dev.js" />
+    <Content Include="wwwroot\webpack\webpack.prod.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.0" />

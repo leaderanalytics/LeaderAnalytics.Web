@@ -3,3 +3,9 @@
 https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins
 
 http://brolik.com/work
+
+
+
+
+
+run: npm run-script buildProd <- case sensitive
