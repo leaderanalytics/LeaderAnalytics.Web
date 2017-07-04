@@ -28,11 +28,8 @@ namespace LeaderAnalytics.Web
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-            if (env.IsDevelopment())
-            {
-                // For more details on using the user secret store see https://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets<Startup>();
-            }
+            // For more details on using the user secret store see https://go.microsoft.com/fwlink/?LinkID=532709
+            builder.AddUserSecrets<Startup>();
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
