@@ -1,5 +1,6 @@
 ﻿var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
@@ -44,6 +45,10 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             hljs: "highlightjs"
+        }),
+        new HtmlWebpackPlugin({
+            filename: '../index.html',
+            template: './wwwroot/indexTemplate.html'
         })
     ]
 }

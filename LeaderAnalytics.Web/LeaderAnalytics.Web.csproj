@@ -37,7 +37,8 @@
     <Content Include="wwwroot\app\site-nav-bar.component.ts" />
     <Content Include="wwwroot\dist\bundle.js" />
     <Content Include="wwwroot\index-webpack.html" />
-    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\index-dev.html" />
+    <Content Include="wwwroot\indexTemplate.html" />
     <Content Include="wwwroot\js\utilities.js" />
     <Content Include="wwwroot\systemjs.config.js" />
     <Content Include="wwwroot\webpack\site.js" />
