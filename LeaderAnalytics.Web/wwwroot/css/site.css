@@ -1,1 +1,105 @@
-﻿
+﻿/*
+    https://metroui.org.ua/
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
+
+*/
+.section {
+    background-size: 100% 90vh;
+    width: 100vw;
+    padding: 20px;
+    margin: 0px;
+    flex-flow: row nowrap;
+    display: flex;
+}
+
+.separator {
+    background-color:gray;
+    width:100vw;
+    height:12px;
+    margin:0;
+}
+.flex-container {
+    display: flex;
+    flex-flow: column; /*items are stacked in a column*/
+    justify-content: center; /* align items on the primary axis, in this vertical */
+    align-items: center; /* align items on the secondary axis */
+}
+
+#main {
+    width:100vw;
+    padding:0px;
+    margin:0px;
+    background-color:blue;
+}
+
+#vintages {
+    background: url("../images/background-68622__340.jpg");
+}
+
+#vintages-cover-img {
+    width:80vw;
+}
+
+#vintages-content {
+    margin-left: 1vw;
+    color: white;
+}
+
+.vintages-headline {
+    font-family: 'Peter Obscure';
+    font-size:6vw;
+}
+
+#custom-software {
+    background: url("../images/red-1937356_1920.jpg");
+}
+
+#custom-software-cover-img {
+    width: 60vw;
+}
+
+#custom-software-content {
+    margin-right: 1vw;
+    width:40vw;
+}
+
+.custom-software-headline {
+    font-family: 'Bilbo Regular';
+    font-size: 5vw;
+}
+
+
+#web-development {
+    background: url("../images/new-york-690868_1920.jpg");
+}
+
+#web-development-cover-img {
+    width: 60vw;
+}
+
+#web-development-content {
+    margin-right: 1vw;
+    width: 40vw;
+}
+
+.web-development-headline {
+    font-family: 'Bilbo Regular';
+    font-size: 5vw;
+}
+
+
+
+@font-face {
+    font-family: Fabrik;
+    src:url("/fonts/fabrik.ttf");
+}
+
+@font-face {
+    font-family: 'Peter Obscure';
+    src: url("/fonts/peter-obscure.bold.ttf");
+}
+
+@font-face {
+    font-family: 'Bilbo Regular';
+    src: url("/fonts/bilbo.regular.ttf");
+}

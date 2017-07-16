@@ -10,8 +10,7 @@ namespace LeaderAnalytics.Web.Controllers
     {
         public IActionResult Index()
         {
-            return new PhysicalFileResult("~/index.html", Microsoft.Net.Http.Headers.MediaTypeHeaderValue.Parse("text/html"));
-            
+            return View();
         }
 
         public IActionResult About()
