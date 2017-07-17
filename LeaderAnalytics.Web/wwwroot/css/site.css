@@ -4,64 +4,36 @@
 
 */
 
-.flex-row {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.flex-column {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-/* Primary axis */
-
-.flex-justify-start {
-    justify-content:flex-start;
-}
-.flex-justify-center {
-    justify-content: center;
-}
-.flex-justify-end {
-    justify-content: flex-end;
-}
-
-/* Secondary axis */
-
-.flex-align-start {
-    align-items:flex-start;
-}
-.flex-align-center {
-    align-items: center;
-}
-.flex-align-end {
-    align-items: flex-end;
-}
 .section {
-    background-size: 100% 90vh;
-    width: 100vw;
     padding: 20px;
     margin: 0px;
 }
 .separator {
     background-color: gray;
-    width: 100vw;
     height: 12px;
     margin: 0;
 }
 
 #main {
-    width:100vw;
-    padding:0px;
-    margin:0px;
+    background-image: url('../images/iStock-499519490.jpg');
+    background-size: cover;
+    margin: 0;
+    height:90vh;
 }
-
+#logo-container {
+    margin:60px 0px 0px 0px;
+    font-size: 4vw;
+}
+.logo {
+    font-family:Toxic;
+    color:#7e0606;
+}
 #vintages {
     /*background: url("../images/background-68622__340.jpg");*/
+    background-color:darkgray;
 }
 
 #vintages-cover-img {
-    width:30vw;
     margin-right:1vw;
 }
 
@@ -71,26 +43,31 @@
 
 .vintages-headline {
     font-family: 'Peter Obscure';
-    font-size:8vw;
-    margin:0 0 .5vh 0;
+    background-color: #7e0606;
+    font-size: 5vw;
+    padding:2px 8px 12px 8px;
+    margin-bottom: 3vh;
 }
 
 #custom-software {
-    background: url("../images/red-1937356_1920.jpg");
+    /*background: url("../images/red-1937356_1920.jpg");*/
+    background-color:orange;
 }
 
 #custom-software-cover-img {
-    width: 60vw;
+    padding:0 2vw 0 0;
+ 
 }
 
 #custom-software-content {
     margin-right: 1vw;
-    width:40vw;
 }
 
 .custom-software-headline {
-    font-family: 'Bilbo Regular';
-    font-size: 5vw;
+    /*font-family: 'Bilbo Regular';*/
+    font-family:'Segoe UI';
+    font-size: 4vw;
+    margin-bottom:2vh;
 }
 
 
@@ -99,12 +76,10 @@
 }
 
 #web-development-cover-img {
-    width: 60vw;
 }
 
 #web-development-content {
     margin-right: 1vw;
-    width: 40vw;
 }
 
 .web-development-headline {
@@ -115,8 +90,8 @@
 
 
 @font-face {
-    font-family: Fabrik;
-    src:url("/fonts/fabrik.ttf");
+    font-family: Toxic;
+    src:url("/fonts/toxigenesis.bold.ttf");
 }
 
 @font-face {
