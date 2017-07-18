@@ -5,7 +5,7 @@
 */
 
 .section {
-    padding: 20px;
+    padding:8vh 2vw 8vh 2vw;
     margin: 0px;
 }
 .separator {
@@ -50,8 +50,9 @@
 }
 
 #custom-software {
+    background: url("../images/new-york-690868_1920.jpg");
     /*background: url("../images/red-1937356_1920.jpg");*/
-    background-color:orange;
+    /*background-color:orange;*/
 }
 
 #custom-software-cover-img {
@@ -65,14 +66,37 @@
 
 .custom-software-headline {
     /*font-family: 'Bilbo Regular';*/
-    font-family:'Segoe UI';
-    font-size: 4vw;
-    margin-bottom:2vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    display:inline-block;
 }
+
+.feature-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    margin: 1.5vw;
+    min-width:200px;
+    max-width:200px;
+    width:200px;
+}
+.feature-box-title {
+    background-color: black;
+    color: white;
+    padding: 2vw;
+    font-size:80%;
+    min-height:12vh;
+    font-size:110%;
+}
+.feature-box-content {
+    padding: 2vw;
+}
+
 
 
 #web-development {
     background: url("../images/new-york-690868_1920.jpg");
+    
 }
 
 #web-development-cover-img {

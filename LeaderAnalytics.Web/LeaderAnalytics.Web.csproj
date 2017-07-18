@@ -11,6 +11,7 @@
   <ItemGroup>
     <Content Include="wwwroot\footer.html" />
     <Content Include="wwwroot\home.html" />
+    <Content Include="wwwroot\images\handshake.jpg" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\navBar.html" />
   </ItemGroup>
@@ -26,7 +27,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
