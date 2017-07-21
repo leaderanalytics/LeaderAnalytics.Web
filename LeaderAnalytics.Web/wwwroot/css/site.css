@@ -1,7 +1,7 @@
 ﻿/*
     https://metroui.org.ua/
     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
-
+    http://www.1001fonts.com/
 */
 
 .section {
@@ -50,7 +50,8 @@
 }
 
 #custom-software {
-    background: url("../images/new-york-690868_1920.jpg");
+    background: url("../images/skyscraper-2461313_1920.jpg");
+    /*background: url("../images/new-york-690868_1920.jpg");*/
     /*background: url("../images/red-1937356_1920.jpg");*/
     /*background-color:orange;*/
 }
@@ -66,20 +67,28 @@
 
 .custom-software-headline {
     /*font-family: 'Bilbo Regular';*/
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
+    /*background-color:rgba(90, 140, 182, 0.30);*/
     padding-top: 2vw;
     padding-bottom: 2vw;
     display:inline-block;
 }
+.custom-software-headline p {
+    font-size:150%;
+}
+    .custom-software-headline li {
+        font-size: 150%;
+        line-height:150%;
+    }
 
-.feature-box {
+    .feature-box {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     margin: 1.5vw;
-    min-width:200px;
+    min-width:140px;
     max-width:200px;
-    width:200px;
 }
+
 .feature-box-title {
     background-color: black;
     color: white;
@@ -95,7 +104,7 @@
 
 
 #web-development {
-    background: url("../images/new-york-690868_1920.jpg");
+    background: url("../images/abstract-2068595_1920.jpg");
     
 }
 
