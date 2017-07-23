@@ -51,9 +51,6 @@
 
 #custom-software {
     background: url("../images/skyscraper-2461313_1920.jpg");
-    /*background: url("../images/new-york-690868_1920.jpg");*/
-    /*background: url("../images/red-1937356_1920.jpg");*/
-    /*background-color:orange;*/
 }
 
 #custom-software-cover-img {
@@ -63,6 +60,21 @@
 
 #custom-software-content {
     margin-right: 1vw;
+}
+
+.black-transp6 {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.greenBorder {
+    border: solid 4px #60a917;
+}
+
+.indigoBorder {
+    border: solid 4px #6a00ff;
+}
+
+.blueBorder {
+    border: solid 4px #00aff0;
 }
 
 .custom-software-headline {
@@ -81,21 +93,28 @@
         line-height:150%;
     }
 
-    .feature-box {
-    background-color: rgba(0, 0, 0, 0.6);
+.feature-box {
     color: white;
     margin: 1.5vw;
     min-width:140px;
     max-width:200px;
 }
 
-.feature-box-title {
-    background-color: black;
+.feature-box-large {
+    display:flex;
+    flex-direction:column;
     color: white;
+    margin: 1.5vw;
+    min-width: 140px;
+    max-width: 400px;
+}
+
+.feature-box-title {
+    
     padding: 2vw;
-    font-size:80%;
     min-height:12vh;
     font-size:110%;
+    flex:1; /*fill parent container*/
 }
 .feature-box-content {
     padding: 2vw;
@@ -117,7 +136,7 @@
 
 .web-development-headline {
     font-family: 'Bilbo Regular';
-    font-size: 5vw;
+    font-size: 6vw;
 }
 
 
