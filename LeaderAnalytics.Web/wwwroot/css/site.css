@@ -3,22 +3,50 @@
     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
     http://www.1001fonts.com/
 */
+/* --------------------------------------- Classes-Elements --------------------------------------- */
+
+.black-transp6 {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.greenBorder {
+    border: solid 4px #60a917;
+}
+
+.indigoBorder {
+    border: solid 4px #6a00ff;
+}
+
+.blueBorder {
+    border: solid 4px #00aff0;
+}
+
+/* --------------------------------------- Classes - Controls --------------------------------------- */
 
 .section {
-    padding:8vh 2vw 8vh 2vw;
+    padding: 8vh 2vw 8vh 2vw;
     margin: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
 }
+
 .separator {
     background-color: gray;
     height: 12px;
     margin: 0;
 }
 
+
+
+/* --------------------------------------- Sections --------------------------------------- */
+
+
+/* --------------------------------------- Vintages --------------------------------------- */
+
 #main {
     background-image: url('../images/iStock-499519490.jpg');
-    background-size: cover;
-    margin: 0;
-    height:90vh;
+    height: 90vh;
 }
 #logo-container {
     margin:60px 0px 0px 0px;
@@ -28,6 +56,7 @@
     font-family:Toxic;
     color:#7e0606;
 }
+
 #vintages {
     /*background: url("../images/background-68622__340.jpg");*/
     background-color:darkgray;
@@ -49,8 +78,12 @@
     margin-bottom: 3vh;
 }
 
+
+/* --------------------------------------- Custom Software --------------------------------------- */
+
+
 #custom-software {
-    background: url("../images/skyscraper-2461313_1920.jpg");
+    background-image: url("../images/skyscraper-2461313_1920.jpg");
 }
 
 #custom-software-cover-img {
@@ -60,21 +93,6 @@
 
 #custom-software-content {
     margin-right: 1vw;
-}
-
-.black-transp6 {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-.greenBorder {
-    border: solid 4px #60a917;
-}
-
-.indigoBorder {
-    border: solid 4px #6a00ff;
-}
-
-.blueBorder {
-    border: solid 4px #00aff0;
 }
 
 .custom-software-headline {
@@ -110,7 +128,6 @@
 }
 
 .feature-box-title {
-    
     padding: 2vw;
     min-height:12vh;
     font-size:110%;
@@ -120,11 +137,10 @@
     padding: 2vw;
 }
 
-
+/* --------------------------------------- Web Development --------------------------------------- */
 
 #web-development {
-    background: url("../images/abstract-2068595_1920.jpg");
-    
+    background-image: url("../images/abstract-2068595_1920.jpg");
 }
 
 #web-development-cover-img {
@@ -140,6 +156,25 @@
 }
 
 
+/* --------------------------------------- Mobile Development --------------------------------------- */
+
+#mobile-development {
+    background-image: url("../images/mobile.jpg");
+}
+
+#mobile-development-cover-img {
+
+}
+
+#mobile-development-content {
+    width:50vw;
+}
+
+.mobile-development-headline {
+    font-size: 4vw;
+}
+
+/* --------------------------------------- Fonts --------------------------------------- */
 
 @font-face {
     font-family: Toxic;
