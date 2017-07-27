@@ -29,6 +29,7 @@ namespace LeaderAnalytics.Web
         {
             // Add framework services.
             services.AddMvc();
+            services.AddRouting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +50,7 @@ namespace LeaderAnalytics.Web
 
             app.UseDefaultFiles(); // must be before UseStaticFiles
             app.UseStaticFiles();
+            app.user
         }
     }
 }

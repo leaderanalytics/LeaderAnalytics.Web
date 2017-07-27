@@ -12,7 +12,7 @@
     <Content Include="wwwroot\footer.html" />
     <Content Include="wwwroot\home.html" />
     <Content Include="wwwroot\images\handshake.jpg" />
-    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\index2.html" />
     <Content Include="wwwroot\navBar.html" />
   </ItemGroup>
   <ItemGroup>
