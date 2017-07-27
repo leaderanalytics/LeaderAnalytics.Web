@@ -50,7 +50,6 @@ namespace LeaderAnalytics.Web
 
             app.UseDefaultFiles(); // must be before UseStaticFiles
             app.UseStaticFiles();
-            app.user
         }
     }
 }
