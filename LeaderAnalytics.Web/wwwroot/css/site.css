@@ -8,6 +8,15 @@
 
 /* --------------------------------------- Classes-Elements --------------------------------------- */
 
+p {
+    line-height:200%;
+    margin:0;
+}
+
+    p + p {
+        margin-top: 10px;
+    }
+
 .section {
     padding: 8vh 2vw 8vh 2vw;
     margin: 0px;
@@ -32,6 +41,15 @@
 }
 .headline {
     font-size:4em;
+}
+
+.imageLeader {
+    height: 90px;
+    width: 100px;
+    float: left;
+    margin-right:6px;
+    margin-bottom:6px;
+    border-radius:50%;
 }
 /* --------------------------------------- Classes - Controls --------------------------------------- */
 
@@ -151,17 +169,27 @@
 
 /* --------------------------------------- Web Development --------------------------------------- */
 
+
+
 #web-development {
     background-image: url("../images/589448438.jpg");
 }
 
 #web-development-cover-img {
+    
+ 
+}
+
+#web-development-content-leader {
+    margin-left: 40vw;
+    background-image: url('../images/square-2484093_1920.jpg');
+    background-size:cover;
+    
 }
 
 #web-development-content {
-    margin-left: 40vw;
-    line-height:200%;
-    background-color:rgba(255, 255, 255, 1);
+    background-color: rgba(254, 253, 224, 1);
+    /*background-color:#247a9b;*/
 }
 
 .web-development-headline {
@@ -183,15 +211,17 @@
 
 #mobile-development-content {
     width: 40vw;
-    height:50vh;
-    padding:0px 2vw 1vh 2vw;
-    background-color:rgba(167, 166, 166, 1);
-    margin:0;
+    height: 50vh;
+    padding: 0px 1vw 1vh 1vw;
+    background-color: rgba(241, 241, 241, 0.81);
+    border:solid 6px silver;
+    border-radius:5px;
 }
 
 .mobile-development-headline {
     font-size: 3rem;
-    
+    font-family: fantasy;
+    color:#603131;
 }
 
 /* --------------------------------------- Fonts --------------------------------------- */

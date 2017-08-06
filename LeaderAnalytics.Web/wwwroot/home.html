@@ -109,18 +109,22 @@
             </div>
             <div style="height:80vh">&nbsp;</div>
             <div class="flexbox row flex-self-end">
-                <div id="web-development-content" class="fg-black align-left padding10 margin20 cell auto-size flex-grow">
-
-                    <p>
-                        Your website identifies your brand.  Make using your website an experience your customers will enjoy and remember.
-                        Leader Analytics creates websites that are both beautiful and functional.  We create a visually appealing image of your brand and we follow through with an
-                        interface that allows your visitors to quickly locate products and information and to complete a purchase effortlessly.
-                    </p>
-                    <p>
-                        Leader Analytics can make your website a seamless extension of your business.  Our experienced developers are experts at building the back office components
-                        required to process orders or deliver business content.
-                        We can also integrate your site with your existing CRM or ERP system, allowing you to focus your attention and resources on building your business.
-                    </p>
+                <div id="web-development-content-leader" class="cell flex-just-end"></div>
+                <div id="web-development-cover-img" class="cell auto-size flex-grow">
+                    <div id="web-development-content" class="fg-gray align-left padding10">
+                        
+                        <p>
+                            Your website identifies your brand.  Make using your website an experience your customers will enjoy and remember.
+                            Leader Analytics creates websites that are both beautiful and functional.  We create a visually appealing image of your brand and we follow through with an
+                            interface that allows your visitors to quickly locate products and information and to complete a purchase effortlessly.
+                        </p>
+                        
+                        <p>
+                            Leader Analytics can make your website a seamless extension of your business.  Our experienced developers are experts at building the back office components
+                            required to process orders or deliver business content.
+                            We can also integrate your site with your existing CRM or ERP system, allowing you to focus your attention and resources on building your business.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,28 +162,34 @@
 
 <section>
     <div id="mobile-development" class="section">
-        <div id="mobile-development-content">
-            <div class="align-center mobile-development-headline">We build mobile apps for your business</div>
-            <div>
-                <div>Expand your online presence</div>
-                <div>Build brand loyalty</div>
-                <div>Target new markets</div>
+        <div id="mobile-development-content" class="block-shadow-impact">
+            <div class="align-center mobile-development-headline padding10">We build mobile apps for your business</div>
+            
+            <div class="carousel" data-role="carousel" data-controls="false" data-markers="false" data-period="3000">
+                <div class="slide">Expand your online presence</div>
+                <div class="slide">Build brand loyalty</div>
+                <div class="slide">Target new markets</div>
             </div>
-
-            <div>Leverage existing API's</div>
-            <div>Full back office integration</div>
-            <div>Target leading mobile platforms</div>
-            <div>We use Microsoft's powerful XAML technology to build rich, interactive applications.</div>
+            
+            
+            <p>
+                We use Microsoft's powerful XAML technology to build rich, interactive applications.
+                We can leverage your existing API's or create new ones.  We can also integrate your app with your back office
+                systems, just as we can do with your web site.  We target all leading mobile platforms.
+            </p>
         </div>
         <div style="min-height:30vh;">&nbsp;</div>
     </div>
 </section>
 
+<hr class="separator" />
 
-<footer>
+<footer id="footer">
 
 </footer>
 
 <script type="text/javascript">
-    $(window.site.Load('/footer.html', 'footer'))
+    $(function() {
+        window.site.Load('/footer.html', 'footer');
+    })
 </script>
