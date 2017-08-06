@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\site.mobile.css" />
     <Content Include="wwwroot\footer.html" />
     <Content Include="wwwroot\home.html" />
     <Content Include="wwwroot\images\handshake.jpg" />

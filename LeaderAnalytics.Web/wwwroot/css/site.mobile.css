@@ -1,0 +1,26 @@
+﻿@media only screen and (max-width: 800px) {
+
+
+    .flex-grid .row .cell:nth-child(1):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(1):last-child,
+    .flex-grid .row .cell:nth-child(3):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(3):last-child,
+    .flex-grid .row .cell:nth-child(5):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(5):last-child,
+    .flex-grid .row .cell:nth-child(7):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(7):last-child,
+    .flex-grid .row .cell:nth-child(9):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(9):last-child,
+    .flex-grid .row .cell:nth-child(11):last-child,
+    .flex-grid .row .cell[class*=size]:nth-child(11):last-child {
+        /*bug fix: this causes the last cell in a row to become disproportionately larger than all other cells*/
+        -webkit-flex-basis: 0;
+        flex-basis: 0;
+    }
+
+
+    .flex-grid .row .cell, .flex-grid .row [class*=size].cell {
+        -webkit-flex: 1 0 100%;
+    }
+}
+
