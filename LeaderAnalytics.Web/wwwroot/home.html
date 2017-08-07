@@ -102,14 +102,24 @@
 <section>
     <div id="web-development" class="section">
         <div class="flex-grid flex-dir-column">
+            
             <div class="row flex-self-start">
-                <div class="cell auto-size flex-grow">
-                    <p class="headline web-development-headline fg-orange">Data driven websites that inspire</p>
+                <div class="cell auto-size">
+                    <div class="headline web-development-headline fg-orange">Data driven websites that inspire</div>
                 </div>
             </div>
-            <div style="height:80vh">&nbsp;</div>
-            <div class="flexbox row flex-self-end">
+
+            <div class="row">
+                <div class="cell auto-size">
+                    <div style="height:80vh">&nbsp;</div>
+                </div>
+            </div>
+            
+            
+            <div class="row flex-self-end">
                 <div id="web-development-content-leader" class="cell flex-just-end"></div>
+                
+                
                 <div id="web-development-cover-img" class="cell auto-size flex-grow">
                     <div id="web-development-content" class="fg-darkCyan align-left padding10">
 
@@ -128,33 +138,6 @@
                 </div>
             </div>
         </div>
-        <!--<div id="web-development-content" class="fg-black" >
-            <div class="padding10" style="background-color:orange;margin:4vh 4vw 4vh 4vw">
-
-
-                <div class="flex-grid">
-                    <div class="row flex-just-sa flex-content-center">
-
-                        <div class="cell colspan3 align-center feature-box-large indigoBorder">
-                            <div class="image-container "><img src="images/ecommerce.jpg" /></div>
-                            <div class="bg-indigo fg-white padding10 feature-box-title"><p class="v-align-middle">Retail and Business-to-Business E-commerce</p></div>
-                        </div>
-
-                        <div class="cell colspan3 align-center feature-box-large greenBorder">
-                            <div class="image-container "><img src="images/vacation-brochure.jpg" /></div>
-                            <div class="bg-green fg-white padding10 feature-box-title"><p class="v-align-middle">Content delivery</p></div>
-                        </div>
-
-                        <div class="cell colspan3 align-center feature-box-large blueBorder">
-                            <div class="image-container "><img src="images/network.jpg" /></div>
-                            <div class="bg-blue fg-white padding10 feature-box-title"><p class="v-align-middle">Data API's</p></div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>-->
     </div>
 </section>
 
@@ -162,37 +145,67 @@
 
 <section>
     <div id="mobile-development" class="section">
+        <div class="flex-grid">
+            <div class="row">
+                <div class="cell auto-size">
+                    <div id="mobile-development-content">
 
-        <div id="mobile-development-content">
-            <div class="align-center mobile-development-headline padding10">We build mobile apps for your business</div>
+                        <div class="flex-grid">
+
+                            <div class="row">
+                                <div class="cell auto-size">
+                                    <div class="align-center mobile-development-headline padding10">
+                                        We build mobile apps for your business
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cell auto-size">
+                                    <div class="carousel" data-role="carousel" data-period="6000" data-controls="false" data-markers="false">
+                                        <div id="slide3" class="slide mdslide">
+                                            <div class="center text-shadow">
+                                                Expand into new markets
+                                            </div>
+                                        </div>
+                                        <div id="slide1" class="slide mdslide">
+                                            <div class="center text-shadow">
+                                                Increase your online presence
+                                            </div>
+                                        </div>
+                                        <div id="slide2" class="slide mdslide">
+                                            <div class="center text-shadow">
+                                                Build brand loyalty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-
-            <div class="carousel" data-role="carousel" data-period="6000" data-controls="false" data-markers="false">
-                <div id="slide3" class="slide mdslide">
-                    <div class="center text-shadow">
-                        Expand into new markets
+                            <div class="row">
+                                <div class="cell auto-size">
+                                    <p>
+                                        We use Microsoft's powerful XAML technology to build rich, interactive applications.
+                                        We can leverage your existing API's or create new ones.  We can also integrate your app with your back office
+                                        systems, just as we can do with your web site.  We target all leading mobile platforms.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="slide1" class="slide mdslide">
-                    <div class="center text-shadow">
-                        Increase your online presence
-                    </div>
-                </div>
-                <div id="slide2" class="slide mdslide">
-                    <div class="center text-shadow">
-                        Build brand loyalty
-                    </div>
+                <div class="cell auto-size">
+                    <div style="min-width:60vw;">&nbsp;</div>
                 </div>
             </div>
 
-            <p>
-                We use Microsoft's powerful XAML technology to build rich, interactive applications.
-                We can leverage your existing API's or create new ones.  We can also integrate your app with your back office
-                systems, just as we can do with your web site.  We target all leading mobile platforms.
-            </p>
+            <div class="row">
+                <div class="cell">
+                    <div style="min-height:60vh;">&nbsp;</div>
+                </div>
+            </div>
         </div>
-        <div style="min-height:30vh;">&nbsp;</div>
     </div>
 </section>
 
@@ -203,6 +216,5 @@
 <script type="text/javascript">
     $(function() {
         window.site.Load('/footer.html', 'footer');
-        $("#carousel").xcarousel();
     })
 </script>
