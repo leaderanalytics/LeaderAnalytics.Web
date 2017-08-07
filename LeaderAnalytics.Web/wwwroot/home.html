@@ -111,14 +111,14 @@
             <div class="flexbox row flex-self-end">
                 <div id="web-development-content-leader" class="cell flex-just-end"></div>
                 <div id="web-development-cover-img" class="cell auto-size flex-grow">
-                    <div id="web-development-content" class="fg-gray align-left padding10">
-                        
+                    <div id="web-development-content" class="fg-darkCyan align-left padding10">
+
                         <p>
                             Your website identifies your brand.  Make using your website an experience your customers will enjoy and remember.
                             Leader Analytics creates websites that are both beautiful and functional.  We create a visually appealing image of your brand and we follow through with an
                             interface that allows your visitors to quickly locate products and information and to complete a purchase effortlessly.
                         </p>
-                        
+
                         <p>
                             Leader Analytics can make your website a seamless extension of your business.  Our experienced developers are experts at building the back office components
                             required to process orders or deliver business content.
@@ -162,16 +162,30 @@
 
 <section>
     <div id="mobile-development" class="section">
-        <div id="mobile-development-content" class="block-shadow-impact">
+
+        <div id="mobile-development-content">
             <div class="align-center mobile-development-headline padding10">We build mobile apps for your business</div>
-            
-            <div class="carousel" data-role="carousel" data-controls="false" data-markers="false" data-period="3000">
-                <div class="slide">Expand your online presence</div>
-                <div class="slide">Build brand loyalty</div>
-                <div class="slide">Target new markets</div>
+
+
+
+            <div class="carousel" data-role="carousel" data-period="6000" data-controls="false" data-markers="false">
+                <div id="slide3" class="slide mdslide">
+                    <div class="center text-shadow">
+                        Expand into new markets
+                    </div>
+                </div>
+                <div id="slide1" class="slide mdslide">
+                    <div class="center text-shadow">
+                        Increase your online presence
+                    </div>
+                </div>
+                <div id="slide2" class="slide mdslide">
+                    <div class="center text-shadow">
+                        Build brand loyalty
+                    </div>
+                </div>
             </div>
-            
-            
+
             <p>
                 We use Microsoft's powerful XAML technology to build rich, interactive applications.
                 We can leverage your existing API's or create new ones.  We can also integrate your app with your back office
@@ -184,12 +198,11 @@
 
 <hr class="separator" />
 
-<footer id="footer">
-
-</footer>
+<footer id="footer"></footer>
 
 <script type="text/javascript">
     $(function() {
         window.site.Load('/footer.html', 'footer');
+        $("#carousel").xcarousel();
     })
 </script>

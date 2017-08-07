@@ -9,7 +9,7 @@
 /* --------------------------------------- Classes-Elements --------------------------------------- */
 
 p {
-    line-height:200%;
+    line-height:170%;
     margin:0;
 }
 
@@ -51,6 +51,15 @@ p {
     margin-bottom:6px;
     border-radius:50%;
 }
+
+.center {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
 /* --------------------------------------- Classes - Controls --------------------------------------- */
 
 
@@ -76,8 +85,8 @@ p {
     margin:60px 0px 0px 0px;
 }
 .logo {
-    font-family:Toxic;
-    color:#7e0606;
+    font-family: Toxic;
+    color: #7e0606;
 }
 
 #vintages {
@@ -202,7 +211,7 @@ p {
     
 /* --------------------------------------- Mobile Development --------------------------------------- */
 #mobile-development {
-    background-image: url("../images/653023274.jpg");
+    background-image: url("../images/iStock-653023274.jpg");
 }
 
 #mobile-development-cover-img {
@@ -223,6 +232,25 @@ p {
     font-family: fantasy;
     color:#603131;
 }
+.mdslide {
+    margin:0;
+    padding:0;
+    height:150px;
+    text-align:center;
+    height:30px;
+    font-family:Krona;
+    font-size:2em;
+    color:#7a1544;
+    background-color:transparent;
+}
+#slide1 {
+}
+
+#slide2 {
+}
+
+#slide3 {
+}
 
 /* --------------------------------------- Fonts --------------------------------------- */
 
@@ -239,6 +267,12 @@ p {
 @font-face {
     font-family: 'Bilbo Regular';
     src: url("/fonts/bilbo.regular.ttf");
+}
+
+
+@font-face {
+    font-family: 'Krona';
+    src: url("/fonts/KronaOne-Regular.ttf");
 }
 
 
