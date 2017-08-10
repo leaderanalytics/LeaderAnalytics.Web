@@ -32,9 +32,14 @@
             });        
 
             
+        },
+        ScrollTo:function(elementID)
+        {
+            var myElement = document.getElementById(elementID);
+            var barHeight = $('.app-bar').height();
+            var topPos = myElement.offsetTop - barHeight;
+            $('html, body').animate({scrollTop:topPos, scrollLeft:0});
         }
-
-
     }
 
     $(window.site.Init())

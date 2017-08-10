@@ -120,7 +120,7 @@ p {
 }
 
 #custom-software-content {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #custom-software-headline {
@@ -149,10 +149,9 @@ p {
 
 .feature-box {
     color: white;
-    margin: 1.5vw;
-    /*min-width:140px;
-    max-width:200px;*/
-    width:100%;
+    margin:0;
+    width:120px;
+    height:220px;
 }
 
 .feature-box-large {
@@ -165,16 +164,19 @@ p {
 }
 
 .feature-box-title {
-    padding: 2vw;
-    min-height:12vh;
-    font-size:110%;
+    padding: 1vw;
+    height:90px;
+    font-size:90%;
+    vertical-align:middle;
     flex:1; /*fill parent container*/
 }
 .feature-box-content {
-    padding: 2vw;
+    padding: 1vw;
 }
 
-
+.feature-box-padding {
+    padding:1vw;
+}
 
 /* --------------------------------------- Web Development --------------------------------------- */
 
@@ -190,10 +192,8 @@ p {
 }
 
 #web-development-content-leader {
-    margin-left: 40vw;
     background-image: url('../images/square-2484093_1920.jpg');
     background-size:cover;
-    
 }
 
 #web-development-content {
@@ -220,8 +220,9 @@ p {
 #mobile-development-content {
     /*width: 40vw;*/
     padding: 0px 1vw 1vh 1vw;
-    background-color: rgba(241, 241, 241, 0.81);
-    border:solid 6px silver;
+    /*background-color: rgba(241, 241, 241, 0.81);*/
+    background-color:white;
+    border:solid 1px silver;
     border-radius:5px;
 }
 
