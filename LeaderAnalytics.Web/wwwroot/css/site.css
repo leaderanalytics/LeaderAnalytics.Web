@@ -161,6 +161,9 @@ p {
     margin:0;
     width:120px;
     height:220px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
 }
 
 .feature-box-large {
@@ -174,10 +177,13 @@ p {
 
 .feature-box-title {
     padding: 1vw;
-    height:90px;
-    font-size:90%;
-    vertical-align:middle;
-    flex:1; /*fill parent container*/
+    height:100%; /*90px;*/
+    width: 100%;
+    font-size: 90%;
+    flex: 1 1 0px; /*fill parent container*/
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 .feature-box-content {
     padding: 1vw;
@@ -185,6 +191,8 @@ p {
 
 .feature-box-padding {
     padding:1vw;
+    display:flex;
+    justify-content:center;
 }
 
 /* --------------------------------------- Web Development --------------------------------------- */
