@@ -5,6 +5,15 @@
 */
 
 
+/* IE fix */
+
+.flex-grid .row .cell.auto-size {
+    -webkit-flex: 1 1 0px;
+    flex: 1 1 0px;
+}
+
+/* end IE fix */
+
 
 /* --------------------------------------- Classes-Elements --------------------------------------- */
 
