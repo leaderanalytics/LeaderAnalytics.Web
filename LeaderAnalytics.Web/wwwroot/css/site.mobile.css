@@ -22,6 +22,17 @@
 
     .flex-grid .row .cell, .flex-grid .row [class*=size].cell {
         -webkit-flex: 1 0 100%;
+        flex: 1 0 100%;
     }
 }
 
+
+/* ie fix */
+@media only screen and (max-width: 640px) {
+    .flex-grid .row {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+
+    
+}

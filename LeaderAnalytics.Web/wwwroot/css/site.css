@@ -12,6 +12,11 @@
     flex: 1 1 0px;
 }
 
+.flex-grid .row .cell.colspan2 {
+    -webkit-flex: 1 1 0px;
+    flex: 1 1 0px;
+}
+
 /* end IE fix */
 
 
@@ -177,16 +182,18 @@ p {
 
 .feature-box-title {
     padding: 1vw;
-    height:100%; /*90px;*/
+    height: 100%; /*90px;*/
     width: 100%;
     font-size: 90%;
-    flex: 1 1 0px; /*fill parent container*/
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    /*flex: 1 1 0px; fill parent container*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .feature-box-content {
     padding: 1vw;
+    display:flex;
+    flex:0 0 auto;
 }
 
 .feature-box-padding {
