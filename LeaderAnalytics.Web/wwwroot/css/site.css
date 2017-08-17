@@ -99,8 +99,9 @@ p {
     margin:60px 0px 0px 0px;
 }
 .logo {
-    font-family: Toxic;
-    color: #7e0606;
+    font-family: SansMan;
+    /*color: #7e0606;*/
+    color:black;
 }
 
 #vintages {
@@ -134,7 +135,7 @@ p {
 }
 
 #custom-software-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #custom-software-headline {
@@ -252,7 +253,7 @@ p {
 
 .mobile-development-headline {
     font-size: 3rem;
-    font-family: fantasy;
+    font-family: Didact;
 }
 .mdslide {
     margin:0;
@@ -277,8 +278,8 @@ p {
 /* --------------------------------------- Fonts --------------------------------------- */
 
 @font-face {
-    font-family: Toxic;
-    src:url("/fonts/toxigenesis.bold.ttf");
+    font-family: 'SansMan';
+    src: url("/fonts/entsans.ttf");
 }
 
 @font-face {
@@ -295,6 +296,10 @@ p {
 @font-face {
     font-family: 'Krona';
     src: url("/fonts/KronaOne-Regular.ttf");
+}
+@font-face {
+    font-family:'Didact';
+    src: url('/fonts/DidactGothic-Regular.ttf');
 }
 
 

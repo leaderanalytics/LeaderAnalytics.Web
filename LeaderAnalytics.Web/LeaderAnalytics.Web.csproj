@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\community - Copy (2).html" />
+    <Content Include="wwwroot\documentation.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\community.html" />
+    <Content Include="wwwroot\construction.html" />
     <Content Include="wwwroot\css\site.mobile.css" />
+    <Content Include="wwwroot\downloads.html" />
     <Content Include="wwwroot\footer.html" />
     <Content Include="wwwroot\home.html" />
     <Content Include="wwwroot\images\handshake.jpg" />
@@ -30,6 +37,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\community - Copy %282%29.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,7 @@
 
             // Load home page
             this.LoadContent('/home.html');
+            this.Load('/footer.html', 'footer');
             this.ShowWindowSize();
         },
 
