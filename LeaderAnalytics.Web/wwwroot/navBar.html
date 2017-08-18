@@ -1,16 +1,14 @@
 ﻿<div class="app-bar orange" data-role="appbar">
-    <a class="app-bar-element" href="/index.html#main">Home</a>
-    
-    
+    <a class="app-bar-element" href="#" onclick="site.LoadContent('/home.html')" >Home</a>
 
     <ul class="app-bar-menu small-dropdown">
         <li>
             <a href="#" class="dropdown-toggle">Products and Services</a>
             <ul class="d-menu" data-role="dropdown">
                 <!--<li><a href="/index.html#vintages">Vintages</a></li>-->
-                <li><a href="#" onclick="site.ScrollTo('custom-software')">Custom Software Development</a></li>
-                <li><a href="#" onclick ="site.ScrollTo('web-development')">Web Development</a></li>
-                <li><a href="#" onclick=" site.ScrollTo('mobile-development')">Mobile/Desktop Development</a></li>
+                <li><a href="#" onclick="site.LoadAndScroll('/home.html','content', 'custom-software')">Custom Software Development</a></li>
+                <li><a href="#" onclick="site.LoadAndScroll('/home.html','content', 'web-development')">Web Development</a></li>
+                <li><a href="#" onclick="site.LoadAndScroll('/home.html','content', 'mobile-development')">Mobile/Desktop Development</a></li>
             </ul>
         </li>
     </ul>
@@ -28,7 +26,7 @@
     </ul>
 
 
-    <a class="app-bar-element" href="/index.html#about">About us</a>
+    <a class="app-bar-element" href="#" onclick="site.LoadAndScroll('/home.html','content', 'about-us')">About us</a>
 
 
     <a class="app-bar-element" href="/index.html#contact">Contact us</a>

@@ -1,5 +1,7 @@
 ﻿(function ($) {
     window.site = {
+        _currentPage:"",
+
         Init: function () {
             // Load navbar
             $.ajax({
@@ -15,14 +17,36 @@
 
         LoadContent: function (url) {
             this.Load(url, 'content');
+        },
+
+        LoadAndScroll: function (url, loadID, scrollID) {
+            var site = this;
+            var promise = this.Load(url, loadID);
+            promise.then(function() {
+                    site.ScrollTo(scrollID); 
+                });
         
         },
 
         Load: function (url, id) {
-            $.ajax({
-                url: url,
-                dataType: 'html'
-            }).done(function (data) { $('#' + id).html(data); });
+            var deferred = $.Deferred();
+
+            if(url === this._curentPage)
+                deferred.resolve();
+            else
+            {
+                this._currentPage = url;
+
+                $.ajax({
+                    url: url,
+                    dataType: 'html'
+                }).done(function (data) { 
+                        $('#' + id).html(data);
+                        deferred.resolve();
+                     });
+            }
+            
+            return deferred.promise();            
         },
 
         ShowWindowSize:function()

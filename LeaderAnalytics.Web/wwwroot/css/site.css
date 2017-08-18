@@ -80,7 +80,7 @@ p {
 
 .separator {
     background-color: gray;
-    height: 12px;
+    height: 6px;
     margin: 0;
 }
 
@@ -88,6 +88,14 @@ p {
 
 /* --------------------------------------- Sections --------------------------------------- */
 
+/* --------------------------------------- About us --------------------------------------- */
+
+#about-us {
+}
+
+    #about-us p {
+        font-family: Didact;
+    }
 
 /* --------------------------------------- Vintages --------------------------------------- */
 
@@ -101,7 +109,7 @@ p {
 .logo {
     font-family: SansMan;
     /*color: #7e0606;*/
-    color:black;
+    color:#555555;
 }
 
 #vintages {
