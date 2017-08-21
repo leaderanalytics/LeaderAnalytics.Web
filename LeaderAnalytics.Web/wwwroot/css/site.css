@@ -31,6 +31,11 @@ p {
         margin-top: 10px;
     }
 
+.button-hilight:hover {
+    border: silver;
+    box-shadow: 4px 4px 6px 3px rgba(76, 76, 79, 0.81);
+}
+
 .section {
     padding: 8vh 2vw 8vh 2vw;
     margin: 0px;
@@ -91,11 +96,28 @@ p {
 /* --------------------------------------- About us --------------------------------------- */
 
 #about-us {
+    display:flex;
 }
 
-    #about-us p {
+#about-us-content {
+    display:flex;
+    flex-direction:column;
+}
+
+    #about-us-content p {
         font-family: Didact;
+        font-size:large;
     }
+
+.sidebar {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width: 25vw;
+    display: flex;
+}
+
+
 
 /* --------------------------------------- Vintages --------------------------------------- */
 
