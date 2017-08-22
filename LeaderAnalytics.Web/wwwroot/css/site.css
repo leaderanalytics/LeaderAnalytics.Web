@@ -32,7 +32,6 @@ p {
     }
 
 .button-hilight:hover {
-    border: silver;
     box-shadow: 4px 4px 6px 3px rgba(76, 76, 79, 0.81);
 }
 
