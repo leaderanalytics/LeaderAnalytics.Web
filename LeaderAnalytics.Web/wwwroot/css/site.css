@@ -32,7 +32,7 @@ p {
     }
 
 .button-hilight:hover {
-    box-shadow: 4px 4px 6px 3px rgba(76, 76, 79, 0.81);
+    box-shadow: 4px 4px 4px 2px rgba(76, 76, 79, 0.5);
 }
 
 .section {
@@ -303,9 +303,13 @@ p {
 
 #slide3 {
 }
+/* --------------------------------------- Contact Form --------------------------------------- */
 
+#contact-form-container {
+    width:60vw;
+    font-size:large;
+}
 /* --------------------------------------- Fonts --------------------------------------- */
-
 @font-face {
     font-family: 'SansMan';
     src: url("/fonts/entsans.ttf");
