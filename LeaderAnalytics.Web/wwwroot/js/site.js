@@ -73,7 +73,28 @@
         SubmitContactForm:function() {
             var formData = $('#contact-form').serializeArray();
             var name = formData[0].value;
+            var phone = formData[1].value;            
+            var email = formData[2].value;
+            var req = formData[3].value;
+            var comment = formData[4].value;
+            
+            if(name.length === 0) {
+                this.ShowErrorDialog("Name is required.");
+                return false;
+            }
+
+            if(phone.length === 0 && email.length === 0) {
+                this.ShowErrorDialog("Phone number or email address is required.");
+                return false;
+            }
+            
+            metroDialog.close('#dialog')
             return false;
+        },
+
+        ShowErrorDialog:function(msg){
+            $('#error-dialog-message').html(msg);
+            metroDialog.open('#error-dialog');
         }
     }
 

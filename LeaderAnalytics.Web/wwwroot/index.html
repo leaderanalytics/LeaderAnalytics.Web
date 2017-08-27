@@ -19,6 +19,17 @@
     <hr class="separator" />
     <footer id="footer"></footer>
     <div data-role="dialog" id="dialog"></div>
+    <div id="error-dialog" data-role="dialog" data-overlay="true" data-overlay-color="op-dark" class="block-shadow" style="background-color:silver;">
+        <div style="background-color:darkred;width:100%;padding:5px;">Error</div>
+        <div class="align-center">
+            <p id="error-dialog-message" class="padding20"></p>
+        </div>
+        
+        <div class="align-right padding10">
+            <hr />
+            <button class="button danger button-hilight" style="width:80px;" onclick="metroDialog.close('#error-dialog')">OK</button>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/metro.min.js"></script>
     <script src="js/site.js"></script>
