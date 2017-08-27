@@ -31,5 +31,24 @@ namespace LeaderAnalytics.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public bool HandleContactRequest([FromBody] ContactRequest contactRequest)
+        {
+            // [FromBody]string name, [FromBody]string phone, [FromBody]string email, [FromBody]string requirement, [FromBody]string comment
+            // string name, string phone, string email, string requirement, string comments
+            string x = "";
+            return true;
+        }
+        
+    }
+
+    public class ContactRequest
+    {
+        public string name { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
+        public string requirement { get; set; }
+        public string comment { get; set; }
     }
 }

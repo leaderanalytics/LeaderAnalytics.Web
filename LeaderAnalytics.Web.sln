@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaderAnalytics.Web.Vintages", "LeaderAnalytics.Web.Vintages\LeaderAnalytics.Web.Vintages.csproj", "{E5331E19-1F98-4748-8B3F-DA987C740A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderAnalytics.Web", "LeaderAnalytics.Web\LeaderAnalytics.Web.csproj", "{73FC784C-778E-4BB2-9A09-A411B8730975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaderAnalytics.Web", "LeaderAnalytics.Web\LeaderAnalytics.Web.csproj", "{73FC784C-778E-4BB2-9A09-A411B8730975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

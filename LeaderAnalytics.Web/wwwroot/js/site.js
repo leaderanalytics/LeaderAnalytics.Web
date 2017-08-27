@@ -71,6 +71,7 @@
         },
 
         SubmitContactForm:function() {
+            var site = this;
             var formData = $('#contact-form').serializeArray();
             var name = formData[0].value;
             var phone = formData[1].value;            
@@ -88,13 +89,42 @@
                 return false;
             }
             
-            metroDialog.close('#dialog')
+            this.ShowWaitDialog();    
+            var json = JSON.stringify({name:name,phone:phone,email:email,requirement:req,comment:comment});
+            $.ajax({headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+                        type:'POST', url:'/Home/HandleContactRequest', data:json, dataType:'json'}).done(function() {
+                site.CloseDialog('#wait-dialog');
+                site.ShowOKDialog("Your request was sent successfully.",  function(){ metroDialog.close('#dialog'); });
+            });
             return false;
         },
 
-        ShowErrorDialog:function(msg){
+        ShowErrorDialog:function(msg, callback){
+            var site = this;            
+            var dlg = '#error-dialog';
             $('#error-dialog-message').html(msg);
+            $('#error-dialog-ok').click(function(){ site.CloseDialog(dlg, callback); });
             metroDialog.open('#error-dialog');
+        },
+
+        ShowOKDialog:function(msg, callback){
+            var site = this;
+            var dlg = '#ok-dialog';
+            $('#ok-dialog-message').html(msg);
+            $('#ok-dialog-ok').click(function(){ site.CloseDialog(dlg, callback); });
+            metroDialog.open('#ok-dialog');
+        },
+
+        ShowWaitDialog:function(){
+            metroDialog.open('#wait-dialog');
+        },
+
+        CloseDialog: function(dlg, callback)
+        {
+            metroDialog.close(dlg);
+            
+            if(typeof(callback) !== 'undefined' && callback !== null)
+                callback();
         }
     }
 
