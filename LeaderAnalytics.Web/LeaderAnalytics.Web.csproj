@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\community - Copy (2).html" />
     <Content Include="wwwroot\contactform.html" />
     <Content Include="wwwroot\documentation.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -38,11 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="wwwroot\community - Copy %282%29.html">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

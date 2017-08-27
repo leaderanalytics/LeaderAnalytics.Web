@@ -3,7 +3,7 @@
         _currentPage:"",
 
         Init: function () {
-            // Load navbar
+            
             $.ajax({
                 url: '/navBar.html',
                 dataType: 'html'
@@ -36,13 +36,14 @@
             else
             {
                 this._currentPage = url;
-
+                
                 $.ajax({
                     url: url,
                     dataType: 'html'
                 }).done(function (data) { 
-                        $('#' + id).html(data);
-                        deferred.resolve();
+                        $('#' + id).empty().append(data).append(function(){
+                            deferred.resolve();
+                        });
                      });
             }
             
@@ -67,6 +68,12 @@
             this.Load('/contactform.html','dialog').then(function() {
                 metroDialog.open('#dialog');                
             });
+        },
+
+        SubmitContactForm:function() {
+            var formData = $('#contact-form').serializeArray();
+            var name = formData[0].value;
+            return false;
         }
     }
 

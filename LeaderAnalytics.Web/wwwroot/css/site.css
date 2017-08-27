@@ -35,6 +35,10 @@ p {
     box-shadow: 4px 4px 4px 2px rgba(76, 76, 79, 0.5);
 }
 
+.button-hilight:focus {
+    box-shadow: 4px 4px 4px 2px rgba(76, 76, 79, 0.5);
+}
+
 .section {
     padding: 8vh 2vw 8vh 2vw;
     margin: 0px;
@@ -80,7 +84,9 @@ p {
 
 /* --------------------------------------- Classes - Controls --------------------------------------- */
 
-
+#dialog {
+    background-color:transparent;
+}
 
 .separator {
     background-color: gray;
@@ -101,6 +107,7 @@ p {
 #about-us-content {
     display:flex;
     flex-direction:column;
+    flex:0 1 100%; /*ie fix*/
 }
 
     #about-us-content p {
@@ -306,9 +313,27 @@ p {
 /* --------------------------------------- Contact Form --------------------------------------- */
 
 #contact-form-container {
-    width:60vw;
-    font-size:large;
+    width: 60vw;
+    background-color: white;
+    animation: fadein 1s;
+    background-image:url('../images/texture-1075992_1920.jpg');
 }
+
+#contact-form-message {
+    background-color: rgba(51, 51, 55, 0.6);
+    color: white;
+    margin-bottom:3vh;
+}
+
+#contact-grid {
+    font-size: larger;
+    background-color: transparent;
+    flex: 0 1 100%; /*ie fix*/
+}
+    #contact-grid input,select,textarea {
+        width: 100%;
+    }
+
 /* --------------------------------------- Fonts --------------------------------------- */
 @font-face {
     font-family: 'SansMan';
@@ -335,4 +360,13 @@ p {
     src: url('/fonts/DidactGothic-Regular.ttf');
 }
 
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 

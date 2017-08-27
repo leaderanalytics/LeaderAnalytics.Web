@@ -1,65 +1,67 @@
-﻿<div id="contact-form-container" class="section shadow">
-    
-    <form id="contact-form">
-        <fieldset>
-            <div class="flex-grid">
-                
-                <div class="row margin5">
-                    <div class="cell colspan2">
-                        <label>Your name</label>
-                    </div>
-                    <div class="cell colspan6">
-                        <input name="name" type="text" required autofocus maxlength="50" />
-                    </div>
-                </div>
+﻿<div id="contact-form-container" class="section shadow" >
+    <div id="contact-form-message" class="padding10">
+        <p>Thank you for your interest.  Please use this form to send us your contact information.  A representative from Leader Analytics will contact you shortly.
+        We will not disclose your contact information to any third party and we will not add you to a recurring email list.</p>
+    </div>
+    <form id="contact-form" onsubmit="return site.SubmitContactForm()">
+        <div id="contact-grid" class="flex-grid">
 
-                <div class="row margin5">
-                    <div class="cell colspan2">
-                        <label>Phone number</label>
-                    </div>
-                    <div class="cell colspan6">
-                        <input name="phone" type="tel" maxlength="50" />
-                    </div>
+            <div class="row margin10">
+                <div class="cell colspan3">
+                    <label>Your&nbsp;name</label>
                 </div>
-
-                <div class="row margin5">
-                    <div class="cell colspan2">
-                        <label>Email address</label>
-                    </div>
-                    <div class="cell colspan6">
-                        <input name="email" type="email" maxlength="50" />
-                    </div>
-                </div>
-
-                <div class="row margin5">
-                    <div class="cell colspan2">
-                        <label>Requirement</label>
-                    </div>
-                    <div class="cell colspan6">
-                        <select name="requirement">
-                            <option value="custom" selected="selected">Custom software</option>
-                            <option value="web">Web Development</option>
-                            <option value="mobile">Mobile Development</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row margin5">
-                    <div class="cell colspan2">
-                        <label>Additional comments</label>
-                    </div>
-                    <div class="cell colspan6">
-                        <textarea name="comments" maxlength="200" />
-                    </div>
+                <div class="cell colspan9">
+                    <input name="name" type="text" required autofocus maxlength="50"  />
                 </div>
             </div>
 
-
-            <div class="align-right margin6">
-                <button class="button primary button-hilight" onclick="site.SubmitContactForm()">OK</button>
-                <button class="button button-hilight" onclick="metroDialog.close('#dialog')">Cancel</button>
+            <div class="row margin10">
+                <div class="cell colspan3">
+                    <label>Phone&nbsp;number</label>
+                </div>
+                <div class="cell colspan9">
+                    <input name="phone" type="tel" maxlength="50"  />
+                </div>
             </div>
-        </fieldset>
+
+            <div class="row margin10">
+                <div class="cell colspan3">
+                    <label>Email&nbsp;address</label>
+                </div>
+                <div class="cell colspan9">
+                    <input name="email" type="email" maxlength="50"  />
+                </div>
+            </div>
+
+            <div class="row margin10">
+                <div class="cell colspan3">
+                    <label>Requirement</label>
+                </div>
+                <div class="cell colspan9">
+                    <select name="requirement" >
+                        <option value="custom" selected="selected">Custom software</option>
+
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile Development</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row margin10">
+                <div class="cell colspan3">
+                    <label>Additional&nbsp;comments</label>
+                </div>
+                <div class="cell colspan9">
+                    <textarea name="comments" maxlength="200"  />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="align-right margin10">
+            <button class="button primary button-hilight" style="width:150px;" type="submit">Send Request</button>
+            <button class="button button-hilight" style="width:150px;" onclick="metroDialog.close('#dialog')">Cancel</button>
+        </div>
     </form>
 </div>
