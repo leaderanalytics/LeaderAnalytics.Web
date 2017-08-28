@@ -171,7 +171,9 @@ p {
 }
 
 #custom-software-content {
-    background-color: rgba(0, 0, 0, 0.2);
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    background-color: rgba(49, 47, 61, 0.85);
+    /*background-color: rgba(227, 226, 233, 0.7);*/
 }
 
 #custom-software-headline {
