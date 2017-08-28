@@ -1,18 +1,13 @@
-﻿(function ($) {
+﻿(function ($, dialogs) {
     window.site = {
         _currentPage:"",
 
         Init: function () {
-            
-            $.ajax({
-                url: '/navBar.html',
-                dataType: 'html'
-            }).done(function (data) { $('#header').html(data); });
-
-            // Load home page
+            this.Load('/navBar.html','header');
             this.LoadContent('/home.html');
+            this.Load('/dialogs.html', 'dialog-container');
             this.Load('/footer.html', 'footer');
-            this.ShowWindowSize();
+            //this.ShowWindowSize();
         },
 
         LoadContent: function (url) {
@@ -61,7 +56,7 @@
             var myElement = document.getElementById(elementID);
             var barHeight = $('.app-bar').height();
             var topPos = myElement.offsetTop - barHeight;
-            $('html, body').animate({scrollTop:topPos, scrollLeft:0});
+            $('html, body').animate({scrollTop:topPos, scrollLeft:0}, 1000);
         },
 
         ShowContactDialog:function() {
@@ -80,53 +75,25 @@
             var comment = formData[4].value;
             
             if(name.length === 0) {
-                this.ShowErrorDialog("Name is required.");
+                dialogs.ShowErrorDialog("Name is required.");
                 return false;
             }
 
             if(phone.length === 0 && email.length === 0) {
-                this.ShowErrorDialog("Phone number or email address is required.");
+                dialogs.ShowErrorDialog("Phone number or email address is required.");
                 return false;
             }
             
-            this.ShowWaitDialog();    
+            dialogs.ShowWaitDialog();    
             var json = JSON.stringify({name:name,phone:phone,email:email,requirement:req,comment:comment});
             $.ajax({headers: {'Accept': 'application/json','Content-Type': 'application/json'},
                         type:'POST', url:'/Home/HandleContactRequest', data:json, dataType:'json'}).done(function() {
-                site.CloseDialog('#wait-dialog');
-                site.ShowOKDialog("Your request was sent successfully.",  function(){ metroDialog.close('#dialog'); });
+                dialogs.CloseDialog('#wait-dialog');
+                dialogs.ShowOKDialog("Your request was sent successfully.",  function(){ metroDialog.close('#dialog'); });
             });
             return false;
-        },
-
-        ShowErrorDialog:function(msg, callback){
-            var site = this;            
-            var dlg = '#error-dialog';
-            $('#error-dialog-message').html(msg);
-            $('#error-dialog-ok').click(function(){ site.CloseDialog(dlg, callback); });
-            metroDialog.open('#error-dialog');
-        },
-
-        ShowOKDialog:function(msg, callback){
-            var site = this;
-            var dlg = '#ok-dialog';
-            $('#ok-dialog-message').html(msg);
-            $('#ok-dialog-ok').click(function(){ site.CloseDialog(dlg, callback); });
-            metroDialog.open('#ok-dialog');
-        },
-
-        ShowWaitDialog:function(){
-            metroDialog.open('#wait-dialog');
-        },
-
-        CloseDialog: function(dlg, callback)
-        {
-            metroDialog.close(dlg);
-            
-            if(typeof(callback) !== 'undefined' && callback !== null)
-                callback();
         }
     }
 
     $(window.site.Init())
-})($)
+})($, window.dialogs)

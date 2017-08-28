@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\contactform.html" />
+    <Content Include="wwwroot\dialogs.html" />
     <Content Include="wwwroot\documentation.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -22,6 +23,7 @@
     <Content Include="wwwroot\images\handshake.jpg" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\index2.html" />
+    <Content Include="wwwroot\js\dialogs.js" />
     <Content Include="wwwroot\navBar.html" />
   </ItemGroup>
   <ItemGroup>
