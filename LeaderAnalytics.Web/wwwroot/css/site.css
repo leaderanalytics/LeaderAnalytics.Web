@@ -337,9 +337,33 @@ p {
     }
 /* --------------------------------------- Footer --------------------------------------- */
 
-footer {
-    background-color:#333337;
+
+
+#footer-content {
+    display:flex;
+    background-color: #333337;
+    flex-flow:column;
 }
+
+
+.footer-row {
+    display: flex;
+}
+.footer-cell {
+    display: flex;
+    flex-grow:1;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+
+
+
+
+
+
 /* --------------------------------------- Fonts --------------------------------------- */
 @font-face {
     font-family: 'SansMan';

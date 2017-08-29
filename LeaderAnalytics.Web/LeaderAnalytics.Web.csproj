@@ -20,6 +20,7 @@
     <Content Include="wwwroot\downloads.html" />
     <Content Include="wwwroot\footer.html" />
     <Content Include="wwwroot\home.html" />
+    <Content Include="wwwroot\images\git.svg" />
     <Content Include="wwwroot\images\handshake.jpg" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\index2.html" />
