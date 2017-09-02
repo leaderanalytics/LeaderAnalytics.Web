@@ -126,10 +126,15 @@
                     </div>
                 </div>
             </div>
-
-            <div class="sub-header align-center">
-                <span>We work with companies of all sizes. Contact us with your requirement and we will work with you to accomplish your goal.</span>
-                <button class="button primary button-hilight" onclick="site.ShowContactDialog()">Get started now</button>
+            <div style="display:flex;justify-content:center;">
+                <div class="padding10" style="border:solid 1px white;display:flex;flex-flow:column;">
+                    <div class="sub-header align-center">
+                        <span>We work with companies of all sizes. Contact us with your requirement and we will work with you to accomplish your goal.</span>
+                    </div>
+                    <div class="align-center" style="margin-top:15px">
+                        <button class="button primary button-hilight" onclick="site.ShowContactDialog()">Get started now</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -139,41 +144,35 @@
 
 <section>
     <div id="web-development" class="section">
-        <div class="flex-grid">
+        <div class="web-dev-grid">
             
-            <div class="row flex-self-start">
-                <div class="cell auto-size">
+            <div class="web-dev-row">
+                <div class="web-dev-cell" style="justify-content:flex-end;">
                     <div class="headline web-development-headline fg-orange">Data driven websites that inspire</div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="cell auto-size">
-                    <div style="height:80vh">&nbsp;</div>
-                </div>
-            </div>
             
             
-            <div class="row">
-                <div class="cell auto-size">
-                    <div style="width:40vw;">
-                    </div>
-                </div>
+            
+            <div class="web-dev-row" style="margin-top:6vh;margin-bottom:6vh;">
+               
                 
-                <div id="web-development-cover-img" class="cell auto-size">
-                    <div class="flex-grid">
-                        <div class="row">
+                <div id="web-development-cover-img" class="web-dev-cell">
+                    <div class="web-dev-grid" style="flex-direction:row;">
+                        <div class="web-dev-row">
                             
                             
-                            <div id="web-development-content-leader" class="cell">
+                            <div id="web-development-content-leader" class="web-dev-cell">
                             </div>
 
-                            <div class="cell auto-size">
+                            <div class="web-dev-cell">
                                 <div id="web-development-content" class="fg-darkCyan align-left padding10">
                                     <p>
-                                        Your website identifies your brand.  Make using your website an experience your customers will enjoy and remember.
-                                        Leader Analytics creates websites that are both beautiful and functional.  We create a visually appealing image of your brand and we follow through with an
-                                        interface that allows your visitors to quickly locate products and information and to complete a purchase effortlessly.
+                                        Your website identifies your brand.  Using your website should be an experience your customers will enjoy and remember.
+                                        Leader Analytics creates websites that are both beautiful and functional.  
+                                        We begin by creating a visually appealing image of your brand. We follow through with an
+                                        interface that allows your visitors to interact effortlessly with your site and to complete a purchase effortlessly.
                                     </p>
 
                                     <p>
@@ -181,14 +180,17 @@
                                         required to process orders or deliver business content.
                                         We can also integrate your site with your existing CRM or ERP system, allowing you to focus your attention and resources on building your business.
                                     </p>
-                                    <div class="align-center"><button class="button primary button-hilight" onclick="site.ShowContactDialog()">Get started now</button></div>
+                                    <div class="align-center" style="margin-top:3vh;margin-bottom:3vh;"><button class="button primary button-hilight" onclick="site.ShowContactDialog()">Get started now</button></div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="web-dev-row" style="height:10vw;">&nbsp;</div>
         </div>
     </div>
 </section>
@@ -207,7 +209,7 @@
                             <div class="row">
                                 <div class="cell auto-size">
                                     <div class="align-center mobile-development-headline padding10">
-                                        <p style="line-height:100%;margin-top:1vh;">We build mobile apps for your business</p>
+                                        <p style="line-height:100%;margin-top:1vh;">Get a mobile app for your business</p>
                                     </div>
                                 </div>
                             </div>

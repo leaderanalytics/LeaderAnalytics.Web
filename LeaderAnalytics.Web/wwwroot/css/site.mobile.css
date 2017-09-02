@@ -1,4 +1,13 @@
-﻿@media only screen and (max-width: 800px) {
+﻿/*
+    iPhone 1 – 3gs: 320 x 460 px
+    iPhone 4 – 4s: 640 x 920 px
+    iPhone 5: 640 x 1096 px
+    iPhone 6: 750 x 1294 px
+    iPhone 6 Plus: 1242 x 2148 px
+
+*/
+
+@media only screen and (max-width: 800px) {
 
 
     .flex-grid .row .cell:nth-child(1):last-child,
@@ -34,5 +43,24 @@
         flex-direction: row;
     }
 
-    
+    #web-development-content-leader {
+        width: 3vw;
+    }
+
+    #web-development-content {
+        max-width: 80vw;
+        min-width: 0px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+    }
+
+    .bare-list {
+        text-align:center;
+    }
+
+    .grow-align-right {
+        text-align:center;
+    }
 }

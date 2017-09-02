@@ -243,10 +243,8 @@ p {
 
 /* --------------------------------------- Web Development --------------------------------------- */
 
-
-
 #web-development {
-    background-image: url("../images/589448438.jpg");
+    background-image: url("../images/laptop-2591245_960_720.jpg");
 }
 
 #web-development-cover-img {
@@ -257,19 +255,51 @@ p {
 #web-development-content-leader {
     background-image: url('../images/square-2484093_1920.jpg');
     background-size:cover;
+    width:8vw;
 }
 
 #web-development-content {
     background-color: rgba(254, 253, 224, 1);
-    /*background-color:#247a9b;*/
+    max-width:20vw;
+    min-width:300px;
+    
+}
+
+.web-dev-grid {
+    display:flex;
+    flex-direction:column;
+}
+
+.web-dev-row {
+    display:flex;
+}
+
+.web-dev-cell {
+    display:flex;
+    flex-grow:1;
 }
 
 .web-development-headline {
     font-family: 'Bilbo Regular';
+    font-size:8vw;
     margin-top: 1vh;
-    margin-left: -1vw;
+    margin-right: 2vw;
     font-weight: 600;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 /* --------------------------------------- Mobile Development --------------------------------------- */
 #mobile-development {
@@ -349,16 +379,25 @@ p {
 .footer-row {
     display: flex;
 }
+
 .footer-cell {
     display: flex;
-    flex-grow:1;
-    justify-content:center;
-    align-items:center;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
 }
 
+.bare-list {
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    
+}
 
-
-
+.grow-align-right {
+    text-align:right;
+}
 
 
 

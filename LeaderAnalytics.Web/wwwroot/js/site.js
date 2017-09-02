@@ -7,7 +7,7 @@
             this.LoadContent('/home.html');
             this.Load('/dialogs.html', 'dialog-container');
             this.Load('/footer.html', 'footer');
-            //this.ShowWindowSize();
+            this.ShowWindowSize();
         },
 
         LoadContent: function (url) {
@@ -63,6 +63,7 @@
             this.Load('/contactform.html','dialog').then(function() {
                 metroDialog.open('#dialog');                
             });
+            return false;
         },
 
         SubmitContactForm:function() {
