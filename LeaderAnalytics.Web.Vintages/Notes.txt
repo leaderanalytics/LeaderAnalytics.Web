@@ -6,6 +6,6 @@ http://brolik.com/work
 
 https://www.devbridge.com/chicago-software-development/
 
-
+https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x
 
 run: npm run-script buildProd <- case sensitive
