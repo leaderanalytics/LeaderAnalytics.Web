@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -46,6 +47,50 @@ namespace LeaderAnalytics.Web.Vintages
             //    .AddEntityFrameworkStores<ApplicationDbContext>()
             //    .AddDefaultTokenProviders();
 
+
+            services.AddAuthentication(options => {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationType;
+                options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            })
+            .AddCookie()
+            .AddOpenIdConnect(options => {
+                options.Authority = Configuration["auth:oidc:authority"];
+                options.ClientId = Configuration["auth:oidc:clientid"];
+            });
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                    options.Audience = "http://localhost:5001/";
+                    options.Authority = "http://localhost:5000/";
+                });
+
+            services.AddAuthentication()
+                .AddFacebook(options => {
+                    options.AppId = Configuration["auth:facebook:appid"];
+                    options.AppSecret = Configuration["auth:facebook:appsecret"];
+                });
+
+            services.AddAuthentication()
+                .AddGoogle(options => {
+                    options.ClientId = Configuration["auth:google:clientid"];
+                    options.ClientSecret = Configuration["auth:google:clientsecret"];
+                });
+
+            services.AddAuthentication()
+                .AddMicrosoftAccount(options => {
+                    options.ClientId = Configuration["auth:microsoft:clientid"];
+                    options.ClientSecret = Configuration["auth:microsoft:clientsecret"];
+                });
+
+            services.AddAuthentication()
+                .AddTwitter(options => {
+                    options.ConsumerKey = Configuration["auth:twitter:consumerkey"];
+                    options.ConsumerSecret = Configuration["auth:twitter:consumersecret"];
+                });
+
+
+
             services.AddMvc(options => {
                 options.SslPort = 44359;
                 options.Filters.Add(new RequireHttpsAttribute());
@@ -64,7 +109,7 @@ namespace LeaderAnalytics.Web.Vintages
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            app.UseAuthentication();
             app.UseDeveloperExceptionPage();
             app.UseDatabaseErrorPage();
             app.UseBrowserLink();

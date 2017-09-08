@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.ApplicationInsights;
 
@@ -14,22 +15,20 @@ namespace LeaderAnalytics.Web.Vintages
         {
             var telemetry = new TelemetryClient();
 
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .UseApplicationInsights()
-                .Build();
-
             try
             {
-                host.Run();
+                BuildWebHost(args).Run();
             }
             catch (Exception ex)
             {
                 telemetry.TrackException(ex);
             }
         }
+
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
+
     }
 }

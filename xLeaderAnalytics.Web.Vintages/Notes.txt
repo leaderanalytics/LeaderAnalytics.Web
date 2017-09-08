@@ -8,4 +8,6 @@ https://www.devbridge.com/chicago-software-development/
 
 https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x
 
+https://github.com/aspnet/Announcements/issues/232
+
 run: npm run-script buildProd <- case sensitive
