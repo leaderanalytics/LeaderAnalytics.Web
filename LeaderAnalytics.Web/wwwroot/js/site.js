@@ -7,7 +7,7 @@
             this.LoadContent('/home.html');
             this.Load('/dialogs.html', 'dialog-container');
             this.Load('/footer.html', 'footer');
-            this.ShowWindowSize();
+            //this.ShowWindowSize();
         },
 
         LoadContent: function (url) {
