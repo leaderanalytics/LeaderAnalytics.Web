@@ -1,0 +1,3 @@
+﻿https://blogs.msdn.microsoft.com/dotnet/2016/10/03/storing-and-using-secrets-in-azure/
+https://docs.microsoft.com/en-us/azure/architecture/multitenant-identity/key-vault
+App key:VisualStudioSPN7dce360a-3a25-4c02-afbd-da9fcdd35a78

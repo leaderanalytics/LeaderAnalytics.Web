@@ -19,6 +19,10 @@ namespace LeaderAnalytics.Web
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+                builder.AddUserSecrets<Startup>();
+
             Configuration = builder.Build();
         }
 
@@ -27,6 +31,7 @@ namespace LeaderAnalytics.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<Secrets>(Configuration);
             // Add framework services.
             services.AddMvc();
             services.AddRouting();
