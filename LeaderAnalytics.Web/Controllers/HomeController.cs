@@ -13,9 +13,10 @@ namespace LeaderAnalytics.Web.Controllers
     {
         private IOptions<Secrets> Configuration;
 
-        public HomeController(IOptions<Secrets> config)
+        public HomeController(IOptions<Secrets> config, IConfiguration configu)
         {
             Configuration = config;
+            var x = configu["SecretName"];
         }
 
         public IActionResult Index()

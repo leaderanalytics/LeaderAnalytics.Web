@@ -12,6 +12,8 @@ namespace LeaderAnalytics.Web
 {
     public class Startup
     {
+        public IConfigurationRoot Configuration { get; }
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -23,14 +25,21 @@ namespace LeaderAnalytics.Web
             if (env.IsDevelopment())
                 builder.AddUserSecrets<Startup>();
 
+
+            var builtConfig = builder.Build();
+
+            builder.AddAzureKeyVault(
+              $"https://{builtConfig["Vault"]}.vault.azure.net",
+              builtConfig["ClientID"],
+              builtConfig["ClientSecret"]);
+
             Configuration = builder.Build();
         }
-
-        public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IConfiguration>(Configuration);
             services.Configure<Secrets>(Configuration);
             // Add framework services.
             services.AddMvc();
