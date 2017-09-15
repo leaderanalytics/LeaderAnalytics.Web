@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration.AzureKeyVault;
 
 namespace LeaderAnalytics.Web
 {
@@ -24,6 +25,14 @@ namespace LeaderAnalytics.Web
                 builder.AddUserSecrets<Startup>();
 
             Configuration = builder.Build();
+
+            //https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x
+            builder.AddAzureKeyVault(
+                $"https://{Configuration["Vault"]}.vault.azure.net/",
+                Configuration["ClientID"],
+                Configuration["ClientSecret"]
+                );
+
         }
 
         public IConfigurationRoot Configuration { get; }
