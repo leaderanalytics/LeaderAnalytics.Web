@@ -11,12 +11,11 @@ namespace LeaderAnalytics.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private IOptions<Secrets> Configuration;
+        private IConfiguration AppSettings;
 
-        public HomeController(IOptions<Secrets> config, IConfiguration configu)
+        public HomeController(IConfiguration appSettings)
         {
-            Configuration = config;
-            var x = configu["SecretName"];
+            AppSettings = appSettings;
         }
 
         public IActionResult Index()
@@ -27,7 +26,6 @@ namespace LeaderAnalytics.Web.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
@@ -53,7 +51,7 @@ namespace LeaderAnalytics.Web.Controllers
                 "Email: " + contactRequest.email + Environment.NewLine +
                 "Requirement: " + contactRequest.requirement + Environment.NewLine +
                 "Comment: " + contactRequest.comment + Environment.NewLine;
-            SendEmailNotice(Configuration.Value.EmailAccount, Configuration.Value.EmailPassword, new string[] { "sam.wheat@outlook.com" }, subject, msgBody);
+            SendEmailNotice(AppSettings["EmailAccount"], AppSettings["EmailPassword"], new string[] { "sam.wheat@outlook.com" }, subject, msgBody);
             return true;
         }
 

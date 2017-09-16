@@ -23,33 +23,25 @@ namespace LeaderAnalytics.Web
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
 
-            if (env.IsDevelopment())
-                builder.AddUserSecrets<Startup>();
+            builder.AddUserSecrets<Startup>();  // always add user secrets because ClientSecret is necessary to to get to KeyValut
 
+            if (! env.IsDevelopment())
+            {
+                var builtConfig = builder.Build();
 
-            var builtConfig = builder.Build();
-
-            builder.AddAzureKeyVault(
-              $"https://{builtConfig["Vault"]}.vault.azure.net",
-              builtConfig["ClientID"],
-              builtConfig["ClientSecret"]);
-
+                //https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x
+                builder.AddAzureKeyVault(
+                  $"https://{builtConfig["Vault"]}.vault.azure.net",
+                  builtConfig["ClientID"],
+                  builtConfig["ClientSecret"]);
+            }
             Configuration = builder.Build();
-
-            //https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x
-            builder.AddAzureKeyVault(
-                $"https://{Configuration["Vault"]}.vault.azure.net/",
-                Configuration["ClientID"],
-                Configuration["ClientSecret"]
-                );
-
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfiguration>(Configuration);
-            services.Configure<Secrets>(Configuration);
             // Add framework services.
             services.AddMvc();
             services.AddRouting();
