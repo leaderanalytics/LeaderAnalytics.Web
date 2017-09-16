@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration.AzureKeyVault;
 
 namespace LeaderAnalytics.Web
 {
@@ -34,6 +35,14 @@ namespace LeaderAnalytics.Web
               builtConfig["ClientSecret"]);
 
             Configuration = builder.Build();
+
+            //https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x
+            builder.AddAzureKeyVault(
+                $"https://{Configuration["Vault"]}.vault.azure.net/",
+                Configuration["ClientID"],
+                Configuration["ClientSecret"]
+                );
+
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
