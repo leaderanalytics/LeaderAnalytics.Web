@@ -7,6 +7,8 @@
   <PropertyGroup>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <UserSecretsId>bdd7dfef-e1fe-4baa-8e3b-ceead643a188</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/1e75a10f-52e9-465d-91bb-91c5e52595f3/resourcegroups/LeaderAnalyticsWeb/providers/microsoft.insights/components/LeaderAnalyticsWeb</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
@@ -30,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
