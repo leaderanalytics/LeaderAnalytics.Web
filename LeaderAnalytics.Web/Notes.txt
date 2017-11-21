@@ -1,6 +1,6 @@
 ﻿https://blogs.msdn.microsoft.com/dotnet/2016/10/03/storing-and-using-secrets-in-azure/
 https://docs.microsoft.com/en-us/azure/architecture/multitenant-identity/key-vault
-
+https://damienbod.com/2017/11/06/identityserver4-localization-with-the-oidc-implicit-flow/
 
 ClientSecret
 To change the ClientSecret 
