@@ -25,7 +25,7 @@ namespace LeaderAnalytics.Web
 
             builder.AddUserSecrets<Startup>();  // always add user secrets because ClientSecret is necessary to to get to KeyValut
 
-            if (! env.IsDevelopment())
+            if (false && ! env.IsDevelopment())
             {
                 var builtConfig = builder.Build();
 
