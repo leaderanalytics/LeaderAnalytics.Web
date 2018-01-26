@@ -87,7 +87,7 @@ namespace LeaderAnalytics.Web
             //
             //
 
-            string logDir = Path.Combine(Directory.GetParent(webroot).Parent.Parent.ToString(), "__log-{Date}.txt");
+            string logDir = Path.Combine(Directory.GetParent(webroot).Parent.ToString(), "\\LogFiles\\__log-{Date}.txt");
             var outputTemplate = "[{Timestamp:HH:mm:ss}] [{Level:u3}] [{Caller}]{NewLine}{Exception}{Message}{NewLine}";
             Serilog.Formatting.Display.MessageTemplateTextFormatter tf = new Serilog.Formatting.Display.MessageTemplateTextFormatter(outputTemplate, CultureInfo.InvariantCulture);
             Log.Logger = new LoggerConfiguration()
