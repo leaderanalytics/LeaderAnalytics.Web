@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration.AzureKeyVault;
 using Serilog;
+using System.IO;
 
 namespace LeaderAnalytics.Web
 {
@@ -38,7 +39,7 @@ namespace LeaderAnalytics.Web
                   builtConfig["ClientSecret"]);
             }
             Configuration = builder.Build();
-            CreateLogger();
+            CreateLogger(env.WebRootPath);
             Log.Debug("Vault {vault}", Configuration["Vault"]);
         }
 
@@ -73,7 +74,7 @@ namespace LeaderAnalytics.Web
         }
 
 
-        private void CreateLogger()
+        private void CreateLogger(string webroot)
         {
 
             //
@@ -86,13 +87,14 @@ namespace LeaderAnalytics.Web
             //
             //
 
+            string logDir = Path.Combine(Directory.GetParent(webroot).Parent.Parent.ToString(), "__log-{Date}.txt");
             var outputTemplate = "[{Timestamp:HH:mm:ss}] [{Level:u3}] [{Caller}]{NewLine}{Exception}{Message}{NewLine}";
             Serilog.Formatting.Display.MessageTemplateTextFormatter tf = new Serilog.Formatting.Display.MessageTemplateTextFormatter(outputTemplate, CultureInfo.InvariantCulture);
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
                 .Enrich.FromLogContext()
                 .Enrich.WithCaller()
-                .WriteTo.RollingFile(tf, "../../LogFiles/__log-{Date}.txt")
+                .WriteTo.RollingFile(tf, logDir)
                 .CreateLogger();
         }
     }
