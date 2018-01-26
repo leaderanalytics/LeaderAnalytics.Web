@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration.AzureKeyVault;
+using Serilog;
 
 namespace LeaderAnalytics.Web
 {
@@ -25,7 +27,7 @@ namespace LeaderAnalytics.Web
 
             builder.AddUserSecrets<Startup>();  // always add user secrets because ClientSecret is necessary to to get to KeyValut
 
-            if (true || ! env.IsDevelopment())
+            if (false || ! env.IsDevelopment())
             {
                 var builtConfig = builder.Build();
 
@@ -36,6 +38,8 @@ namespace LeaderAnalytics.Web
                   builtConfig["ClientSecret"]);
             }
             Configuration = builder.Build();
+            CreateLogger();
+            Log.Debug("Vault {vault}", Configuration["Vault"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -66,6 +70,30 @@ namespace LeaderAnalytics.Web
             app.UseDefaultFiles(); // must be before UseStaticFiles
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+        }
+
+
+        private void CreateLogger()
+        {
+
+            //
+            //
+            // Note:  dont use string interpolation when logging. Example:
+            //
+            // string userName = "sam";
+            // Log.Information($"My name is {userName}");              // WRONG:  serilog cannot generate a variable for username
+            // Log.Information("My name is {userName}", userName);     // Correct: userName:"sam" can optionally be generated in the log file as a searchable variable
+            //
+            //
+
+            var outputTemplate = "[{Timestamp:HH:mm:ss}] [{Level:u3}] [{Caller}]{NewLine}{Exception}{Message}{NewLine}";
+            Serilog.Formatting.Display.MessageTemplateTextFormatter tf = new Serilog.Formatting.Display.MessageTemplateTextFormatter(outputTemplate, CultureInfo.InvariantCulture);
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(Configuration)
+                .Enrich.FromLogContext()
+                .Enrich.WithCaller()
+                .WriteTo.RollingFile(tf, "__log-{Date}.txt")
+                .CreateLogger();
         }
     }
 }

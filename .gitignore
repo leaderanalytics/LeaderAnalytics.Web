@@ -250,3 +250,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/LeaderAnalytics.Web/__log-20180125.txt

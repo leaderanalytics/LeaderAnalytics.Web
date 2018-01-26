@@ -17,18 +17,20 @@ namespace LeaderAnalytics.Web
             var skip = 3;
             while (true)
             {
-                var stack = new StackFrame(skip,true);
-                if (!stack.HasMethod())
+                var stack = new StackFrame(skip, true);
+                if (stack.GetMethod() == null)
                 {
                     logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue("<unknown method>")));
                     return;
                 }
 
-                int lineNumber = stack.GetFileLineNumber();
                 var method = stack.GetMethod();
+                var fileName = stack.GetFileName();
+                var signaure = string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName));
+                int lineNumber = stack.GetFileLineNumber();
                 if (method.DeclaringType.Assembly != typeof(Log).Assembly)
                 {
-                    var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
+                    var caller = $"{method.DeclaringType.FullName}.{method.Name}({signaure}) {fileName} line:{lineNumber}";
                     logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue(caller)));
                 }
 
@@ -37,7 +39,7 @@ namespace LeaderAnalytics.Web
         }
     }
 
-    static class LoggerCallerEnrichmentConfiguration
+    public static class LoggerCallerEnrichmentConfiguration
     {
         public static LoggerConfiguration WithCaller(this LoggerEnrichmentConfiguration enrichmentConfiguration)
         {
