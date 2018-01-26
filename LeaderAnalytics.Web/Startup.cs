@@ -39,8 +39,8 @@ namespace LeaderAnalytics.Web
                   builtConfig["ClientSecret"]);
             }
             Configuration = builder.Build();
-            //CreateLogger(env.WebRootPath);
-            //Log.Debug("Vault {vault}", Configuration["Vault"]);
+            CreateLogger(env.WebRootPath);
+            Log.Debug("Vault {vault}", Configuration["Vault"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
