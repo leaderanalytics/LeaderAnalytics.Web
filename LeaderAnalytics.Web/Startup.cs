@@ -38,8 +38,8 @@ namespace LeaderAnalytics.Web
                   builtConfig["ClientSecret"]);
             }
             Configuration = builder.Build();
-            //CreateLogger();
-            //Log.Debug("Vault {vault}", Configuration["Vault"]);
+            CreateLogger();
+            Log.Debug("Vault {vault}", Configuration["Vault"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -92,7 +92,7 @@ namespace LeaderAnalytics.Web
                 .ReadFrom.Configuration(Configuration)
                 .Enrich.FromLogContext()
                 .Enrich.WithCaller()
-                .WriteTo.RollingFile(tf, "__log-{Date}.txt")
+                .WriteTo.RollingFile(tf, "../../LogFiles/__log-{Date}.txt")
                 .CreateLogger();
         }
     }
