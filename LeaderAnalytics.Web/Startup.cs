@@ -27,7 +27,7 @@ namespace LeaderAnalytics.Web
 
             builder.AddUserSecrets<Startup>();  // always add user secrets because ClientSecret is necessary to to get to KeyValut
 
-            if (false || ! env.IsDevelopment())
+            if (! env.IsDevelopment())
             {
                 var builtConfig = builder.Build();
 
@@ -38,8 +38,8 @@ namespace LeaderAnalytics.Web
                   builtConfig["ClientSecret"]);
             }
             Configuration = builder.Build();
-            CreateLogger();
-            Log.Debug("Vault {vault}", Configuration["Vault"]);
+            //CreateLogger();
+            //Log.Debug("Vault {vault}", Configuration["Vault"]);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
