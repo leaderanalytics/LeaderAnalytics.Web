@@ -2,6 +2,13 @@
 https://docs.microsoft.com/en-us/azure/architecture/multitenant-identity/key-vault
 https://damienbod.com/2017/11/06/identityserver4-localization-with-the-oidc-implicit-flow/
 
+Themes, styles, example sites:
+https://preview.arraythemes.com/paperback/
+https://liftcodeplay.com/
+https://www.nuget.org/packages/Metro4/
+
+https://www.awwwards.com/websites/graphic-design/
+
 ClientSecret
 To change the ClientSecret 
 Go to Azure Active Directory

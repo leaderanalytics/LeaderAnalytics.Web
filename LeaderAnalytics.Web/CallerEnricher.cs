@@ -18,13 +18,14 @@ namespace LeaderAnalytics.Web
             while (true)
             {
                 var stack = new StackFrame(skip, true);
-                if (stack.GetMethod() == null)
+                var method = stack.GetMethod();
+
+                if (method == null)
                 {
                     logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue("<unknown method>")));
                     return;
                 }
-
-                var method = stack.GetMethod();
+                
                 var fileName = stack.GetFileName();
                 var signaure = string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName));
                 int lineNumber = stack.GetFileLineNumber();

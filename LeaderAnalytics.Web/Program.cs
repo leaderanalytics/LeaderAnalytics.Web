@@ -16,7 +16,9 @@ namespace LeaderAnalytics.Web
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
+                //.UseApplicationInsights()
+                .CaptureStartupErrors(true)                             // Enables error page in Azure
+                .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")  // Enables error page in Azure
                 .Build();
 
             host.Run();

@@ -51,7 +51,7 @@ namespace LeaderAnalytics.Web.Controllers
                 "Email: " + contactRequest.email + Environment.NewLine +
                 "Requirement: " + contactRequest.requirement + Environment.NewLine +
                 "Comment: " + contactRequest.comment + Environment.NewLine;
-            SendEmailNotice(AppSettings["EmailAccount"], AppSettings["EmailPassword"], new string[] { "sam.wheat@outlook.com" }, subject, msgBody);
+            SendEmailNotice(AppSettings["EmailAccount"], AppSettings["EmailPassword"], new string[] { AppSettings["EmailAccount"] }, subject, msgBody);
             return true;
         }
 
@@ -59,7 +59,7 @@ namespace LeaderAnalytics.Web.Controllers
         {
             MailMessage msg = new MailMessage
             {
-                From = new MailAddress("sam.wheat@outlook.com"),
+                From = new MailAddress(emailAccount),
                 Subject = subject,
                 Body = msgBody
             };
