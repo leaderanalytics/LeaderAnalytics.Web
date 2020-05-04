@@ -16,13 +16,30 @@
         <div class="section-title aos-init aos-animate" data-aos="fade-up">
             <h2 class="text-center mb-5">Enterprise Software Development</h2>
         </div>
-        
-        <div class="container" >
-            <div class="row">
-                <div class="col-lg-4 d-flex">
-                    <div class="blurbcontainer">
+
+        <div class="d-flex">
+            <div class="flexx-row"> <!--row 1-->
+                <div class="d-flex"> <!--column 1-->
+                    <div class="blurbcontainer" data-aos="fade-up" data-aos-delay="100">
                         <h4 class="p-4">Patterns and practices that are proven and time-tested.</h4>
-                        <img src="assets/img/services/code.png" />
+
+
+                        <div class="slider-area">
+                            <div class="bend niceties preview-2">
+                                <div id="ensign-nivoslider2" class="slides">
+                                    <img src="assets/img/services/code.png" title="#slider-direction-4" />
+                                    <img src="assets/img/services/azure.jpg" title="#slider-direction-5" />
+                                </div>
+                                <!-- direction 1 -->
+                                <div id="slider-direction-4" class="slider-direction slider-one">
+                                </div>
+
+                                <!-- direction 2 -->
+                                <div id="slider-direction-5" class="slider-direction slider-two">
+                                </div>
+                            </div>
+                        </div>
+
                         <p class="p-4">
                             We specialize in .Net development.
                             We have extensive experience integrating our software with Microsoft technologies
@@ -30,38 +47,39 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-8">
-
-                    <div class="row justify-content-end">
-                        <div class="svcbox col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0 mt-lg-0 aos-init aos-animate" data-aos="zoom-in">
-                            <div class="icon-box-red">
-                                <div class="icon"><i class="icofont-lock"></i></div>
+                <div class="d-flex"> <!--column 2-->
+                    <div class="d-flex" style="flex-direction:column"> <!--inner table-->
+                        <div class="flexx-row"> <!--row 1-->
+                            <div class="svcbox" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="icon-box-red">
+                                    <div class="icon"><i class="icofont-lock"></i></div>
+                                </div>
                                 <h4 class="title">Secure</h4>
                                 <p class="description">Trusted industry standard libraries to implement security.</p>
                             </div>
-                        </div>
 
-                        <div class="svcbox col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon-box-green">
-                                <div class="icon"><i class="icofont-compass"></i></div>
+                            <div class="svcbox" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="icon-box-green">
+                                    <div class="icon"><i class="icofont-compass"></i></div>
+                                </div>
                                 <h4 class="title">Reliable</h4>
                                 <p class="description">Loosely coupled components that are designed for testability.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row justify-content-end">
-                        <div class="svcbox col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="icon-box-blue">
-                                <div class="icon"><i class="icofont-expand"></i></div>
+                        <div class="flexx-row"> <!--row 2-->
+                            <div class="svcbox" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon-box-blue">
+                                    <div class="icon"><i class="icofont-expand"></i></div>
+                                </div>
                                 <h4 class="title">Scalable</h4>
-                                <p class="description">Solid N-tier design patterns maximize code re-usablity.</p>
+                                <p class="description">N-tier design patterns maximize code re-usablity.</p>
                             </div>
-                        </div>
 
-                        <div class="svcbox col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="icon-box-purple">
-                                <div class="icon"><i class="icofont-wrench"></i></div>
+                            <div class="svcbox" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon-box-purple">
+                                    <div class="icon"><i class="icofont-wrench"></i></div>
+                                </div>
                                 <h4 class="title">Configurable</h4>
                                 <p class="description">Proven object-oriented patterns that allow components to be easily re-factored.</p>
                             </div>
@@ -75,7 +93,7 @@
 
     <div class="row text-center services">
         <!-- Start Left services -->
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="300">
             <div class="about-move">
                 <div class="services-details">
                     <div class="single-services">
@@ -86,7 +104,7 @@
                 <!-- end about-details -->
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="300">
             <div class="about-move">
                 <div class="services-details">
                     <div class="single-services">
@@ -97,7 +115,7 @@
                 <!-- end about-details -->
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="300">
             <!-- end col-md-4 -->
             <div class=" about-move">
                 <div class="services-details">
@@ -109,20 +127,56 @@
                 <!-- end about-details -->
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="300">
+            <!-- end col-md-4 -->
+            <div class=" about-move">
+                <div class="services-details">
+                    <div class="single-services">
+                        <div class="icon"><i class="icofont-computer"></i></div>
+                        <h4>Custom Applications</h4>
+                    </div>
+                </div>
+                <!-- end about-details -->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="400">
             <!-- end col-md-4 -->
             <div class=" about-move">
                 <div class="services-details">
                     <div class="single-services">
                         <div class="icon"><i class="icofont-money"></i></div>
-                        <h4>Banking </h4>
+                        <h4>Investing</h4>
                     </div>
                 </div>
                 <!-- end about-details -->
             </div>
         </div>
         <!-- End Left services -->
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="400">
             <!-- end col-md-4 -->
             <div class=" about-move">
                 <div class="services-details">
@@ -135,7 +189,7 @@
             </div>
         </div>
         <!-- End Left services -->
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="400">
             <!-- end col-md-4 -->
             <div class=" about-move">
                 <div class="services-details">
@@ -147,6 +201,22 @@
                 <!-- end about-details -->
             </div>
         </div>
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-aos="fade-up" data-aos-delay="400">
+            <!-- end col-md-4 -->
+            <div class=" about-move">
+                <div class="services-details">
+                    <div class="single-services">
+                        <div class="icon"><i class="icofont-barcode"></i></div>
+                        <h4>Inventory and Warehousing</h4>
+                    </div>
+                </div>
+                <!-- end about-details -->
+            </div>
+        </div>
+
+
+
     </div>
 </div>
 <!-- End Services Section -->

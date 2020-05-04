@@ -218,7 +218,10 @@ div#preloader {
   text-transform: uppercase;
   transition: all 0.4s ease 0s;
 }
-
+.flexx-row {
+    display:flex;
+    flex-direction:row;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -549,7 +552,7 @@ margin-right: 40px;
   content: "";
   height: 100%;
   left: 0;
-  opacity: 0.5;
+  opacity: 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -946,8 +949,8 @@ preview-2
 # Services
 --------------------------------------------------------------*/
 .services .svcbox {
+    display:flex;
     padding: 20px;
-    position: relative;
     overflow: hidden;
     margin: 0;
     background: beige;
@@ -955,7 +958,10 @@ preview-2
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     text-align: center;
-    margin:30px;
+    margin:30px 30px 0px 0px;
+    flex-basis:50%;
+    align-content:center;
+    flex-direction:column;
 }
 
 .services .icon-box-red .icon i {
@@ -988,6 +994,9 @@ preview-2
     box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.3);
     background-color: beige;
     flex: 1;
+    /*margin-top: 30px;*/
+    margin: 30px 30px 0px 0px;
+    border-radius: 8px;
 }
 
 .section-headline.services-head > h2 {
@@ -2772,6 +2781,10 @@ span.email-notes {
   li.threaded-comments {
     margin-left: 0;
   }
+
+    .flexx-row {
+        flex-direction:column;
+    }
 }
 
 /* Large Mobile :480px. */

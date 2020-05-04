@@ -117,7 +117,7 @@ import { Site } from './site.js';
   //---------------------------------------------
   //Nivo slider
   //---------------------------------------------
-  $('#ensign-nivoslider').nivoSlider({
+    $('#ensign-nivoslider').nivoSlider({
     effect: 'random',
     slices: 15,
     boxCols: 12,
@@ -127,9 +127,25 @@ import { Site } from './site.js';
     startSlide: 0,
     directionNav: true,
     controlNavThumbs: false,
+    controlNav:false,
     pauseOnHover: true,
     manualAdvance: false,
-  });
+    });
+
+    $('#ensign-nivoslider2').nivoSlider({
+        effect: 'random',
+        slices: 15,
+        boxCols: 12,
+        boxRows: 8,
+        animSpeed: 500,
+        pauseTime: 5000,
+        startSlide: 0,
+        directionNav: false,
+        controlNavThumbs: false,
+        controlNav:false,
+        pauseOnHover: true,
+        manualAdvance: false,
+    });
 
   /*----------------------------
    Scrollspy js
@@ -298,6 +314,11 @@ import { Site } from './site.js';
     });
     }
 
+    // Initi AOS
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out-back"
+    });
    
 
 })(jQuery);
