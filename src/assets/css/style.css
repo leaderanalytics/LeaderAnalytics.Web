@@ -990,7 +990,7 @@ preview-2
     font-weight:bold;
     color:skyblue;
 }
-.services .blurbcontainer {
+.services .copy-container {
     box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.3);
     background-color: beige;
     flex: 1;
@@ -1032,10 +1032,143 @@ preview-2
 }
 
 /*--------------------------------------------------------------
+# Web Dev
+--------------------------------------------------------------*/
+.webdev-area {
+    background-color: #f9f9f9;
+}
+
+.webdev-img-grid {
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-flow:column;
+    
+}
+
+.webdev-flex-row {
+    flex-flow:row;
+}
+
+.webdev-img-background1 {
+    background-image: url('../img/webdev/blocks.png');
+}
+
+.webdev-img-background2 {
+    background-image: url('../img/webdev/circles.jpg');
+}
+
+.webdev-img-background3 {
+    background-image: url('../img/webdev/mosaic.jpg');
+}
+
+.webdev-img-background4 {
+    background-image: url('../img/webdev/squares.jpg');
+}
+
+.webdev-img-background5 {
+    background-image: url('../img/webdev/womanworking2.jpeg');
+}
+
+.webdev-img-background6 {
+    background-image: url('../img/webdev/coffee.jpg');
+}
+.webdev-img-background7 {
+    background-image: url('../img/webdev/manworking.jpg');
+}
+.webdev-img-background8 {
+    background-image: url('../img/webdev/guyworking.jpg');
+}
+.webdev-img-background9 {
+    background-image: url('../img/webdev/womenworking.jpg');
+}
+
+
+.webdev-img-background1,
+.webdev-img-background2,
+.webdev-img-background3,
+.webdev-img-background4,
+.webdev-img-background5,
+.webdev-img-background6,
+.webdev-img-background7,
+.webdev-img-background8,
+.webdev-img-background9 {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-grow: 1;
+    min-height: 281px;
+}
+
+.webdev-txt-container {
+    background: rgba(255, 255, 255, 1);
+    font-size: clamp(18px,2vw,28px);
+    font-family: Didact;
+    padding: 5px;
+    flex-direction: column;
+    justify-self: stretch;
+    align-self: stretch;
+    line-height: clamp(20px,2vw,40px);
+}
+    .webdev-txt-container span {
+    }
+
+    .webdev-txt-container i {
+        text-align: center;
+        font-size: clamp(30px,4vw,48px);
+    }
+
+    .webdev-txt-container li {
+
+    }
+
+    .webdev-txt-container .title {
+        font-size: clamp(14px,3vw,30px);
+        text-align:center;
+        
+        margin-bottom:15px;
+        font-family:Arial;
+    }
+
+    .webdev-txt-container .pointer {
+        color: skyblue;
+        font-weight: bold;
+        margin-right: 6px;
+    }
+
+
+.webdev-img-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.webdev-img-cell {
+    border: solid 5px transparent;
+    flex-grow: 1;
+    justify-self: stretch;
+    align-self: stretch;
+    justify-content:stretch;
+    align-content:stretch;
+    flex-basis:0;
+}
+
+.webdev-img-grid,
+.webdev-flex-row,
+.webdev-img-cell,
+.webdev-txt-container {
+    display: flex;
+    flex-grow:1;
+}
+
+
+
+/*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
 .our-skill-area {
-  position: relative;
+    position: relative;
 }
 
 .our-skill-area {
@@ -2665,6 +2798,9 @@ span.email-notes {
   .search-option input {
     width: 67%;
   }
+    .webdev-flex-row {
+        flex-direction: column;
+    }
 }
 
 /* small mobile :320px. */
@@ -2785,6 +2921,10 @@ span.email-notes {
     .flexx-row {
         flex-direction:column;
     }
+
+    .webdev-flex-row {
+        flex-direction: column;
+    }
 }
 
 /* Large Mobile :480px. */
@@ -2827,22 +2967,22 @@ span.email-notes {
 
 @font-face {
   font-family: 'Peter Obscure';
-  src: url("/fonts/peter-obscure.bold.ttf");
+  src: url("../fonts/peter-obscure.bold.ttf");
 }
 
 @font-face {
   font-family: 'Bilbo Regular';
-  src: url("/fonts/bilbo.regular.ttf");
+  src: url("../fonts/bilbo.regular.ttf");
 }
 
 
 @font-face {
   font-family: 'Krona';
-  src: url("/fonts/KronaOne-Regular.ttf");
+  src: url("../fonts/KronaOne-Regular.ttf");
 }
 @font-face {
   font-family:'Didact';
-  src: url('/fonts/DidactGothic-Regular.ttf');
+  src: url('../fonts/DidactGothic-Regular.ttf');
 }
 
 @keyframes fadein {
