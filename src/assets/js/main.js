@@ -147,6 +147,21 @@ import { Site } from './site.js';
         manualAdvance: false,
     });
 
+    $('#ensign-nivoslider3').nivoSlider({
+        effect: 'random',
+        slices: 15,
+        boxCols: 12,
+        boxRows: 8,
+        animSpeed: 100,
+        pauseTime: 5000,
+        startSlide: 0,
+        directionNav: false,
+        controlNavThumbs: false,
+        controlNav: false,
+        pauseOnHover: true,
+        manualAdvance: false,
+    });
+
   /*----------------------------
    Scrollspy js
   ------------------------------ */

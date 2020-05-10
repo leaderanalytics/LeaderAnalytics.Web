@@ -1104,8 +1104,8 @@ preview-2
 
 .webdev-txt-container {
     background: rgba(255, 255, 255, 1);
-    font-size: clamp(18px,2vw,28px);
-    font-family: Didact;
+    font-size: clamp(20px,1.5vw,26px);
+    font-family: Arial;
     padding: 5px;
     flex-direction: column;
     justify-self: stretch;
@@ -1160,6 +1160,165 @@ preview-2
 .webdev-txt-container {
     display: flex;
     flex-grow:1;
+}
+
+/*--------------------------------------------------------------
+# Mobile Dev
+--------------------------------------------------------------*/
+
+
+.mobiledev-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    font-family: Roboto;
+    line-height:2.6vw;
+}
+
+    .mobiledev-banner p {
+        color:skyblue;
+    }
+    .mobiledev-banner .title1 {
+        font-weight: 100;
+        font-size: 2.0vw;
+    }
+    .mobiledev-banner .title2 {
+        font-weight: 800;
+        font-size: 4.2vw;
+    }
+
+.mobiledev-circle {
+    background-color:paleturquoise;
+    height:60px;
+    width:60px;
+    border-radius:30px;
+    padding:10px;
+    margin-right:1vw;
+}
+
+.mobiledev-table {
+    flex-flow: column;
+
+}
+.mobiledev-row {
+    flex-flow: row;
+    margin-top: 15px;
+}
+
+.mobiledev-cell2 {
+    flex-basis: 50%;
+    align-items: center;
+}
+
+.mobiledev-cell2-1 {
+    justify-content: flex-end;
+    margin-right:1vw;
+}
+
+.mobiledev-cell2-2 {
+    justify-content: flex-start;
+    margin-left: 1vw;
+    margin-right: 6vw;
+    font-family: Lorenza;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height:150%;
+    font-size: 30px;
+}
+
+.mobiledev-cell3 {
+    flex-basis: 33.33333%;
+}
+
+.mobiledev-cell5 {
+    background-color: beige;
+    font-family: Lorenza;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 22px;
+    align-items: center;
+    flex-basis: 20%;
+    margin: 1vw;
+    padding: 1vw;
+    
+
+    border-radius: 4px;
+    border-top: solid 2px black;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.3);
+}
+
+    .mobiledev-cell5 i {
+        font-size: 40px;
+        color: deepskyblue;
+    }
+
+    
+ 
+.mobiledev-cell5-1 i {
+    color:lightcoral;
+}
+.mobiledev-cell5-2 i {
+    color:lawngreen;
+}
+.mobiledev-cell5-3 i {
+    color: #FFEC5C;
+}
+.mobiledev-cell5-4 i {
+    color: #008DCB;
+}
+.mobiledev-cell5-5 i {
+    color: #A4CABC;
+}
+
+.mobiledev-table,
+.mobiledev-row,
+.mobiledev-cell2,
+.mobiledev-cell3,
+.mobiledev-cell5 {
+    display:flex;
+    flex-grow:1;
+}
+  
+.mobiledev-slider-content {
+    padding-top:120px;
+}
+.mobiledev-xamarin {
+    max-width:500px;
+}
+
+
+@media (min-width: 992px) and (max-width: 1169px) {
+    .mobiledev-cell5 {
+        font-size: 14px;
+    }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .mobiledev-row {
+        flex-flow: column;
+    }
+
+    .mobiledev-cell2-1,
+    .mobiledev-cell2-2 {
+        justify-content: center;
+    }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    
+    .mobiledev-row {
+        flex-flow: column;
+    }
+
+    .mobiledev-cell2-1,
+    .mobiledev-cell2-2 {
+        justify-content:center;
+    }
 }
 
 
@@ -2983,6 +3142,16 @@ span.email-notes {
 @font-face {
   font-family:'Didact';
   src: url('../fonts/DidactGothic-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoSlabRegular-w1GE3.ttf');
+}
+
+@font-face {
+    font-family: 'Lorenza';
+    src: url('../fonts/Lorenza-lgdp5.ttf');
 }
 
 @keyframes fadein {
