@@ -222,6 +222,10 @@ div#preloader {
     display:flex;
     flex-direction:row;
 }
+
+.shadow {
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.3);
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1039,8 +1043,7 @@ preview-2
 }
 
 .webdev-img-grid {
-    margin-left: 10%;
-    margin-right: 10%;
+    
     flex-flow:column;
     
 }
@@ -1094,7 +1097,6 @@ preview-2
 .webdev-img-background9 {
     align-items: center;
     justify-content: center;
-    padding: 20px;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1103,14 +1105,16 @@ preview-2
 }
 
 .webdev-txt-container {
+    margin: 2vw;
     background: rgba(255, 255, 255, 1);
     font-size: clamp(20px,1.5vw,26px);
     font-family: Arial;
-    padding: 5px;
+    padding: 1.5vw;
     flex-direction: column;
     justify-self: stretch;
     align-self: stretch;
     line-height: clamp(20px,2vw,40px);
+    border-top: solid 4px darkblue;
 }
     .webdev-txt-container span {
     }
@@ -1120,16 +1124,15 @@ preview-2
         font-size: clamp(30px,4vw,48px);
     }
 
-    .webdev-txt-container li {
-
-    }
+    
 
     .webdev-txt-container .title {
-        font-size: clamp(14px,3vw,30px);
+        font-size: clamp(14px,3vw,18px);
         text-align:center;
-        
         margin-bottom:15px;
         font-family:Arial;
+        color:black;
+        font-weight:700;
     }
 
     .webdev-txt-container .pointer {
@@ -1138,6 +1141,10 @@ preview-2
         margin-right: 6px;
     }
 
+    .webdev-txt-container li {
+        font-size: clamp(14px,3vw,18px);
+        color:gray;
+    }
 
 .webdev-img-container {
     align-items: center;
@@ -1145,13 +1152,13 @@ preview-2
 }
 
 .webdev-img-cell {
-    border: solid 5px transparent;
     flex-grow: 1;
     justify-self: stretch;
     align-self: stretch;
-    justify-content:stretch;
-    align-content:stretch;
-    flex-basis:0;
+    justify-content: stretch;
+    align-content: stretch;
+    flex-basis: 0;
+    
 }
 
 .webdev-img-grid,
@@ -1161,6 +1168,80 @@ preview-2
     display: flex;
     flex-grow:1;
 }
+
+
+.webdev-cell2-1 {
+    padding-left:1vw;
+    padding-right:1vw;
+    width:60%;
+    float:left;
+}
+
+    
+
+
+.webdev-cell2-2 {
+    width: 40%;
+    float: right;
+}
+
+.webdev-flex-cell2-3 {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 40%;
+    align-content:flex-start;
+    justify-content:flex-start;
+}
+
+.webdev2-headline {
+    font-family: Lorenza;
+    color:black;
+    font-size: 5vw;
+    margin-top: 1vh;
+    margin-right: 2vw;
+    font-weight: 300;
+    line-height:6vw;
+    padding-left:2vw;
+}
+
+.webdev2-copy {
+    font-family: Lorenza;
+    color: gray;
+    font-size: clamp(12px,2vw, 28px);
+    margin-top: 1vh;
+    margin-right: 2vw;
+    font-weight: 300;
+    line-height: 2.2vw;
+}
+
+
+@media (min-width: 992px) and (max-width: 1169px) {
+    .mobiledev-cell5 {
+        
+    }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+
+    .webdev-cell2-1 {
+        padding-left: 2vw;
+        padding-right: 1vw;
+        width: 100%;
+        float: none;
+    }
+
+    .webdev-cell2-2 {
+        width: 100%;
+        float: none;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # Mobile Dev
