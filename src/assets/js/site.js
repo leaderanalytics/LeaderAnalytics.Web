@@ -14,7 +14,6 @@
         promises.push(this.Load('about.html', 'about'));
         promises.push(this.Load('entdev.html', 'entdev'));
         promises.push(this.Load('webdev.html', 'webdev'));
-        promises.push(this.Load('webdev2.html', 'webdev2'));
         promises.push(this.Load('mobiledev.html', 'mobiledev'));
         promises.push(this.Load('footer.html', 'footer'));
         await Promise.all(promises);
