@@ -1,33 +1,44 @@
 import { Site } from './site.js';
 
-(async function($) {
+(async function ($) {
     "use strict";
 
     $(window).on('load', async x => {
-        let site = new Site();
-        await site.Init();
+        window.site = new Site();
+        await window.site.Init();
         var pre_loader = $('#preloader');
         pre_loader.fadeOut('slow', function () {
             $(this).remove();
         });
     });
 
-    let site = new Site();
-    await site.Init();
+    window.site = new Site();
+    await window.site.Init();
+    let lastScrollPos = 0;
+    let isscrolling = 0;
 
+    // Toggle .header-scrolled class to #header when page is scrolled
+    //$(window).scroll(function (e) {
+    //    ToggleHeaderOnScroll(e);
+    //});
 
-  // Toggle .header-scrolled class to #header when page is scrolled
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#header').addClass('header-scrolled');
-    } else {
-      $('#header').removeClass('header-scrolled');
+    function ToggleHeaderOnScroll(e) {
+
+        if (isscrolling === 1)
+            return;
+
+        isscrolling = 1;
+
+        let st = $(window).scrollTop();
+
+        if (st > (lastScrollPos))
+            $('#header').animate({height: '0px'}, 'slow');
+        else
+            $('#header').animate({ height: '80px' }, 'slow');
+
+        lastScrollPos = st;
+        isscrolling = 0;
     }
-  });
-
-  if ($(window).scrollTop() > 100) {
-    $('#header').addClass('header-scrolled');
-  }
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {

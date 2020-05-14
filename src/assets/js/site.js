@@ -9,12 +9,13 @@
 
     async Init() {
         var promises = [];
-        promises.push(this.Load('header.html', 'header'));
+        promises.push(this.Load('header.html', 'headersection'));
         promises.push(this.Load('slider.html', 'slider'));
         promises.push(this.Load('about.html', 'about'));
         promises.push(this.Load('entdev.html', 'entdev'));
         promises.push(this.Load('webdev.html', 'webdev'));
         promises.push(this.Load('mobiledev.html', 'mobiledev'));
+        promises.push(this.Load('contact.html', 'contact'));
         promises.push(this.Load('footer.html', 'footer'));
         await Promise.all(promises);
     }
