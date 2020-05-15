@@ -109,6 +109,7 @@ body {
   text-align: left;
   overflow-x: hidden;
   line-height: 22px;
+  position:relative;
 }
 
 /* Back to top button */
@@ -2246,7 +2247,9 @@ preview-2
 # Contact
 --------------------------------------------------------------*/
 
-
+.contact {
+    margin-bottom:100px;
+}
 
 .contact .info {
     border-top: 3px solid #47b2e4;

@@ -1,21 +1,15 @@
-﻿class Site  {
+﻿import { Home } from './home.js';
 
+class Site  {
 
     constructor() {
         this._currentPage = "";
     }
 
-    
-
     async Init() {
         var promises = [];
-        promises.push(this.Load('header.html', 'headersection'));
-        promises.push(this.Load('slider.html', 'slider'));
-        promises.push(this.Load('about.html', 'about'));
-        promises.push(this.Load('entdev.html', 'entdev'));
-        promises.push(this.Load('webdev.html', 'webdev'));
-        promises.push(this.Load('mobiledev.html', 'mobiledev'));
-        promises.push(this.Load('contact.html', 'contact'));
+        promises.push(this.Load('header.html', 'header'));
+        promises.push(this.LoadContent('home.html'));
         promises.push(this.Load('footer.html', 'footer'));
         await Promise.all(promises);
     }
@@ -35,8 +29,9 @@
 
     async Load(url, id) {
         var deferred = $.Deferred();
+        var that = this;
 
-        if (url === this._curentPage)
+        if (url === this._currentPage)
             deferred.resolve();
         else {
             this._currentPage = url;
@@ -45,13 +40,19 @@
                 url: url,
                 dataType: 'html'
             }).done(function (data) {
-                $('#' + id).empty().append(data).append(function () {
+                $('#' + id).empty().append(data).append(async function () {
+                    await that.InitPageJs(url);
                     deferred.resolve();
                 });
             });
         }
 
         return deferred.promise();
+    }
+
+    async InitPageJs(url) {
+        if (url === 'home.html')
+            await new Home().Init();
     }
 
 
