@@ -260,17 +260,49 @@ div#preloader {
 .img-cover {
     object-fit: cover;
 }
+
+#content {
+    min-height: 100vh; /*keep the footer pinned to the bottom*/
+}
+
+.under-construction {
+    display:flex;
+    flex-flow:column;
+    align-content:center;
+    justify-items:center;
+    align-items:center;
+    justify-content:center;
+    padding:3vw;
+    margin:3vw;
+    background-color:teal;
+}
+
+.under-construction i {
+    font-size:80px;
+    color:yellow;
+    margin-bottom:2vw;
+}
+    .under-construction a {
+        font-size:large;
+        color: rgb(185, 185, 185);
+    }
+
+    .under-construction a:hover {
+        color:white;
+    }
+
+
 /*--------------------------------------------------------------
 # Action
 --------------------------------------------------------------*/
-.action {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2vw;
-    padding: 1vw;
-    justify-content: center;
-    align-items: center;
-}
+    .action {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2vw;
+        padding: 1vw;
+        justify-content: center;
+        align-items: center;
+    }
     .action span {
         font-size: clamp(14px,3vw,18px);
         margin-right: 20px;
@@ -2959,6 +2991,8 @@ preview-2
 # Footer 
     --------------------------------------- */
 
+
+
 .separator {
     background-color: gray;
     height: 6px;
@@ -3021,6 +3055,20 @@ preview-2
 .footer-row > a {
     color: #330;
 }
+
+
+/*--------------------------------------------------------------
+# Dialogs
+--------------------------------------------------------------*/
+.dialog-footer {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:flex-end;
+    padding:.75rem;
+}
+
+
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/

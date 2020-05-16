@@ -7,13 +7,13 @@
         <nav class="nav-menu d-none d-lg-block ml-auto">
             <ul>
                 <li class="active"><a href="#header" onclick="site.LoadAndScroll('home.html','content','header')">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" onclick="window.site.LoadAndScroll('home.html', 'content','about')">About</a></li>
                 <li class="drop-down">
                     <a href="">Services</a>
                     <ul>
-                        <li><a href="#entdev">Enterprise Software Development</a></li>
-                        <li><a href="#webdev">Web Development</a></li>
-                        <li><a href="#mobiledev">Mobile Application Development</a></li>
+                        <li><a href="#services" onclick="window.site.LoadAndScroll('home.html', 'content','services')">Enterprise Software Development</a></li>
+                        <li><a href="#webdev" onclick="window.site.LoadAndScroll('home.html', 'content','webdev')">Web Development</a></li>
+                        <li><a href="#mobiledev" onclick="window.site.LoadAndScroll('home.html', 'content','mobiledev')">Mobile Application Development</a></li>
                     </ul>
                 </li>
 
@@ -21,25 +21,24 @@
                 <li class="drop-down">
                     <a href="">Applications</a>
                     <ul>
-                        <li><a href="#" onclick="window.site.LoadContent('apps/vyntix.html')" >Vyntix</a></li>
-                        <li><a href="#">Vyntix FRED Client</a></li>
-                        <li><a href="#">Vyntix Downloader</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/vyntix.html')">Vyntix</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/vyntix-fred-client.html')">Vyntix FRED Client</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/vyntix-downloader.html')">Vyntix Downloader</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a href="#">Renewals</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/renewals.html')">Renewals</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a href="#">Adaptive Client</a></li>
-                        <li><a href="#">Multi-Index Cache</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/adaptive-client.html')">Adaptive Client</a></li>
+                        <li><a href="#" onclick="window.site.LoadContent('apps/multi-index-cache.html')">Multi-Index Cache</a></li>
                     </ul>
                 </li>
-
 
 
                 <li class="drop-down">
                     <a href="">Support</a>
                     <ul>
-                        <li><a class="dropdown-item" href="#">Community</a></li>
-                        <li><a class="dropdown-item" href="#">Documentation</a></li>
-                        <li><a class="dropdown-item" href="#">Downloads</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="window.site.LoadContent('support/community.html')">Community</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="window.site.LoadContent('support/documentation.html')">Documentation</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="window.site.LoadContent('support/downloads.html')">Downloads</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li>

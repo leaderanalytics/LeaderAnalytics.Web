@@ -1,4 +1,5 @@
 ﻿import { Home } from './home.js';
+import { Dialogs } from './dialogs.js';
 
 class Site  {
 
@@ -11,6 +12,7 @@ class Site  {
         promises.push(this.Load('header.html', 'header'));
         promises.push(this.LoadContent('home.html'));
         promises.push(this.Load('footer.html', 'footer'));
+        promises.push(this.Load('dialogs.html', 'dialog-container'));
         await Promise.all(promises);
     }
 
@@ -82,31 +84,49 @@ class Site  {
         var site = this;
         var formData = $('#contact-form').serializeArray();
         var name = formData[0].value;
-        var phone = formData[1].value;
-        var email = formData[2].value;
+        var email = formData[1].value;
+        var phone = formData[2].value;
         var req = formData[3].value;
         var comment = formData[4].value;
 
         if (name.length === 0) {
-            dialogs.ShowErrorDialog("Name is required.");
+            Dialogs.ShowErrorDialog("Name is required.");
             return false;
         }
 
         if (phone.length === 0 && email.length === 0) {
-            dialogs.ShowErrorDialog("Phone number or email address is required.");
+            Dialogs.ShowErrorDialog("Phone number or email address is required.");
             return false;
         }
 
-        dialogs.ShowWaitDialog();
+        Dialogs.ShowWaitDialog();
         var json = JSON.stringify({ name: name, phone: phone, email: email, requirement: req, comment: comment });
         $.ajax({
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             type: 'POST', url: '/Home/HandleContactRequest', data: json, dataType: 'json'
-        }).done(function () {
-            dialogs.CloseDialog('#wait-dialog');
-            dialogs.ShowOKDialog("Your request was sent successfully.", function () { metroDialog.close('#dialog'); });
+        }).done(async function () {
+            // timeout is required to allow the wait dialog to render.
+            setTimeout(() => {
+                site.ClearContactForm();
+                Dialogs.CloseDialog('#wait-dialog');
+                Dialogs.ShowOKDialog("Your request was sent successfully.");
+            }, 2000);
+        }).fail(async function () {
+            // timeout is required to allow the wait dialog to render.
+            setTimeout(() => {
+                Dialogs.CloseDialog('#wait-dialog');
+                Dialogs.ShowOKDialog("An error occurred while processing your request.  Please try again later.");
+            }, 2000);
         });
         return false;
+    }
+
+    ClearContactForm() {
+        $('#name').val('');
+        $('#email').val('');
+        $('#phone').val('');
+        $('#requirement').val('custom');
+        $('textarea#comments').val('');
     }
 }
 export { Site };
