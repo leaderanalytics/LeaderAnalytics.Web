@@ -7,16 +7,15 @@ class Home {
 
     async Init() {
 
-
         var pre_loader = $('#preloader');
         pre_loader.fadeOut('slow', function () {
             $(this).remove();
         });
 
 
-
         // Smooth scroll for the navigation menu and links with .scrollto classes
         $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function (e) {
+
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 e.preventDefault();
                 var target = $(this.hash);
@@ -96,58 +95,70 @@ class Home {
             $(".navbar-collapse.collapse").removeClass('in');
         });
 
-        //---------------------------------------------
-        //Nivo slider
-        //---------------------------------------------
-        $('#ensign-nivoslider').nivoSlider({
-            effect: 'random',
-            slices: 15,
-            boxCols: 12,
-            boxRows: 8,
-            animSpeed: 500,
-            pauseTime: 5000,
-            startSlide: 0,
-            directionNav: true,
-            controlNavThumbs: false,
-            controlNav: false,
-            pauseOnHover: true,
-            manualAdvance: false,
+        $('#home').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots:false,
+            autoplay: true,
+            smartSpeed: 2500,
+            animateOut: 'fadeOut',
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
         });
 
-        $('#ensign-nivoslider2').nivoSlider({
-            effect: 'random',
-            slices: 15,
-            boxCols: 12,
-            boxRows: 8,
-            animSpeed: 500,
-            pauseTime: 5000,
-            startSlide: 0,
-            directionNav: false,
-            controlNavThumbs: false,
-            controlNav: false,
-            pauseOnHover: true,
-            manualAdvance: false,
+
+        var owl = $('#azure-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            animateOut: 'fadeOut',
+            singleItem: true,
+            items:1
+            
+        });
+        owl.trigger('refresh.owl.carousel');
+
+
+
+        $('#mobiledev-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            smartSpeed:2500,
+            animateOut: 'fadeOut',
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1169: {
+                    items: 3
+                }
+            }
         });
 
-        $('#ensign-nivoslider3').nivoSlider({
-            effect: 'random',
-            slices: 15,
-            boxCols: 12,
-            boxRows: 8,
-            animSpeed: 100,
-            pauseTime: 5000,
-            startSlide: 0,
-            directionNav: false,
-            controlNavThumbs: false,
-            controlNav: false,
-            pauseOnHover: true,
-            manualAdvance: false,
-        });
-
-    
-        
-
-      
 
         /*----------------------------
         Page Scroll
@@ -232,7 +243,6 @@ class Home {
 
             });
         });
-
     }
 
     ToggleHeaderOnScroll(e) {

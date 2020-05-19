@@ -19,12 +19,20 @@ class Dialogs {
         $('#wait-dialog').modal('show');
     }
 
+    static ShowLoginDialog() {
+        $('#login-dialog').modal('show');
+    }
+
     static CloseDialog(dlg, callback) {
 
         $(dlg).modal('hide');
 
         if (typeof (callback) !== 'undefined' && callback !== null)
             callback();
+    }
+
+    NotStatic() {
+        alert('NotStatic');
     }
 
 

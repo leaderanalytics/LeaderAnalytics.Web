@@ -1,4 +1,4 @@
-﻿<header id="header" class="fixed-top ">
+﻿<header id="header" class="fixed-top" >
     <div class="container-fluid d-flex align-items-center justify-content-between" >
         <div class="logo mr-auto">
             Leader Analytics
@@ -16,7 +16,6 @@
                         <li><a href="#mobiledev" onclick="window.site.LoadAndScroll('home.html', 'content','mobiledev')">Mobile Application Development</a></li>
                     </ul>
                 </li>
-
 
                 <li class="drop-down">
                     <a href="">Applications</a>
@@ -41,7 +40,13 @@
                         <li><a class="dropdown-item" href="#" onclick="window.site.LoadContent('support/downloads.html')">Downloads</a></li>
                     </ul>
                 </li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" onclick="site.LoadAndScroll('home.html','content','contact')">Contact</a></li>
+
+
+                <li class="drop-down">
+                    <a href="#" onclick="Dialogs.ShowLoginDialog()"><i class="icofont-login" />&nbsp;Log in</a>
+                    
+                </li>
             </ul>
         </nav>
     </div>

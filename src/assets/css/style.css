@@ -709,8 +709,44 @@ div#preloader {
 }
 
 
+/*--------------------------------------------------------------
+# Owl
+--------------------------------------------------------------*/
+.slide {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    height:80vh;
+    justify-content:center;
+    align-items:center;
+}
 
-    /*--------------------------------------------------------------
+.slide1 {
+    background-image: url('../img/slider/slider1.jpg');
+ 
+}
+.slide2 {
+    background-image: url('../img/slider/oldmanlecturing.jpg');
+}
+.slide3 {
+    background-image: url('../img/slider/slider3.jpg');
+}
+
+.title1 {
+    margin-top:30vw;
+    font-size:clamp(14pt,3vw,40pt);
+}
+.title2 {
+    margin-top: 1.2vw;
+    font-size: clamp(12pt,2vw,30pt);
+}
+.title1, .title2 {
+    padding: 0vw 2vw 0vw 2vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+}
+
+/*--------------------------------------------------------------
 # Slider
 --------------------------------------------------------------*/
     .slider-area {
@@ -1195,6 +1231,7 @@ preview-2
         /*margin-top: 30px;*/
         margin: 30px 30px 0px 0px;
         border-radius: 8px;
+        
     }
 
     .section-headline.services-head > h2 {
@@ -1228,6 +1265,31 @@ preview-2
         color: #333;
         font-size: 14px;
     }
+
+#azure-carousel {
+    max-width: 637px;
+}
+
+@media (min-width: 992px) and (max-width: 1169px) {
+    #azure-carousel {
+        max-width: 420px;
+    } 
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    #azure-carousel {
+        max-width: 420px;
+    }
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+
+    #azure-carousel {
+        max-width: 420px;
+    }
+}
 
     /*--------------------------------------------------------------
 # Web Dev
@@ -1338,7 +1400,7 @@ preview-2
 .webdev2-copy {
     font-family: Lorenza;
     color: gray;
-    font-size: clamp(12px,2vw, 28px);
+    font-size: clamp(14px,2vw, 28px);
     margin-top: 1vh;
     margin-right: 2vw;
     font-weight: 300;
@@ -1400,7 +1462,7 @@ preview-2
         }
 
     .mobiledev-circle {
-        background-color: paleturquoise;
+        background-color: skyblue;
         height: 60px;
         width: 60px;
         border-radius: 30px;
@@ -1447,7 +1509,7 @@ preview-2
         background-color: beige;
         font-family: Lorenza;
         color:black;
-        font-weight: 900;
+        font-weight: 1000;
         letter-spacing: 2px;
         font-size: 22px;
         align-items: center;
@@ -1504,8 +1566,32 @@ preview-2
     }
 
 
-    @media (min-width: 992px) and (max-width: 1169px) {
-        .mobiledev-cell5 {
+.mobiledev-slide1 {
+    background-image:url('../img/mobiledev/creditcard.jpg');
+}
+.mobiledev-slide2 {
+    background-image: url('../img/mobiledev/corpusers.jpg');
+}
+.mobiledev-slide3 {
+    background-image: url('../img/mobiledev/industry.jpg');
+}
+.mobiledev-slide4 {
+    background-image: url('../img/mobiledev/retail2.jpg');
+}
+
+.mobiledev-slide1,
+.mobiledev-slide2,
+.mobiledev-slide3,
+.mobiledev-slide4 {
+    background-size:cover;
+    width:auto;
+    max-height:300px;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1169px) {
+    .mobiledev-cell5 {
             font-size: 14px;
         }
     }
