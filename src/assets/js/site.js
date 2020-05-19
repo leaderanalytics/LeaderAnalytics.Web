@@ -115,13 +115,13 @@ class Site  {
             setTimeout(() => {
                 site.ClearContactForm();
                 Dialogs.CloseDialog('#wait-dialog');
-                Dialogs.ShowOKDialog("Your request was sent successfully.");
+                Dialogs.ShowOKDialog("Your message was sent successfully.");
             }, 2000);
         }).fail(async function (jqXHR, textStatus, error) {
             // timeout is required to allow the wait dialog to render.
             setTimeout(() => {
                 Dialogs.CloseDialog('#wait-dialog');
-                Dialogs.ShowOKDialog("An error occurred while processing your request.  Please try again later.");
+                Dialogs.ShowOKDialog("An error occurred while processing your message.  Please try again later.");
             }, 2000);
         });
         return false;
