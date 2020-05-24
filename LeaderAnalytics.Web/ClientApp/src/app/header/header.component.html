@@ -1,0 +1,55 @@
+<header id="header" class="fixed-top">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="logo mr-auto">
+      Leader Analytics
+    </div>
+
+    <nav class="nav-menu d-none d-lg-block ml-auto">
+      <ul>
+        <li class="active"><a [routerLink]="['/home']" fragment="home" skipLocationChange >Home</a></li>
+        <li><a [routerLink]="['/home']" fragment="about" skipLocationChange >About</a></li>
+        <li class="drop-down">
+          <a href="">Services</a>
+          <ul>
+            <li><a [routerLink]="['/home']" fragment="services" skipLocationChange>Enterprise Software Development</a></li>
+            <li><a [routerLink]="['/home']" fragment="webdev" skipLocationChange>Web Development</a></li>
+            <li><a [routerLink]="['/home']" fragment="mobiledev" skipLocationChange>Mobile Application Development</a></li>
+          </ul>
+        </li>
+
+        <li class="drop-down">
+          <a [routerLink]="['/home']" fragment="home" skipLocationChange>Applications</a>
+          <ul>
+            <li><a [routerLink]="['/apps/vyntix']">Vyntix</a></li>
+            <li><a [routerLink]="['/apps/vyntix-fred-client']">Vyntix FRED Client</a></li>
+            <li><a [routerLink]="['/apps/vyntix-downloader']">Vyntix Downloader</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a [routerLink]="['/apps/renewals']">Renewals</a></li>
+            <li><div class="dropdown-divider"></div></li>
+            <li><a [routerLink]="['/apps/adaptiveclient']">Adaptive Client</a></li>
+            <li><a [routerLink]="['/apps/multi-index-cache']">Multi-Index Cache</a></li>
+          </ul>
+        </li>
+
+
+        <li class="drop-down">
+          <a [routerLink]="['/home']" fragment="home" skipLocationChange>Support</a>
+          <ul>
+            <li><a class="dropdown-item" [routerLink]="['/support/community']">Community</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/support/documentation']">Documentation</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/support/downloads']">Downloads</a></li>
+          </ul>
+        </li>
+        <li><a [routerLink]="['/home']" fragment="contact" skipLocationChange>Contact</a></li>
+
+        <li >
+          <a [routerLink]="['/home']" fragment="home" (click)="LogIn()"><i class="icofont-login"></i>&nbsp;Log in</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<app-login [visibleEvent]="showLoginDialog"></app-login>
+
+
+

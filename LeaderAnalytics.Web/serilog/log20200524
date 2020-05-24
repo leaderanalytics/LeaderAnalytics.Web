@@ -1,0 +1,96 @@
+2020-05-24 06:26:05.638 -07:00 [INF] Logger created
+2020-05-24 06:26:05.877 -07:00 [INF] ConfigureServices started
+2020-05-24 06:26:09.338 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 06:26:09.340 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 06:27:31.819 -07:00 [INF] Logger created
+2020-05-24 06:27:32.003 -07:00 [INF] ConfigureServices started
+2020-05-24 06:27:34.674 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 06:27:34.675 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 06:46:15.886 -07:00 [INF] Logger created
+2020-05-24 06:46:15.987 -07:00 [INF] ConfigureServices started
+2020-05-24 06:46:16.747 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 06:46:16.747 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 07:20:53.473 -07:00 [INF] Logger created
+2020-05-24 07:20:53.549 -07:00 [INF] ConfigureServices started
+2020-05-24 07:20:54.242 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 07:20:54.242 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 07:21:10.288 -07:00 [INF] Logger created
+2020-05-24 07:21:10.366 -07:00 [INF] ConfigureServices started
+2020-05-24 07:21:11.095 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 07:21:11.096 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 07:50:31.777 -07:00 [INF] Logger created
+2020-05-24 07:50:31.857 -07:00 [INF] ConfigureServices started
+2020-05-24 07:50:32.607 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 07:50:32.608 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 07:57:18.705 -07:00 [INF] Logger created
+2020-05-24 07:57:18.785 -07:00 [INF] ConfigureServices started
+2020-05-24 07:57:19.518 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 07:57:19.519 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 07:58:56.670 -07:00 [INF] Logger created
+2020-05-24 07:58:56.748 -07:00 [INF] ConfigureServices started
+2020-05-24 07:58:57.526 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 07:58:57.527 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 11:41:17.348 -07:00 [INF] Logger created
+2020-05-24 11:41:17.560 -07:00 [INF] ConfigureServices started
+2020-05-24 11:41:20.586 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 11:41:20.587 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 11:43:05.788 -07:00 [INF] Logger created
+2020-05-24 11:43:05.878 -07:00 [INF] ConfigureServices started
+2020-05-24 11:43:06.811 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 11:43:06.813 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 12:33:00.977 -07:00 [INF] Logger created
+2020-05-24 12:33:01.067 -07:00 [INF] ConfigureServices started
+2020-05-24 12:33:01.919 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 12:33:01.920 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 12:36:22.573 -07:00 [INF] Logger created
+2020-05-24 12:36:22.660 -07:00 [INF] ConfigureServices started
+2020-05-24 12:36:23.565 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 12:36:23.566 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 12:44:53.026 -07:00 [INF] Logger created
+2020-05-24 12:44:53.114 -07:00 [INF] ConfigureServices started
+2020-05-24 12:44:53.985 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 12:44:53.986 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 12:54:41.636 -07:00 [INF] Logger created
+2020-05-24 12:54:41.727 -07:00 [INF] ConfigureServices started
+2020-05-24 12:54:42.542 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 12:54:42.543 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 12:57:19.810 -07:00 [INF] Logger created
+2020-05-24 12:57:19.903 -07:00 [INF] ConfigureServices started
+2020-05-24 12:57:20.780 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 12:57:20.781 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 13:19:32.129 -07:00 [INF] Logger created
+2020-05-24 13:19:32.208 -07:00 [INF] ConfigureServices started
+2020-05-24 13:19:32.956 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 13:19:32.957 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 13:41:07.924 -07:00 [INF] Logger created
+2020-05-24 13:41:08.038 -07:00 [INF] ConfigureServices started
+2020-05-24 13:41:09.730 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 13:41:09.731 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 13:55:35.629 -07:00 [INF] Logger created
+2020-05-24 13:55:35.763 -07:00 [INF] ConfigureServices started
+2020-05-24 13:55:36.952 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 13:55:36.953 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 14:01:39.799 -07:00 [INF] Logger created
+2020-05-24 14:01:39.890 -07:00 [INF] ConfigureServices started
+2020-05-24 14:01:40.827 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 14:01:40.828 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 14:04:31.502 -07:00 [INF] Logger created
+2020-05-24 14:04:31.593 -07:00 [INF] ConfigureServices started
+2020-05-24 14:04:32.469 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 14:04:32.471 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 14:10:40.813 -07:00 [INF] Logger created
+2020-05-24 14:10:40.905 -07:00 [INF] ConfigureServices started
+2020-05-24 14:10:41.789 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 14:10:41.790 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 14:14:26.095 -07:00 [INF] Logger created
+2020-05-24 14:14:26.187 -07:00 [INF] ConfigureServices started
+2020-05-24 14:14:27.076 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 14:14:27.077 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 16:05:44.266 -07:00 [INF] Logger created
+2020-05-24 16:05:44.367 -07:00 [INF] ConfigureServices started
+2020-05-24 16:05:45.260 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 16:05:45.261 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
+2020-05-24 16:19:33.105 -07:00 [INF] Logger created
+2020-05-24 16:19:33.190 -07:00 [INF] ConfigureServices started
+2020-05-24 16:19:33.991 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-24 16:19:33.992 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development

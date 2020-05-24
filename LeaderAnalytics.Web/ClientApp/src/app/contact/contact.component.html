@@ -1,0 +1,80 @@
+<section id="contact" class="contact area-padding">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-headline text-center">
+      <h2>Contact us</h2>
+      <p>Please tell us briefly what you want to accomplish.  One of our Account Mangers will respond shortly.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="icofont-google-map"></i>
+            <h4>Location:</h4>
+            <p>Orange County, CA</p>
+          </div>
+
+          <div class="email">
+            <i class="icofont-envelope"></i>
+            <h4>Email:</h4>
+            <p>LeaderAnalytics@outlook.com</p>
+          </div>
+
+          <div class="phone">
+            <i class="icofont-phone"></i>
+            <h4>Call:</h4>
+            <p>(714)931-7440</p>
+          </div>
+
+          <img src="assets/img/contact/office.jpg" class="img-cover" />
+        </div>
+
+      </div>
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <div class="php-email-form">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Your name</label>
+              <input type="text" class="form-control" [(ngModel)]="ContactRequest.Name" name="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Email address</label>
+              <input type="email" class="form-control" [(ngModel)]="ContactRequest.EMail" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Phone number</label>
+              <input type="tel" name="phone" [(ngModel)]="ContactRequest.Phone" class="form-control" id="phone" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Requirement</label>
+              <select name="requirement" class="form-control" id="requirement" [(ngModel)]="ContactRequest.Requirement">
+                <option value="custom" selected="selected">Custom software</option>
+                <option value="web">Web development</option>
+                <option value="mobile">Mobile development</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="validate"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea class="form-control" name="comments" id="comments" [(ngModel)]="ContactRequest.Message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+          </div>
+          <div class="text-center"><button class="btn btn-primary" (click)="SubmitForm()">Send Message</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-dialogs></app-dialogs>
