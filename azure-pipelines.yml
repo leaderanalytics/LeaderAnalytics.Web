@@ -1,22 +1,51 @@
-# Node.js with webpack
-# Build a Node.js project using the webpack CLI.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+- task: NuGetToolInstaller@1
 
-- script: |
-    npm install -g webpack webpack-cli --save-dev
-    npm install
-    npx webpack --config webpack.config.js
-  displayName: 'npm install, run webpack'
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select'
+    vstsFeed: 'LeaderAnalytics.Core/CoreArtifacts'
+    includeNuGetOrg: true
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.ArtifactStagingDirectory)\\"    /p:UseWPP_CopyWebApplication=true  /p:OutDir="$(build.ArtifactStagingDirectory)"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    
+- task: PublishBuildArtifacts@1
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+ 
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'All Azure Services'
+    appType: 'webApp'
+    WebAppName: 'LeaderAnalyticsWeb'
+    UseWebDeploy: true
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
+
