@@ -45,7 +45,7 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
-    workingDir: $(System.DefaultWorkingDirectory)\LeaderAnalytics.Web\LeaderAnalytics.Web\ClientApp
+    workingDir: $(System.DefaultWorkingDirectory)LeaderAnalytics.Web/ClientApp
 
 
 #- task: DotNetCoreCLI@2
