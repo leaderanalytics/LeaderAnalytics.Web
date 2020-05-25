@@ -1,0 +1,2 @@
+﻿Add this to .csproj file to prevent hostingModel="inprocess" from being added to web.config:
+<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>

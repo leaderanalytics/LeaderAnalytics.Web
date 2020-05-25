@@ -1,0 +1,4 @@
+2020-05-25 13:36:19.409 -07:00 [INF] Logger created
+2020-05-25 13:36:19.605 -07:00 [INF] ConfigureServices started
+2020-05-25 13:36:22.450 -07:00 [INF] Configuration["ASPNETCORE_ENVIRONMENT"] is Development
+2020-05-25 13:36:22.451 -07:00 [INF] WebHostEnvironment.EnvironmentName is Development
