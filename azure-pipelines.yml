@@ -29,6 +29,8 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
+    workingDir: $(System.DefaultWorkingDirectory)\LeaderAnalytics.Web\LeaderAnalytics.Web\ClientApp
+    
     
 
 - task: VSBuild@1
