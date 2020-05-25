@@ -28,6 +28,12 @@ steps:
     includeNuGetOrg: true
      
 
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+    workingDir: $(build.ArtifactStagingDirectory)\\LeaderAnalytics.Web\\ClientApp
+
 - task: VSBuild@1
   displayName: 'Build solution'
   inputs:
@@ -36,11 +42,7 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    command: install
-    workingDir: $(build.ArtifactStagingDirectory)/LeaderAnalytics.Web/ClientApp
+
 
 
 - task: PublishBuildArtifacts@1
