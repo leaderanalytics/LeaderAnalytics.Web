@@ -29,7 +29,7 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
-    workingDir: LeaderAnalytics.Webb\ClientApp
+    workingDir: LeaderAnalytics.Web\ClientApp
 
 
 - task: VSBuild@1
