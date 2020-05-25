@@ -45,20 +45,3 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
-
-
-- task: DotNetCoreCLI@2
-  displayName: 'DotNet publish'
-inputs:
-  command: publish
-  publishWebProjects: True
-  zipAfterPublish: True
-
-- task:AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'All Azure Services'
-    appType: 'webApp'
-    WebAppName: 'LeaderAnalyticsWeb'
-    UseWebDeploy: true
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
