@@ -29,8 +29,7 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
-    workingDir: $(Build.SourcesDirectory)/ClientApp
-
+    
 
 - task: VSBuild@1
   inputs:
