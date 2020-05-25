@@ -24,6 +24,14 @@ steps:
     vstsFeed: 'LeaderAnalytics.Core/CoreArtifacts'
     includeNuGetOrg: true
 
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: install
+    workingDir: ClientApp
+
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
@@ -31,21 +39,3 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-- task: PublishBuildArtifacts@1
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
- 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'All Azure Services'
-    appType: 'webApp'
-    WebAppName: 'LeaderAnalyticsWeb'
-    UseWebDeploy: true
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
-
