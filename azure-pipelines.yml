@@ -21,5 +21,5 @@ steps:
   displayName: 'npm install'
   inputs:
     command: install
-    workingDir: $(build.ArtifactStagingDirectory)\\ClientApp
+    workingDir: $(build.ArtifactStagingDirectory)\\LeaderAnalytics.Web\\ClientApp
 
