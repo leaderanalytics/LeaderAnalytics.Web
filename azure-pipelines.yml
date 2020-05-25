@@ -17,26 +17,9 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    feedsToUse: 'select'
-    vstsFeed: 'LeaderAnalytics.Core/CoreArtifacts'
-    includeNuGetOrg: true
-
-
 - task: Npm@1
   displayName: 'npm install'
   inputs:
     command: install
     workingDir: $(System.DefaultWorkingDirectory)\LeaderAnalytics.Web\LeaderAnalytics.Web\ClientApp
-    
-    
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.ArtifactStagingDirectory)\\"    /p:UseWPP_CopyWebApplication=true  /p:OutDir="$(build.ArtifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
     
