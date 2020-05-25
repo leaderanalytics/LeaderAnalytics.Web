@@ -47,7 +47,13 @@ steps:
   displayName: 'Publish Artifacts'
 
 
-
+- task: DotNetCoreCLI@2
+  displayName: 'DotNet publish'
+inputs:
+  command:publish
+  publishWebProjects:True
+  arguments:'--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+  zipAfterPublish:True
 
 - task:AzureRmWebAppDeployment@4
   inputs:
