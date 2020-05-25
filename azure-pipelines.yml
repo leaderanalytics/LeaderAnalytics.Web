@@ -48,18 +48,12 @@ steps:
 
 
 
-- task: DotNetCoreCLI@2
-inputs:'DotNet publish'
-command:publish
-publishWebProjects:True
-arguments:'--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-zipAfterPublish:True
 
 - task: AzureRmWebAppDeployment@4
 inputs:
-ConnectionType: 'AzureRM'
-azureSubscription: 'All Azure Services'
-appType: 'webApp'
-WebAppName: 'LeaderAnalyticsWeb'
-UseWebDeploy: true
-packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
+  ConnectionType: 'AzureRM'
+  azureSubscription: 'All Azure Services'
+  appType: 'webApp'
+  WebAppName: 'LeaderAnalyticsWeb'
+  UseWebDeploy: true
+  packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
