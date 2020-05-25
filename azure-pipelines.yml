@@ -49,11 +49,11 @@ steps:
 
 
 
-- task: AzureRmWebAppDeployment@4
-inputs:
-  ConnectionType: 'AzureRM'
-  azureSubscription: 'All Azure Services'
-  appType: 'webApp'
-  WebAppName: 'LeaderAnalyticsWeb'
-  UseWebDeploy: true
-  packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
+- task:AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'All Azure Services'
+    appType: 'webApp'
+    WebAppName: 'LeaderAnalyticsWeb'
+    UseWebDeploy: true
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
