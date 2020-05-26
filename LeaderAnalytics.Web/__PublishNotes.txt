@@ -2,6 +2,6 @@
 <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 
 Added to .csproj:
-<RuntimeIdentifier>win10-x64;</RuntimeIdentifier>
+<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
 Also added --self-contained to DotNetCoreCLI@2 task in azure-pipelines.yaml
 arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingdirectory) --self-contained'
