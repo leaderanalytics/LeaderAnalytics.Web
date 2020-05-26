@@ -1,2 +1,7 @@
 ﻿Add this to .csproj file to prevent hostingModel="inprocess" from being added to web.config:
 <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+
+Added to .csproj:
+<RuntimeIdentifier>win10-x64;</RuntimeIdentifier>
+Also added --self-contained to DotNetCoreCLI@2 task in azure-pipelines.yaml
+arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingdirectory) --self-contained'
