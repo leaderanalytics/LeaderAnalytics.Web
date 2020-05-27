@@ -373,7 +373,7 @@ div#preloader {
                 color: #3ec1d5;
             }
 
-            #header .logo h1 a, #header .logo h1 a:hover {
+            #header .container-fluid .logo a, #header .container-fluid .logo a:hover {
                 color: #fff;
                 text-decoration: none;
             }
