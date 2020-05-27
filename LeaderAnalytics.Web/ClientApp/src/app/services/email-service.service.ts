@@ -41,7 +41,7 @@ export class EmailServiceService {
   handleError(error: HttpErrorResponse): Observable<AsyncResult> {
     let result: AsyncResult = new AsyncResult();
 
-    if (error.status !== 200) {
+    if (error.status !== 201) {
       result.ErrorMessage = "Status: " + error.status + " Message: " + error.message;
     }
     else
