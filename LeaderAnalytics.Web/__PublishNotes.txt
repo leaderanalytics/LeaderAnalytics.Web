@@ -1,4 +1,9 @@
-﻿Add this to .csproj file to prevent hostingModel="inprocess" from being added to web.config:
+﻿Debugging:
+	1.) Open a command window in ClientApp directory
+	2.) ng serve
+	3.) Click start debugging in VS
+
+Add this to .csproj file to prevent hostingModel="inprocess" from being added to web.config:
 <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 
 Added to .csproj:
