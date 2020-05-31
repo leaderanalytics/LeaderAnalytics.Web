@@ -2542,6 +2542,100 @@ div#preloader {
 
 
 /*--------------------------------------------------------------
+# Products
+--------------------------------------------------------------*/
+.product-spacer {
+  height:8vw;
+  background-color:black;
+}
+
+.product-banner {
+  background-image: url('../img/common/texture4.PNG');
+  background-size: cover;
+  padding: 3vw;
+  margin-top: -1.5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-radius: 3px;
+  
+}
+
+  .product-banner h1 {
+    color: blue;
+    font-size: clamp(16pt,3.5vw,40pt);
+    font-family:Lorenza;
+    font-weight:700;
+  }
+
+  .product-banner h2 {
+    color: whitesmoke;
+    font-size: clamp(14pt,2vw,20pt);
+  }
+
+.product-article {
+  margin-top: -10px;
+  margin-left: 12vw;
+  margin-right: 12vw;
+  padding-top:3vw;
+  padding-left:2vw;
+  padding-right:2vw;
+}
+
+  .product-article h1 {
+    font-size: clamp(16pt,3vw,18pt);
+    font-weight: 600;
+  }
+  .product-article h2  {
+    font-size: 22px;
+    font-size: clamp(14pt,2.5vw,16pt);
+    font-weight: 600;
+  }
+
+.link-container {
+  margin: 2vw 10vw 2vw 10vw;
+  padding: 1.5vw;
+  border-radius: 6px;
+ 
+}
+
+.github-container {
+  background-color: lightgreen;
+}
+
+.nuget-container {
+  background-color: #004880;
+}
+
+
+  .product-article p, .link-container a {
+    font-size: clamp(12pt,2vw,14pt);
+    font-weight: 200;
+    line-height:150%;
+    color:gray;
+  }
+
+.github-container a {
+  color: darkblue;
+}
+
+.nuget-container a {
+  color: white;
+}
+
+
+.link-container a > span{
+  margin-left:10px;
+}
+
+    .link-container a:hover {
+      color: gold;
+      
+    }
+
+
+
+
+/*--------------------------------------------------------------
 # Dialogs
 --------------------------------------------------------------*/
 .dialog-footer {

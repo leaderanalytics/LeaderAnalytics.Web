@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-adaptive-client',
@@ -11,5 +11,4 @@ export class AdaptiveClientComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

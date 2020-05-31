@@ -1,5 +1,131 @@
-<div class="under-construction">
-  <i class="icofont-under-construction"></i>
-  <h5><span>&nbsp;This page is currently under construction.  Please try again at a later date.</span></h5>
-  <a [routerLink]="['/home']" >Home</a>
+<div class="d-flex align-content-center justify-content-center flex-column mb-5">
+  <div class="product-spacer d-flex"></div>
+  <div class="d-flex flex-row">
+    <div class="product-banner d-flex flex-column flex-grow-1 align-items-center">
+      <h1>Adaptive Client</h1>
+      <h2>Build a scalable, loosely coupled service layer across multiple platforms and transports.</h2>
+    </div>
+  </div>
+  <div class="product-article shadow flex-row">
+
+
+
+    <h2>What Adaptive Client does</h2>
+    <p>
+      Adaptive Client is a library that allows a developer to write services that target multiple transports and database platforms.   Each implementation is registered with the dependency
+      injection container using a connection string or URL as a root key.  An entire dependency graph can be resolved effortlessly at runtime, dependent on external factors such as configuration
+      setting, Internet availability, or availability of a specific server.
+    </p>
+
+    <p>
+      For example, the developer of a desktop application might implement a configuration setting that allows the end user to
+      choose either MSSQL or MySQL as a database platform.  The developer may also implement a configuration option that will route data calls to an Internet API server
+      instead of directly to a DBMS.  The application itself does not need any special code to handle settings such as these.  Adaptive Client handles the task of looking at these
+      configuration settings.  It resolves and injects the correct service layer components at runtime and the application runs correctly.
+    </p>
+
+    <div class="link-container github-container">
+      <a href="https://github.com/leaderanalytics/AdaptiveClient" target="_blank" class="d-flex flex-row align-items-center">
+        <svg height="36" viewBox="0 0 16 16" version="1.1" width="36" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>Get the source code on GitHub.  Adaptive Client is free and open source, even for commercial use.</span>
+      </a>
+    </div>
+
+    <p>
+      Registering services with a dependency injection container is a complex job.  It often involves using factory methods to inject lower level dependencies and other parameters.  When multiple
+      dependency graphs are necessary, managing registrations becomes truly burdensome.  Adaptive Client eliminates much of the work by providing registration wrapper methods that are easy to
+      understand, implement, and maintain.  Adaptive Client also provides special registration methods for Entity Framework.  These methods manage the lifetime of the DbContext
+      object and allow multiple asynchronous calls to be made in parallel.
+    </p>
+
+    <p>
+      Adaptive Client introduces an object called a Service Manifest.  A Service Manifest is simply a directory of services that are made available by the service layer.
+      It is a single object with each service exposed as a property.  This single object is easily injected into a Controller or ViewModel.
+      It provides an immediate gateway to the entire service layer. Guidance to each service and each service method is provided by Visual Studio Intellisense.
+    </p>
+
+    <div class="link-container nuget-container">
+      <a href="https://www.nuget.org/packages/AdaptiveClient/" target="_blank" class="d-flex flex-row align-items-center">
+        <img src="assets/img/footer/nuget.png" />
+        <span>Get the Adaptive Client nuget package.</span>
+      </a>
+    </div>
+
+
+    <p>
+      Adaptive Client makes it easy to write services that are granular and testable.  In large applications, the service layer often becomes a monolith.
+      This usually happens because services are highly inter-dependent.  When there are hundreds of services, the dependency graph becomes unmanageable and
+      developers resort to creating services in a single, enormous class.  Adaptive Client resolves this problem by making the Service Manifest available to each service.
+      A service can lazily resolve an instance of any other service and no additional effort is required by the developer.
+    </p>
+
+    <p>Adaptive Client is not a service locater.  It is strongly typed throughout.</p>
+
+
+    <div class="link-container github-container">
+      <a href="https://github.com/leaderanalytics/AdaptiveClient.SimpleConsoleDemo" target="_blank" class="d-flex flex-row align-items-center">
+        <svg height="36" viewBox="0 0 16 16" version="1.1" width="36" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>Get started with the simple console application demo.</span>
+      </a>
+    </div>
+
+
+
+
+    <h2>Common use cases for Adaptive Client</h2>
+    <p>
+      Perhaps the most common use case for Adaptive Client is thick-client applications that are run on corporate local area networks.  These types of applications often have their service layer
+      wrapped by some transport such as REST, WCF, or gRPC.  This is done to allow data to be exposed to consumers who need access to the data via the Internet.
+    </p>
+    <p>
+      The problem in this scenario is that LAN users, who often represent the vast majority, are reduced to making out-of-process HTTP calls to access data.
+      These users have LAN connectivity, which, if utilized, would allow them to make in-process database calls that are hundreds of times faster.  Adaptive Client rectifies
+      this by allowing different implementations of the application service layer to be injected into the application at run time.  An implementation for LAN users would
+      make fast in-process database calls.  A different implementation for Internet users would make calls over HTTP to an API server.
+    </p>
+
+    <p>
+      Another common use case is that of web servers that reside on the same physical local area network as their API counterparts.  These servers are often configured to make HTTP calls when
+      they need data.  A much more efficient way to obtain the data would be to bypass the API server and make an in-process call directly to the database.  Adaptive Client allows
+      different implementations of the service layer to be resolved at run time which would allow a web server to access data in the most efficient way possible.
+    </p>
+
+    <p>
+      A third use case scenario is that of an application that is designed to target multiple database platforms.  The application developers will of course need to write a correct implementation
+      of the service layer for each DBMS they choose to target.  The application, however, need not have any additional logic implemented as result of a decision to target multiple
+      database platforms.  Adaptive Client will be responsible for looking at configuration settings, resolving the dependency graph, and injecting service components into the application.
+    </p>
+
+    <div class="link-container github-container">
+      <a href="https://github.com/leaderanalytics/AdaptiveClient.EntityFramework.Zamagon" target="_blank" class="d-flex flex-row align-items-center">
+        <svg height="36" viewBox="0 0 16 16" version="1.1" width="36" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>Run fully functional desktop and web applications with the Adaptive Client Zamagon demo.</span>
+      </a>
+    </div>
+
+    <h2>How Adaptive Client works</h2>
+    <p>
+      Much of the functionality in Adaptive Client is centered around a class called End Point Configuration.  This class has four important string properties:
+    </p>
+    <ul>
+      <li><b>Connection String:</b>&nbsp; Database connection string or API URL.</li>
+      <li><b>API Name:</b>&nbsp; User defined name that describes the database or API<i> (OurApp, Accounting, BankAPI)</i>.</li>
+      <li><b>End Point Type:</b>&nbsp; User defined description of the end point type<i> (REST, WCF, gRPC, InProcess)</i>.</li>
+      <li><b>Provider Name:</b>&nbsp;User defined name of a database provider<i> (MSSQL, MySQL, MemSQL, None)</i>.</li>
+    </ul>
+    <p></p>
+    <p>
+      An End Point Configuration is created for every connection string or API URL.  Every class in the service layer is registered with the dependency injection container using one or
+      more properties of an End Point Configuration as a key.  When a dependency graph needs to be created, Adaptive Client is able resolve the correct components based on the
+      connection string being used.
+    </p>
+
+    <p>
+      The current version Adaptive Client works only with <a href="https://autofac.org/" target="_blank">Autofac</a>.  Support for other dependency injection containers will
+      be added in the future.
+    </p>
+
+    <p>For additional technical details please see the <a href="https://github.com/leaderanalytics/AdaptiveClient" target="_blank">Adaptive Client page on GitHub</a>.</p>
+    <p></p>
+  </div>
 </div>

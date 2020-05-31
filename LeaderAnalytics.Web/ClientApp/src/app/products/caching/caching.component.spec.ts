@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultiIndexCacheComponent } from './multi-index-cache.component';
+import { CachingComponent } from './caching.component';
 
-describe('MultiIndexCacheComponent', () => {
-  let component: MultiIndexCacheComponent;
-  let fixture: ComponentFixture<MultiIndexCacheComponent>;
+describe('CachingComponent', () => {
+  let component: CachingComponent;
+  let fixture: ComponentFixture<CachingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MultiIndexCacheComponent ]
+      declarations: [ CachingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MultiIndexCacheComponent);
+    fixture = TestBed.createComponent(CachingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

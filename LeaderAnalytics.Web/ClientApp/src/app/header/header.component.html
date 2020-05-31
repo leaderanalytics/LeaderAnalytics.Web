@@ -1,7 +1,7 @@
 <header id="header" class="fixed-top">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <div class="logo mr-auto">
-      <a [routerLink]="['/home']" fragment="home" skipLocationChange>Leader Analytics</a>
+      <a [routerLink]="['/home']" >Leader Analytics</a>
     </div>
 
     <nav class="nav-menu d-none d-lg-block ml-auto">
@@ -27,7 +27,7 @@
             <li><a [routerLink]="['/apps/renewals']">Renewals</a></li>
             <li><div class="dropdown-divider"></div></li>
             <li><a [routerLink]="['/apps/adaptiveclient']">Adaptive Client</a></li>
-            <li><a [routerLink]="['/apps/multi-index-cache']">Multi-Index Cache</a></li>
+            <li><a [routerLink]="['/apps/caching']">Caching Library</a></li>
           </ul>
         </li>
 
@@ -49,6 +49,7 @@
     </nav>
   </div>
 </header>
+<!--We have to bind to the event otherwise the control does not render-->
 <app-login [visibleEvent]="showLoginDialog"></app-login>
 
 

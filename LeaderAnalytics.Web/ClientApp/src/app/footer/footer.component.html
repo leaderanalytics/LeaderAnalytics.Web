@@ -19,20 +19,20 @@
     </div>
 
     <div class="footer-cell">
-      <a href="#" onclick="site.LoadContent('/community.html')" class="link"><i class="icofont-people"></i><span>Community</span></a>
-      <a href="#" onclick="site.LoadContent('/documentation.html')" class="link"><i class="icofont-book"></i><span>Documentation</span></a>
+      <a [routerLink]="['/support/community']" class="link"><i class="icofont-people"></i><span>Community</span></a>
+      <a [routerLink]="['/support/documentation']" class="link"><i class="icofont-book"></i><span>Documentation</span></a>
 
     </div>
 
     <div class="footer-cell">
-      <a href="#" onclick="site.LoadContent('/downloads.html')" class="link"><i class="icofont-download"></i><span>Downloads</span></a>
-      <a href="#" onclick="site.ShowContactDialog();return false;" class="link"><i class="icofont-envelope"></i><span>Contact Us</span></a>
+      <a [routerLink]="['/support/downloads']" class="link"><i class="icofont-download"></i><span>Downloads</span></a>
+      <a [routerLink]="['/home']" fragment="contact" skipLocationChange class="link"><i class="icofont-envelope"></i><span>Contact Us</span></a>
     </div>
 
     <div class="footer-cell">
       <div class="grow-align-right">
         <span class="logo-small">Leader Analytics</span>
-        <p class="txt">Orange County, Ca</p>
+        <p class="txt">Orange County, CA</p>
       </div>
     </div>
   </div>

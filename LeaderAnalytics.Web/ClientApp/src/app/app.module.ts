@@ -11,7 +11,6 @@ import { DownloadsComponent } from './support/downloads/downloads.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { MultiIndexCacheComponent } from './products/multi-index-cache/multi-index-cache.component';
 import { RenewalsComponent } from './products/renewals/renewals.component';
 import { VyntixComponent } from './products/vyntix/vyntix.component';
 import { VyntixDownloaderComponent } from './products/vyntix-downloader/vyntix-downloader.component';
@@ -19,12 +18,13 @@ import { VyntixFredClientComponent } from './products/vyntix-fred-client/vyntix-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { CachingComponent } from './products/caching/caching.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AdaptiveClientComponent,
-    MultiIndexCacheComponent,
     RenewalsComponent,
     VyntixComponent,
     VyntixDownloaderComponent,
@@ -37,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     ContactComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CachingComponent
   ],
   imports: [
     BrowserModule,
