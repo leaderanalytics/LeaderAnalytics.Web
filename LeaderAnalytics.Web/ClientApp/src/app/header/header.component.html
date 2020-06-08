@@ -1,53 +1,62 @@
-<header id="header" class="fixed-top">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <div class="logo mr-auto">
-      <a [routerLink]="['/home']" >Leader Analytics</a>
-    </div>
+<header id="header" class="fixed-top ">
+  <a class="rh5 rml2 rmr13 logo" [routerLink]="['/home']">Leader Analytics</a>
+</header>
 
-    <nav class="nav-menu d-none d-lg-block ml-auto">
-      <ul>
-        <li class="active"><a [routerLink]="['/home']" fragment="home" skipLocationChange >Home</a></li>
-        <li><a [routerLink]="['/home']" fragment="about" skipLocationChange >About</a></li>
-        <li class="drop-down">
-          <a href="">Services</a>
-          <ul>
-            <li><a [routerLink]="['/home']" fragment="services" skipLocationChange>Enterprise Software Development</a></li>
-            <li><a [routerLink]="['/home']" fragment="webdev" skipLocationChange>Web Development</a></li>
-            <li><a [routerLink]="['/home']" fragment="mobiledev" skipLocationChange>Mobile Application Development</a></li>
-          </ul>
+<header id="nav-container" class="fixed-top">
+  <nav class="navbar navbar-expand-lg my-navbar ">
+    <button style="margin-left:auto" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="icofont-navigation-menu text-white"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav justify-content-space-even">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/home']" fragment="home" skipLocationChange>Home</a>
         </li>
 
-        <li class="drop-down">
-          <a [routerLink]="['/home']" fragment="home" skipLocationChange>Applications</a>
-          <ul>
-            <li><a [routerLink]="['/apps/vyntix']">Vyntix</a></li>
-            <li><a [routerLink]="['/apps/vyntix-fred-client']">Vyntix FRED Client</a></li>
-            <li><a [routerLink]="['/apps/vyntix-downloader']">Vyntix Downloader</a></li>
-            <li><div class="dropdown-divider"></div></li>
-            <li><a [routerLink]="['/apps/renewals']">Renewals</a></li>
-            <li><div class="dropdown-divider"></div></li>
-            <li><a [routerLink]="['/apps/adaptiveclient']">Adaptive Client</a></li>
-            <li><a [routerLink]="['/apps/caching']">Caching Library</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" fragment="about" skipLocationChange>About</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="services" skipLocationChange>Enterprise Software Development</a>
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="webdev" skipLocationChange>Web Development</a>
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="mobiledev" skipLocationChange>Mobile Application Development</a>
+          </div>
         </li>
 
 
-        <li class="drop-down">
-          <a [routerLink]="['/home']" fragment="home" skipLocationChange>Support</a>
-          <ul>
-            <li><a class="dropdown-item" [routerLink]="['/support/community']">Community</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/support/documentation']">Documentation</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/support/downloads']">Downloads</a></li>
-          </ul>
-        </li>
-        <li><a [routerLink]="['/home']" fragment="contact" skipLocationChange>Contact</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" skipLocationChange role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Applications
+          </a>
 
-        <li >
-          <a [routerLink]="['/home']" fragment="home" (click)="LogIn()"><i class="icofont-login"></i>&nbsp;Log in</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix']">Vyntix</a>
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix-fred-client']">Vyntix FRED Client</a>
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix-downloader']">Vyntix Downloader</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/apps/renewals']">Renewals</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/apps/adaptiveclient']">Adaptive Client</a>
+            <a class="dropdown-item" [routerLink]="['/apps/caching']">Caching Library</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" fragment="contact" skipLocationChange>Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="LogIn()"><i class="icofont-login"></i>&nbsp;Log in</a>
         </li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
 <!--We have to bind to the event otherwise the control does not render-->
 <app-login [visibleEvent]="showLoginDialog"></app-login>

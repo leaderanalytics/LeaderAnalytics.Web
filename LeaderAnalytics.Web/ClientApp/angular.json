@@ -20,21 +20,21 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets/img",
               "src/assets/fonts"
             ],
             "styles": [
-
               "node_modules/aos/dist/aos.css",
               "src/assets/vendor/icofont/icofont.min.css",
               "src/assets/css/style.css",
-              "node_modules/bulma/css/bulma.css",
-              "src/styles.css"
+              "src/assets/css/fluid.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -93,7 +93,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets"
             ],
             "styles": [
