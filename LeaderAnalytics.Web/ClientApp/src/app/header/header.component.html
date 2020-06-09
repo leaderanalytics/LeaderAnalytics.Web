@@ -10,15 +10,15 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav justify-content-space-even">
-        <li class="nav-item active">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link" [routerLink]="['/home']" fragment="home" skipLocationChange [class.activelink]="ActiveLinkName === 'home'" (click)="SetActiveLinkName('home')" >Home</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link" [routerLink]="['/home']" fragment="about" skipLocationChange [class.activelink]="ActiveLinkName === 'about'" (click)="SetActiveLinkName('about')">About</a>
         </li>
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
             Services
           </a>
@@ -30,7 +30,7 @@
         </li>
 
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link dropdown-toggle" skipLocationChange role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Applications
           </a>
@@ -47,11 +47,11 @@
           </div>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link" [routerLink]="['/home']" fragment="contact" skipLocationChange [class.activelink]="ActiveLinkName === 'contact'" (click)="SetActiveLinkName('contact')">Contact</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
           <a class="nav-link" (click)="LogIn()"><i class="icofont-login"></i>&nbsp;Log in</a>
         </li>
       </ul>

@@ -617,7 +617,7 @@ div#preloader {
   }
 
     .layer-1-3 a.ready-btn:hover {
-      color: #fff;
+      color: #fff !important;
       background: #3EC1D5;
       border: 1px solid #3EC1D5;
       text-decoration: none;
@@ -1084,7 +1084,7 @@ div#preloader {
   }
 
 .mobiledev-circle {
-  background-color: skyblue;
+  background-color: #116466;
   height: 60px;
   width: 60px;
   border-radius: 30px;
@@ -1127,16 +1127,14 @@ div#preloader {
 
 .mobiledev-cell5 {
   background-color: beige;
-  font-family: Lorenza;
-  color: black;
-  font-weight: 1000;
-  letter-spacing: 2px;
-  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #D9B08C;
+  font-weight: 700;
   align-items: center;
   flex-basis: 20%;
   margin: 1vw;
-  padding: 1vw;
-  border-top: solid 2px black;
+  padding: .5vw;
+  border-top: solid 1vw #2C3531;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.3);
 }
 
@@ -1145,26 +1143,45 @@ div#preloader {
     color: deepskyblue;
   }
 
+.mobiledev-cell5-1 {
+  background: linear-gradient(rgba(40, 58, 90, 0.1), rgba(40, 58, 90, 0.9)), url("../img/mobiledev/iphone-410311_640.jpg") no-repeat scroll center;
+}
+
+.mobiledev-cell5-2 {
+  background: linear-gradient(rgba(40, 58, 90, 0.1), rgba(40, 58, 90, 0.9)), url("../img/mobiledev/iphone-410324_640.jpg") no-repeat scroll center;
+}
+
+.mobiledev-cell5-3 {
+  background: linear-gradient(rgba(40, 58, 90, 0.1), rgba(40, 58, 90, 0.9)), url("../img/mobiledev/office-620822_640.jpg") no-repeat scroll center;
+}
+
+.mobiledev-cell5-4 {
+  background: linear-gradient(rgba(40, 58, 90, 0.1), rgba(40, 58, 90, 0.9)), url("../img/mobiledev/woman-3083379_640.jpg") no-repeat scroll center;
+}
+
+.mobiledev-cell5-5 {
+  background: linear-gradient(rgba(40, 58, 90, 0.1), rgba(40, 58, 90, 0.9)), url("../img/mobiledev/telephone-586268_640.jpg") no-repeat scroll center;
+}
 
 
 .mobiledev-cell5-1 i {
-  color: lightcoral;
+  color: #D1E8E2;
 }
 
 .mobiledev-cell5-2 i {
-  color: lawngreen;
+  color: #D1E8E2;
 }
 
 .mobiledev-cell5-3 i {
-  color: #FFEC5C;
+  color: #D1E8E2;
 }
 
 .mobiledev-cell5-4 i {
-  color: #008DCB;
+  color: #D1E8E2;
 }
 
 .mobiledev-cell5-5 i {
-  color: rgb(175, 56, 175);
+  color: #D1E8E2;
 }
 
 .mobiledev-table,
@@ -1955,7 +1972,7 @@ div#preloader {
 }
 
   .ready-btn:hover {
-    color: #fff;
+    color: #fff !important;
     background: #3EC1D5;
     border: 1px solid #3EC1D5;
     text-decoration: none;
