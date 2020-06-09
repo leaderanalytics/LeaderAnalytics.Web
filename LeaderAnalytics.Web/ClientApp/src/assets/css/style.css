@@ -186,7 +186,7 @@ div#preloader {
 }
 
 .area-padding {
-  padding: 2vw 0vw 1vw 0vw;
+  padding: 2vw 1vw 1vw 1vw;
 }
 
 .area-padding-2 {
@@ -355,7 +355,7 @@ div#preloader {
 
 #content {
   min-height: calc(100vh - 80px); /*keep the footer pinned to the bottom*/
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 #header {
@@ -521,12 +521,12 @@ div#preloader {
   flex-direction: column;
   background-size: cover;
   height: 80vh;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .slide1 {
-  background-image: url('../img/slider/slider1.jpg');
+  background-image: url('../img/slider/oldmanlecturing.jpg');
 }
 
 .slide2 {
@@ -543,7 +543,7 @@ div#preloader {
 }
 
 .title2 {
-  margin-top: 1.2vw;
+  margin-top: 30px;
   font-size: clamp(12pt,2vw,30pt);
 }
 
@@ -551,6 +551,7 @@ div#preloader {
   padding: 0vw 2vw 0vw 2vw;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /*--------------------------------------------------------------
@@ -874,9 +875,15 @@ div#preloader {
   font-size: 14px;
 }
 
-#azure-carousel {
-  max-width: 637px;
+.copy-container2 {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
+  .copy-container2 img {
+      width:300px;
+      margin-bottom:10px;
+  }
 
 @media (min-width: 992px) and (max-width: 1169px) {
   #azure-carousel {
@@ -995,9 +1002,8 @@ div#preloader {
 }
 
 .webdev2-headline {
-  font-family: Lorenza;
+  font-family: 'Segoe UI';
   color: black;
-  font-size: 3vw;
   margin-top: 1vh;
   margin-right: 2vw;
   font-weight: 300;
@@ -1006,20 +1012,18 @@ div#preloader {
 }
 
 .webdev2-copy {
-  font-family: Lorenza;
+  font-family: 'Segoe UI';
   color: gray;
   font-size: clamp(14px,2vw, 28px);
   margin-top: 1vh;
   margin-right: 2vw;
   font-weight: 300;
-  line-height: 2.2vw;
   padding-left: 1vw;
 }
 
 
 @media (min-width: 992px) and (max-width: 1169px) {
-  .mobiledev-cell5 {
-  }
+  
 }
 
 /* Tablet desktop :768px. */
@@ -1037,6 +1041,16 @@ div#preloader {
   .webdev-cell2-1, .webdev-cell2-2 {
     width: 100%;
     float: none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .webdev-cell2-2 img {
+      width:60vw;
+  }
+
+  .webdev-img-cell {
+      width:80vw;
   }
 }
 
@@ -1104,8 +1118,6 @@ div#preloader {
   font-family: Lorenza;
   font-weight: 300;
   color: black;
-  letter-spacing: normal;
-  line-height: 150%;
   font-size: 30px;
 }
 
@@ -1172,42 +1184,34 @@ div#preloader {
   max-width: 500px;
 }
 
-
-.mobiledev-slide1 {
-  background-image: url('../img/mobiledev/creditcard.jpg');
+.mobile-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left:5vw;
+  margin-right:5vw;
+  
 }
-
-.mobiledev-slide2 {
-  background-image: url('../img/mobiledev/corpusers.jpg');
-}
-
-.mobiledev-slide3 {
-  background-image: url('../img/mobiledev/industry.jpg');
-}
-
-.mobiledev-slide4 {
-  background-image: url('../img/mobiledev/retail2.jpg');
-}
-
-.mobiledev-slide1,
-.mobiledev-slide2,
-.mobiledev-slide3,
-.mobiledev-slide4 {
-  background-size: cover;
-  width: auto;
-  max-height: 300px;
-}
+  .mobile-img-container img {
+    max-width:30vw;
+  }
 
 
 
-@media (min-width: 992px) and (max-width: 1169px) {
-  .mobiledev-cell5 {
+
+  @media (min-width: 992px) and (max-width: 1169px) {
+    .mobiledev-cell5 {
     font-size: 14px;
   }
 }
 
 /* Tablet desktop :768px. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media  (max-width: 991px) {
+
+    .mobiledev-table {
+        width:80vw;
+        margin:auto;
+  }
 
   .mobiledev-row {
     flex-flow: column;
@@ -1216,21 +1220,27 @@ div#preloader {
   .mobiledev-cell2-1,
   .mobiledev-cell2-2 {
     justify-content: center;
+    margin-left:0px;
+    margin-right:0px;
   }
+
+  .mobiledev-xamarin {
+    width: 60vw;
+    margin: auto;
+  }
+
+  .mobile-img-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .mobile-img-container img {
+      max-width: 60vw;
+    }
 }
 
-/* small mobile :320px. */
-@media (max-width: 767px) {
 
-  .mobiledev-row {
-    flex-flow: column;
-  }
 
-  .mobiledev-cell2-1,
-  .mobiledev-cell2-2 {
-    justify-content: center;
-  }
-}
 
 
 /*--------------------------------------------------------------
