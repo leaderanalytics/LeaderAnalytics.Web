@@ -11,21 +11,21 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav justify-content-space-even">
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/home']" fragment="home" skipLocationChange>Home</a>
+          <a class="nav-link" [routerLink]="['/home']" fragment="home" skipLocationChange [class.activelink]="ActiveLinkName === 'home'" (click)="SetActiveLinkName('home')" >Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" fragment="about" skipLocationChange>About</a>
+          <a class="nav-link" [routerLink]="['/home']" fragment="about" skipLocationChange [class.activelink]="ActiveLinkName === 'about'" (click)="SetActiveLinkName('about')">About</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
             Services
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/home']" fragment="services" skipLocationChange>Enterprise Software Development</a>
-            <a class="dropdown-item" [routerLink]="['/home']" fragment="webdev" skipLocationChange>Web Development</a>
-            <a class="dropdown-item" [routerLink]="['/home']" fragment="mobiledev" skipLocationChange>Mobile Application Development</a>
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="services" skipLocationChange [class.activelink]="ActiveLinkName === 'services'" (click)="SetActiveLinkName('services')">Enterprise Software Development</a>
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="webdev" skipLocationChange [class.activelink]="ActiveLinkName === 'webdev'" (click)="SetActiveLinkName('webdev')">Web Development</a>
+            <a class="dropdown-item" [routerLink]="['/home']" fragment="mobiledev" skipLocationChange [class.activelink]="ActiveLinkName === 'mobiledev'" (click)="SetActiveLinkName('mobiledev')">Mobile Application Development</a>
           </div>
         </li>
 
@@ -36,19 +36,19 @@
           </a>
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/apps/vyntix']">Vyntix</a>
-            <a class="dropdown-item" [routerLink]="['/apps/vyntix-fred-client']">Vyntix FRED Client</a>
-            <a class="dropdown-item" [routerLink]="['/apps/vyntix-downloader']">Vyntix Downloader</a>
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix']" [class.activelink]="ActiveLinkName === 'vyntix'" (click)="SetActiveLinkName('vyntix')">Vyntix</a>
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix-fred-client']" [class.activelink]="ActiveLinkName === 'fred-client'" (click)="SetActiveLinkName('fred-client')">Vyntix FRED Client</a>
+            <a class="dropdown-item" [routerLink]="['/apps/vyntix-downloader']" [class.activelink]="ActiveLinkName === 'downloader'" (click)="SetActiveLinkName('downloader')">Vyntix Downloader</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/apps/renewals']">Renewals</a>
+            <a class="dropdown-item" [routerLink]="['/apps/renewals']" [class.activelink]="ActiveLinkName === 'renewals'" (click)="SetActiveLinkName('renewals')">Renewals</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/apps/adaptiveclient']">Adaptive Client</a>
-            <a class="dropdown-item" [routerLink]="['/apps/caching']">Caching Library</a>
+            <a class="dropdown-item" [routerLink]="['/apps/adaptiveclient']" [class.activelink]="ActiveLinkName === 'adaptiveclient'" (click)="SetActiveLinkName('adaptiveclient')">Adaptive Client</a>
+            <a class="dropdown-item" [routerLink]="['/apps/caching']" [class.activelink]="ActiveLinkName === 'caching'" (click)="SetActiveLinkName('caching')">Caching Library</a>
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']" fragment="contact" skipLocationChange>Contact</a>
+          <a class="nav-link" [routerLink]="['/home']" fragment="contact" skipLocationChange [class.activelink]="ActiveLinkName === 'contact'" (click)="SetActiveLinkName('contact')">Contact</a>
         </li>
 
         <li class="nav-item">

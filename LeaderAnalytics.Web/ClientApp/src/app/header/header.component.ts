@@ -10,15 +10,19 @@ import { LoginComponent } from '../login/login.component';
 export class HeaderComponent implements OnInit {
   @ViewChild(LoginComponent) loginComponent: LoginComponent;
   @Output() showLoginDialog = new EventEmitter<boolean>();
-
-  constructor() { }
+  public ActiveLinkName: string;
+  constructor() { this.ActiveLinkName = 'home' }
 
   ngOnInit(): void {
   }
 
 
   LogIn() {
-    //this.loginComponent.ShowLoginDialog();
+
     this.showLoginDialog.emit(true);
+  }
+
+  SetActiveLinkName(linkname: string) {
+    this.ActiveLinkName = linkname;
   }
 }

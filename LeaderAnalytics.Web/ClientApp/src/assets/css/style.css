@@ -410,7 +410,6 @@ div#preloader {
 
 .my-navbar {
     
-    
 }
 .my-navbar, .my-navbar .dropdown-menu {
   background-color: #333337;
@@ -430,10 +429,10 @@ div#preloader {
   text-transform: uppercase;
 }
 
-  .my-navbar .nav-link:hover, .nav-link:focus {
-    color: whitesmoke;
-    transition: 1s;
-  }
+  .my-navbar > div > ul > li > a:hover, .my-navbar > div > ul > li > div > a:hover {
+    color: whitesmoke !important;
+    transition: 1s !important;
+  }  
 
 .my-navbar .dropdown-divider {
   border-top: 1px solid #9a9a92;
@@ -449,7 +448,9 @@ div#preloader {
     padding:1vw;
 }
 
-
+.activelink {
+    color:whitesmoke !important;
+}
 
   
 
