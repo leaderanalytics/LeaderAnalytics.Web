@@ -139,10 +139,7 @@ body {
   outline: none;
 }
 
-.back-to-top:hover {
-  background: #3cd6ed;
-  color: #fff;
-}
+
 
 .clear {
   clear: both;
@@ -360,22 +357,38 @@ div#preloader {
 }
 
 #header {
-  transition: all 0.5s;
+    display:flex;
+    flex-direction:row;
+    align-content:center;
+    transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
   height: 70px;
   border-bottom: solid 6px grey;
-  display: flex;
-  align-items: center;
+  width:100%;
+  max-width:100%;
 }
 
 #header, #nav-container {
   background: #333337;
 }
 
-#nav-container {
-  margin-left: 40vw;
+#logo-container {
+    display:flex;
+    align-items:center;
+    max-width:40vw;
 }
+  #logo-container a {
+      line-height:1;
+  }  
+
+#nav-container {
+  
+  margin-left:auto;
+  max-width:60vw;
+  
+}
+
 @media (max-width: 768px) {
   
 
@@ -490,12 +503,6 @@ div#preloader {
 /*--------------------------------------------------------------
 # Brand
 --------------------------------------------------------------*/
-#logo-container {
-  position: absolute;
-  top: 15vh;
-  left: 2vw;
-  z-index: 9000;
-}
 
 .logo {
   margin-top: 4px;
@@ -581,6 +588,9 @@ div#preloader {
   .about-cell-right {
       margin-top:1vw;
       margin-left:0vw;
+  }
+  p {
+      text-align:left;
   }
 }
 
