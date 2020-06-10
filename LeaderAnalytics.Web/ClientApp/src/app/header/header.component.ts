@@ -1,5 +1,5 @@
-import { Component, OnInit,Output, EventEmitter, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -11,7 +11,11 @@ export class HeaderComponent implements OnInit {
   @ViewChild(LoginComponent) loginComponent: LoginComponent;
   @Output() showLoginDialog = new EventEmitter<boolean>();
   public ActiveLinkName: string;
-  constructor() { this.ActiveLinkName = 'home' }
+
+  constructor(private router: Router)
+  {
+    this.ActiveLinkName = 'home';
+  }
 
   ngOnInit(): void {
   }
@@ -25,4 +29,5 @@ export class HeaderComponent implements OnInit {
   SetActiveLinkName(linkname: string) {
     this.ActiveLinkName = linkname;
   }
+
 }
