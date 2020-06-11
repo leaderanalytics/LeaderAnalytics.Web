@@ -23,6 +23,17 @@ export class HomeComponent implements OnInit {
       $(this).remove();
     });
 
+
+    // Initi AOS
+
+    setTimeout(function () {
+      (AOS as any).init({
+        duration: 1000,
+        easing: "ease-in-out-back"
+      });
+
+    }, 1000);
+
     return;
 
     /*--------------------------
@@ -43,16 +54,7 @@ export class HomeComponent implements OnInit {
       return false;
     });
 
-
-    // Initi AOS
-
-    setTimeout(function () {
-      (AOS as any).init({
-        duration: 1000,
-        easing: "ease-in-out-back"
-      });
-
-    }, 1000);
+    
 
     // Navigation active state on scroll
     let nav_sections = $('section');
