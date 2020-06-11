@@ -1410,7 +1410,6 @@ input:-internal-autofill-selected {
     font-size: clamp(12pt,2vw,14pt);
     font-weight: 200;
     line-height: 150%;
-    color: gray;
   }
 
   .github-container a {
