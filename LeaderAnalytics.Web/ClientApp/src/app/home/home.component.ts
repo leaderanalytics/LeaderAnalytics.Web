@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       $(this).remove();
     });
 
-    
+    return;
 
     /*--------------------------
       Back to top button
