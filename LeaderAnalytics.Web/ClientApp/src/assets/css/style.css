@@ -468,11 +468,6 @@ div#preloader {
     color:whitesmoke !important;
 }
 
-
-
-
-
-
 /* Get Startet Button */
 .get-started-btn {
   margin-left: 25px;
@@ -577,6 +572,7 @@ div#preloader {
 .about-cell-right {
   margin-left: 1vw;
 }
+
 /* Tablet desktop :768px. */
 @media (max-width: 991px) {
   #about-row {
@@ -589,8 +585,8 @@ div#preloader {
       margin-top:1vw;
       margin-left:0vw;
   }
-  p {
-      text-align:left;
+  .about-cell-right p {
+    text-align: left;
   }
 }
 
@@ -740,8 +736,6 @@ div#preloader {
     font-family: Arial;
     padding: .5vw 1.5vw 1.0vw 1.5vw;
     flex-direction: column;
-    justify-self: stretch;
-    align-self: stretch;
     line-height: clamp(20px,2vw,40px);
     border-top: solid 4px darkblue;
   }
@@ -1286,7 +1280,7 @@ div#preloader {
     display: flex;
     flex-grow: 1;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     margin: 10px 0px 0px 0px;
     flex-direction: column;
   }
@@ -1323,18 +1317,35 @@ div#preloader {
     color: white;
   }
 
-  .footer-row > a {
+  .blend {
     color: #330;
   }
 
+@media (max-width: 767px) {
+  .footer-row {
+      flex-direction:column;
+      align-items:unset;
+  }
 
-  /*--------------------------------------------------------------
+  .footer-cell {
+      flex-direction:row;
+      justify-content:space-around;
+  }
+
+  .grow-align-right {
+      margin-top:2vw;
+  }
+  .grow-align-right, .grow-align-right p {
+    text-align: center;
+  }
+}
+/*--------------------------------------------------------------
 # Products
 --------------------------------------------------------------*/
-  .product-spacer {
-    height: 8vw;
-    background-color: black;
-  }
+.product-spacer {
+  height: 8vw;
+  background-color: black;
+}
 
   .product-banner {
     background-image: url('../img/common/texture4.PNG');
@@ -1435,7 +1446,9 @@ div#preloader {
 
 
 
-  /* --------------------------------------- Fonts --------------------------------------- */
+  /* ---------------------------------------
+      # Fonts
+  --------------------------------------- */
   @font-face {
     font-family: 'SansMan';
     src: url("../fonts/entsans.ttf");
