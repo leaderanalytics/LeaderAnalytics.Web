@@ -743,7 +743,6 @@ div#preloader {
 
     .webdev-txt-container i {
       text-align: center;
-      font-size: clamp(30px,4vw,48px);
     }
 
     .webdev-txt-container .title {
