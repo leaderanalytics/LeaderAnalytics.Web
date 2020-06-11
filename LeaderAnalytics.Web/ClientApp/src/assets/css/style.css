@@ -886,10 +886,9 @@ div#preloader {
     justify-content: flex-start;
     margin-left: 1vw;
     margin-right: 6vw;
-    /*font-family: Lorenza;*/
     font-weight: 300;
     color: black;
-    font-size: 30px;
+    font-size: 15px; /* android does recognize clamp() */
   }
 
   .mobiledev-cell3 {
@@ -1046,6 +1045,7 @@ div#preloader {
   .contact {
     margin-bottom: 100px;
   }
+    
 
     .contact .info {
       border-top: 3px solid #47b2e4;
@@ -1255,14 +1255,21 @@ div#preloader {
 input:-internal-autofill-selected {
   background-color: white !important;
 }
-  /* --------------------------------------- 
+
+
+@media (max-width: 767px) {
+  .info img {
+      width:80vw;
+  }
+}
+/* --------------------------------------- 
 # Footer 
     --------------------------------------- */
-  .separator {
-    background-color: gray;
-    height: 6px;
-    margin: 0;
-  }
+.separator {
+  background-color: gray;
+  height: 6px;
+  margin: 0;
+}
 
   #footer-content {
     display: flex;
