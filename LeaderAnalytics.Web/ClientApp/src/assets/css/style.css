@@ -830,7 +830,7 @@ div#preloader {
     }
 
     .webdev-cell2-1, .webdev-cell2-2 {
-      width: 100%;
+      width: unset;
       float: none;
       display: flex;
       flex-direction: column;
