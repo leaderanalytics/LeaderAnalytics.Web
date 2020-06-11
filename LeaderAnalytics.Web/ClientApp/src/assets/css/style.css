@@ -365,8 +365,6 @@ div#preloader {
   transition: all 0.5s;
   height: 70px;
   border-bottom: solid 6px grey;
-  width:100%;
-  max-width:100%;
 }
 
 #header, #nav-container {
@@ -588,6 +586,11 @@ div#preloader {
   .about-cell-right p {
     text-align: left;
   }
+
+  .about-cell-left img {
+    max-height:80vw;
+  }
+
 }
 
 
@@ -1049,7 +1052,6 @@ div#preloader {
       border-bottom: 3px solid #47b2e4;
       padding: 30px;
       background: #fff;
-      width: 100%;
       box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
     }
 
@@ -1116,7 +1118,6 @@ div#preloader {
       }
 
     .contact .php-email-form {
-      width: 100%;
       border-top: 3px solid #47b2e4;
       border-bottom: 3px solid #47b2e4;
       padding: 30px;
@@ -1174,7 +1175,7 @@ div#preloader {
           animation: animate-loading 1s linear infinite;
         }
 
-      .contact .php-email-form input, .contact .php-email-form textarea {
+      .contact .php-email-form input, .php-email-form select, .contact .php-email-form textarea {
         border-radius: 0;
         box-shadow: none;
         font-size: 14px;
@@ -1185,7 +1186,7 @@ div#preloader {
           border-color: #47b2e4;
         }
 
-      .contact .php-email-form input {
+      .contact .php-email-form input select {
         height: 44px;
       }
 
@@ -1251,11 +1252,12 @@ div#preloader {
       text-decoration: none;
     }
 
-
+input:-internal-autofill-selected {
+  background-color: white !important;
+}
   /* --------------------------------------- 
 # Footer 
     --------------------------------------- */
-
   .separator {
     background-color: gray;
     height: 6px;
