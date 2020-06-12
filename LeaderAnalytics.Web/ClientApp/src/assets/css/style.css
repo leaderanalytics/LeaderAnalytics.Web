@@ -270,7 +270,9 @@ div#preloader {
 .img-cover {
   object-fit: cover;
 }
-
+.small-font {
+    font-size:14pt;
+}
 .under-construction {
   display: flex;
   flex-flow: column;
