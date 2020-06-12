@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogsComponent, Dialog } from '../dialogs/dialogs.component';
+import { Title, Meta } from '@angular/platform-browser';
 import * as AOS from 'aos';
 
 
@@ -10,7 +11,12 @@ import * as AOS from 'aos';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  
+
+  constructor(private titleService: Title, private metaService: Meta) {
+    this.titleService.setTitle("Leader Analytics Oceanside, CA");
+    this.metaService.updateTag({ name: "description", content: "Leader Analytics provides custom software development, custom web development, and custom mobile application development.  We are also the company behind Vyntix, a platform for managing economic and financial data." });
+  }
 
   ngOnInit(): void {
     this.Init();

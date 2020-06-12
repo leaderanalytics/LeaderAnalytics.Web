@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-renewals',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RenewalsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title, private metaService: Meta) {
+    this.titleService.setTitle("Leader Analytics Renewals");
+    this.metaService.updateTag({ name: "description", content: "Leader Analytics Renewals is a SAAS subscription management and authentication service." });
+  }
 
   ngOnInit(): void {
   }
