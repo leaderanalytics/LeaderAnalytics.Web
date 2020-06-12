@@ -1,4 +1,4 @@
-
+﻿
 @charset "UTF-8";
 /*--------------------------------------------------------------
 # General
@@ -848,6 +848,10 @@ div#preloader {
       width: 80vw;
     }
 
+
+    .webdev-txt-container > i {
+      font-size: 18pt !important;
+    }
     .webdev-txt-container > .title {
         font-size:14pt !important;
     }
