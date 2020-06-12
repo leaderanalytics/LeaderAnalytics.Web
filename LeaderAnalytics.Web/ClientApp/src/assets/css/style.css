@@ -499,7 +499,7 @@ div#preloader {
 # Brand
 --------------------------------------------------------------*/
 
-.logo {
+.logo-container {
   margin-top: 4px;
   margin-left: 4px;
 }
@@ -510,8 +510,11 @@ div#preloader {
 
 .logo, .logo-small {
   font-family: SansMan;
-  color: #fff;
+  color: #9a9a92;
 }
+  .logo:hover {
+      color:whitesmoke !important;
+  }
 
 
 /*--------------------------------------------------------------
