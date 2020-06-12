@@ -292,7 +292,6 @@ div#preloader {
   }
 
   .under-construction a {
-    font-size: large;
     color: rgb(185, 185, 185);
   }
 
@@ -373,12 +372,12 @@ div#preloader {
   background: #333337;
 }
 
-#logo-container {
+.logo-container {
     display:flex;
     align-items:center;
-    max-width:40vw;
+    max-width:38vw;
 }
-  #logo-container a {
+  .logo-container a {
       line-height:1;
   }  
 
