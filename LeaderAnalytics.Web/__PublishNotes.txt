@@ -10,3 +10,8 @@ Added to .csproj:
 <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
 Also added --self-contained to DotNetCoreCLI@2 task in azure-pipelines.yaml
 arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingdirectory) --self-contained'
+
+Google Mobile-Friendly Test: https://search.google.com/test/mobile-friendly
+Great color schemes page:  https://visme.co/blog/website-color-schemes/
+Content creator: https://www.visme.co/
+Another Content creator: https://www.canva.com/
