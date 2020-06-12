@@ -11,7 +11,7 @@
 .rh6 { font-size: clamp(15px,1.5vw,30px); }
 
 .rp {
-  font-size: clamp(15px,1vw,18px);
+  font-size: clamp(12px,1vw,18px);
   line-height: 1.5;
 }
 
@@ -85,4 +85,3 @@
 .rpl5 { padding-left:5vw; }
 .rpl8 { padding-left:8vw; }
 .rpl13 { padding-left:13vw; }
- 
