@@ -847,6 +847,15 @@ div#preloader {
     .webdev-img-cell {
       width: 80vw;
     }
+
+    .webdev-txt-container > .title {
+        font-size:14pt !important;
+    }
+
+    .webdev-txt-container > ul > li >  .li {
+      font-size: 12pt !important;
+    }
+
   }
 
 
