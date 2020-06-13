@@ -365,6 +365,7 @@ div#preloader {
   z-index: 997;
   transition: all 0.5s;
   height: 70px;
+  width:100vw;
   border-bottom: solid 6px grey;
 }
 
