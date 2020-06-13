@@ -519,6 +519,10 @@ div#preloader {
 /*--------------------------------------------------------------
 # Home
 --------------------------------------------------------------*/
+#home {
+  width: 100%;
+  border: solid blue 3px;
+}
 .slide {
   display: flex;
   flex-direction: column;
@@ -526,14 +530,12 @@ div#preloader {
   justify-content: flex-start;
   align-items: center;
   height:80vh;
-  
 }
 
 .slide1 {
   background-image: url('../img/slider/oldmanlecturing.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
   border: solid red 2px;
 }
 
