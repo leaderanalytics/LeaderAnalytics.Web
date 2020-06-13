@@ -532,7 +532,7 @@ div#preloader {
 .slide1 {
   background-image: url('../img/slider/oldmanlecturing.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw auto;
   width: 100vw;
   height: 80vh;
 }
