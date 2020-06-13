@@ -526,14 +526,14 @@ div#preloader {
   justify-content: flex-start;
   align-items: center;
   height:80vh;
+  
 }
 
 .slide1 {
   background-image: url('../img/slider/oldmanlecturing.jpg');
   background-repeat: no-repeat;
-  background-size:cover;
-  
-  
+  background-size: cover;
+  width: auto;
   border: solid red 2px;
 }
 
