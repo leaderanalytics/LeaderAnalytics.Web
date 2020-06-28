@@ -32,16 +32,23 @@
       </div>
 
       <div class="col-lg-7 mt-5 mt-lg-0 d-flex ">
-        <div class="php-email-form">
+        <form (ngSubmit)="SubmitForm()" #contactForm="ngForm" class="php-email-form">
           <div class="form-row">
             <div class="form-group col-md-12">
               <p class="rh6 rp2" style="background-color:#e7f5fb">Please tell us briefly what you want to accomplish.  One of our Account Mangers will respond shortly.</p>
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <p class="rh6 rp2 bg-warning" *ngIf="ErrorMessage.length > 0" >{{ErrorMessage}}</p>
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Your name</label>
-              <input type="text" class="form-control" [(ngModel)]="ContactRequest.Name" name="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" class="form-control" [(ngModel)]="ContactRequest.Name" name="name" id="name" required />
               <div class="validate"></div>
             </div>
             <div class="form-group col-md-6">
@@ -53,12 +60,12 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Phone number</label>
-              <input type="tel" name="phone" [(ngModel)]="ContactRequest.Phone" class="form-control" id="phone" />
+              <input type="tel" name="phone" [(ngModel)]="ContactRequest.Phone" class="form-control" name="phone" id="phone" />
               <div class="validate"></div>
             </div>
             <div class="form-group col-md-6">
               <label for="name">Requirement</label>
-              <select name="requirement" class="form-control" id="requirement" [(ngModel)]="ContactRequest.Requirement">
+              <select name="requirement" class="form-control" name="requirement" id="requirement" [(ngModel)]="ContactRequest.Requirement">
                 <option value="custom" selected="selected">Custom software</option>
                 <option value="web">Web development</option>
                 <option value="mobile">Mobile development</option>
@@ -75,8 +82,8 @@
           </div>
           <div class="mb-3">
           </div>
-          <div class="text-center"><button class="btn btn-primary" (click)="SubmitForm()">Send Message</button></div>
-        </div>
+          <div class="text-center"><button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-primary" >Send Message</button></div>
+        </form>
       </div>
     </div>
   </div>

@@ -14,19 +14,32 @@ namespace LeaderAnalytics.Web
     {
         public static void Main(string[] args)
         {
+            string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            string logRoot = null;
+
+            if (env == "Development")
+                logRoot = "c:\\serilog\\Web\\log";
+            else
+                logRoot = "..\\..\\serilog\\Web\\log";   // Create logs in D:\home\serilog
+
+
             Log.Logger = new LoggerConfiguration()
-               .WriteTo.File("..\\..\\serilog\\WEB\\log", rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information)
+               .WriteTo.File(logRoot, rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information)
                .CreateLogger();
-            Log.Information("Logger created");
-            Log.Information("ConfigureServices started");
 
             try
             {
+                Log.Information("Leader Analytics Web - Program.Main started.");
+                Log.Information("Environment is: {env}", env);
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
                 Log.Error(ex.ToString());
+            }
+            finally 
+            {
+                Log.CloseAndFlush();
             }
         }
 

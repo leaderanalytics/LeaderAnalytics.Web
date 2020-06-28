@@ -16,7 +16,7 @@ import { RenewalsComponent } from './products/renewals/renewals.component';
 import { VyntixComponent } from './products/vyntix/vyntix.component';
 import { VyntixDownloaderComponent } from './products/vyntix-downloader/vyntix-downloader.component';
 import { VyntixFredClientComponent } from './products/vyntix-fred-client/vyntix-fred-client.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CachingComponent } from './products/caching/caching.component';
@@ -46,7 +46,11 @@ import { CachingComponent } from './products/caching/caching.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'Cookie',
+      headerName: 'CookieHeader'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

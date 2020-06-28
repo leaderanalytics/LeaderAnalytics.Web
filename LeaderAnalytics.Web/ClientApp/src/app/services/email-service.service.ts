@@ -14,7 +14,7 @@ export class EmailServiceService {
   }
 
   SendContactRequest(request: ContactRequest): Observable<AsyncResult> {
-    const url = environment.api_url + '/api/message/sendemail';
+    const url = environment.api_url + '/webapi/sendemail';
     const msg = 'Name: ' + request.Name + '\r\nPhone: ' + request.Phone + '\r\nEmail: ' + request.EMail + '\r\nRequirement: ' + request.Requirement + '\r\nComment: ' + request.Message;
     const json = JSON.stringify({ "To": "leaderanalytics@outlook.com", "Msg": msg });
     const options = {

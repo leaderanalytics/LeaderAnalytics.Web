@@ -1,11 +1,17 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using System.Threading.Tasks;
+using System.IO;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using LeaderAnalytics.Core.Azure;
 
 namespace LeaderAnalytics.Web
 {
@@ -13,10 +19,21 @@ namespace LeaderAnalytics.Web
     {
         public IConfiguration Configuration { get; }
 
-
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            string devFilePath = string.Empty;
+
+            if (env.EnvironmentName == "Development")
+                devFilePath = AppConfig.ConfigFilePath;
+
+            string configFilePath = Path.Combine(devFilePath, $"appsettings.{env.EnvironmentName}.json");
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile(configFilePath, optional: false)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         
@@ -30,6 +47,14 @@ namespace LeaderAnalytics.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddCors();
+
+            // App Config
+            AppConfig config = new AppConfig(AzureADConfig.ReadFromConfig(Configuration));
+            services.AddSingleton<AppConfig>(config);
+            
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +82,7 @@ namespace LeaderAnalytics.Web
             }
 
             app.UseRouting();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
 
             app.UseSpa(spa =>
             {
@@ -71,6 +97,32 @@ namespace LeaderAnalytics.Web
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
+
+            app.UseCors(policy =>
+            {
+                policy.WithOrigins(new string[] 
+                {
+                    "http://www.leaderanalytics.com",
+                    "https://www.leaderanalytics.com",
+                    "http://leaderanalytics.com",
+                    "https://leaderanalytics.com",
+                    "http://localhost",
+                    "http://localhost:80",
+                    "http://localhost:63284",
+                    "http://dev.leaderanalytics.com",
+                    "http://leaderanalyticsweb.azurewebsites.net",
+                    "https://leaderanalyticsweb.azurewebsites.net",
+                    "https://localhost:5031",
+                    "https://localhost:44381",
+                    "https://leaderanalyticstweb-staging.azurewebsites.net"
+                });
+                policy.AllowAnyMethod();
+                policy.AllowCredentials();
+                policy.AllowAnyHeader();
+            });
+
+            app.UseAuthentication();
+            
         }
     }
 }

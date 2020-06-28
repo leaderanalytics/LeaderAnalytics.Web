@@ -11,13 +11,15 @@ import { EmailServiceService } from '../services/email-service.service';
 export class ContactComponent implements OnInit {
   @ViewChild(DialogsComponent) dialogs: DialogsComponent;
   public ContactRequest: ContactRequest;
-
+  public ErrorMessage: string;
 
   constructor(private emailService: EmailServiceService) {
     this.ClearContactForm();
+    this.ErrorMessage = "";
   }
 
   ngOnInit(): void {
+
   }
 
   SubmitForm() {
@@ -32,7 +34,9 @@ export class ContactComponent implements OnInit {
       return false;
     }
     this.dialogs.ShowDialog(Dialog.Wait, "", null);
-    this.emailService.SendContactRequest(this.ContactRequest).subscribe(x => this.CallbackHandler(x));
+    setTimeout(() => {
+      this.emailService.SendContactRequest(this.ContactRequest).subscribe(x => this.CallbackHandler(x));
+    }, 1500);
   }
 
   ClearContactForm() {
@@ -44,13 +48,12 @@ export class ContactComponent implements OnInit {
   CallbackHandler(result: AsyncResult) {
     this.dialogs.CloseDialog(Dialog.Wait, true);
     // todo:  result should never be null. Fix emailservice.
-    if (result == null || result.Success) {
+    if (result === null || result.Success) {
       this.ClearContactForm();
       this.dialogs.ShowDialog(Dialog.Info, "Your message was sent successfully.", null);
     }
     else {
-      this.dialogs.ShowDialog(Dialog.ErrorMsg, "An error occurred while processing your message.  Please try again later.", null);
+      this.dialogs.ShowDialog(Dialog.ErrorMsg, "An error occurred while processing your message.  Please wait at least 5 minutes and try again.", null);
     }
-
   }
 }

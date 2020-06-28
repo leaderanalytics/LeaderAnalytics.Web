@@ -16,3 +16,10 @@ Google Search console: https://search.google.com/search-console/about
 Great color schemes page:  https://visme.co/blog/website-color-schemes/
 Content creator: https://www.visme.co/
 Another Content creator: https://www.canva.com/
+
+-- Security
+See example project in:
+C:\Projects\Identity - Azure AD B2C\Client Credentials Flow\2-Call-OwnApi
+The documentation for the second example is found here:
+https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi
+Note the requirement to edit the manifest in the service app and update the appRoles section.
