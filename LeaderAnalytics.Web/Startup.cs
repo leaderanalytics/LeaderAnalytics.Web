@@ -21,6 +21,7 @@ namespace LeaderAnalytics.Web
 
         public Startup(IWebHostEnvironment env)
         {
+            Log.Information("Start constructing Startup class.");
             string devFilePath = string.Empty;
 
             if (env.EnvironmentName == "Development")
@@ -28,12 +29,19 @@ namespace LeaderAnalytics.Web
 
             string configFilePath = Path.Combine(devFilePath, $"appsettings.{env.EnvironmentName}.json");
 
+            if (File.Exists(configFilePath))
+                Log.Information("Configuration file {f} exists.", configFilePath);
+            else
+                Log.Error("Configuration file {f} was not found.", configFilePath);
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile(configFilePath, optional: false)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            Log.Information("Constructing Startup class completed.");
         }
 
         
@@ -41,6 +49,8 @@ namespace LeaderAnalytics.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Log.Information("ConfigureServices started.");
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -55,11 +65,14 @@ namespace LeaderAnalytics.Web
             services.AddSingleton<AppConfig>(config);
             
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+            Log.Information("ConfigureServices completed.");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Log.Information("Configure Started.");
             Log.Information("Configuration[\"ASPNETCORE_ENVIRONMENT\"] is {env}", Configuration["ASPNETCORE_ENVIRONMENT"]);
             Log.Information("WebHostEnvironment.EnvironmentName is {env}", env.EnvironmentName);
 
@@ -122,7 +135,8 @@ namespace LeaderAnalytics.Web
             });
 
             app.UseAuthentication();
-            
+            Log.Information("Configure Completed.");
+
         }
     }
 }

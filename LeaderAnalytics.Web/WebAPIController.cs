@@ -49,12 +49,32 @@ namespace LeaderAnalytics.Web
             bool cantSend = contactHistory.Any(x => x.IP_Address == ipaddress);                                 // Check if current user IP exists (they have sent less than 5 min ago).
 
             if (cantSend)
+            {
                 result = BadRequest("Please wait at least five minutes between requests.");
+                Log.Information("User with IP Address {i} was denied permission to send contact email due to excessive try count.", ipaddress);
+            }
             else
             {
-                var apiResult = await apiClient.PostAsync(config.AzureADConfig.APIBaseAddress + "api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
-                result = CreatedAtAction("SendEMail", "email") as IActionResult;
-                contactHistory.Add(new ContactHistory { IP_Address = ipaddress, SendTime = DateTime.UtcNow });
+                try
+                {
+                    var apiResult = await apiClient.PostAsync(config.AzureADConfig.APIBaseAddress + "api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
+
+                    if (apiResult.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        result = CreatedAtAction("SendEMail", "email") as IActionResult;
+                        contactHistory.Add(new ContactHistory { IP_Address = ipaddress, SendTime = DateTime.UtcNow });
+                    }
+                    else
+                    {
+                        result = BadRequest("Failed to send contact email.");
+                        Log.Error("Failed to send contact email.  The status code is: {e}", apiResult.StatusCode);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result = BadRequest("Failed to send contact email.");
+                    Log.Error("An exception occurred when trying to send contact email.  The error is: {e}", ex.ToString());
+                }
             }
             return result;
         }
