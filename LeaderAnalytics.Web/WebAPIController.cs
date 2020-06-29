@@ -59,7 +59,7 @@ namespace LeaderAnalytics.Web
                 {
                     var apiResult = await apiClient.PostAsync(config.AzureADConfig.APIBaseAddress + "api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
 
-                    if (apiResult.StatusCode == System.Net.HttpStatusCode.OK)
+                    if (apiResult.StatusCode == System.Net.HttpStatusCode.Created)
                     {
                         result = CreatedAtAction("SendEMail", "email") as IActionResult;
                         contactHistory.Add(new ContactHistory { IP_Address = ipaddress, SendTime = DateTime.UtcNow });
