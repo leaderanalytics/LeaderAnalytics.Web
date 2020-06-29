@@ -67,7 +67,7 @@ namespace LeaderAnalytics.Web
                     else
                     {
                         result = BadRequest("Failed to send contact email.");
-                        Log.Error("Failed to send contact email.  The status code is: {e}", apiResult.StatusCode);
+                        Log.Error("Failed to send contact email.  The response from the API server is: {@e}", apiResult);
                     }
                 }
                 catch (Exception ex)
