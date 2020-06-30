@@ -89,14 +89,13 @@ namespace LeaderAnalytics.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
-
             app.UseRouting();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
-
+            
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -111,6 +110,7 @@ namespace LeaderAnalytics.Web
                 }
             });
 
+            // With endpoint routing, the CORS middleware must be configured to execute between the calls to UseRouting and UseEndpoints.
             app.UseCors(policy =>
             {
                 policy.WithOrigins(new string[] 
@@ -128,12 +128,10 @@ namespace LeaderAnalytics.Web
                     "https://localhost:5031",
                     "https://localhost:44381",
                     "https://leaderanalyticstweb-staging.azurewebsites.net"
-                });
-                policy.AllowAnyMethod();
-                policy.AllowCredentials();
-                policy.AllowAnyHeader();
+                }).AllowAnyMethod().AllowAnyHeader();
             });
 
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
             app.UseAuthentication();
             Log.Information("Configure Completed.");
 
