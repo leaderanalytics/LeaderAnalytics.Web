@@ -57,7 +57,7 @@ namespace LeaderAnalytics.Web
             {
                 try
                 {
-                    var apiResult = await apiClient.PostAsync(config.AzureADConfig.APIBaseAddress + "api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
+                    var apiResult = await apiClient.PostAsync("api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
 
                     if (apiResult.StatusCode == System.Net.HttpStatusCode.Created)
                     {

@@ -41,7 +41,11 @@ export class ContactComponent implements OnInit {
 
   ClearContactForm() {
     this.ContactRequest = new ContactRequest();
+    this.ContactRequest.Name = '';
+    this.ContactRequest.EMail = '';
+    this.ContactRequest.Phone = '';
     this.ContactRequest.Requirement = 'custom';
+    this.ContactRequest.Message = ''
   }
 
 
