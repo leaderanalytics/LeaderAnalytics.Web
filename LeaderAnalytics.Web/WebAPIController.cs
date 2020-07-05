@@ -1,5 +1,4 @@
-﻿using IdentityModel.Client;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Serilog;
 using System;
@@ -11,6 +10,7 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Text.Json;
 using LeaderAnalytics.Core.Azure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LeaderAnalytics.Web
 {
@@ -39,6 +39,12 @@ namespace LeaderAnalytics.Web
                 apiClient = helper.AuthorizedClient();
             }
         }
+
+        public async Task<IActionResult> Get()
+        {
+            return Ok();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> SendEMail(EmailMsg msg)

@@ -16,11 +16,30 @@ import { RenewalsComponent } from './products/renewals/renewals.component';
 import { VyntixComponent } from './products/vyntix/vyntix.component';
 import { VyntixDownloaderComponent } from './products/vyntix-downloader/vyntix-downloader.component';
 import { VyntixFredClientComponent } from './products/vyntix-fred-client/vyntix-fred-client.component';
-import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CachingComponent } from './products/caching/caching.component';
+import { ProfileComponent } from './profile/profile.component';
+import { Configuration } from 'msal';
+import {
+  MsalModule,
+  MsalInterceptor,
+  MSAL_CONFIG,
+  MSAL_CONFIG_ANGULAR,
+  MsalService,
+  MsalAngularConfiguration
+} from '@azure/msal-angular';
 
+import { msalConfig, msalAngularConfig } from '../environments/msal-config';
+
+function MSALConfigFactory(): Configuration {
+  return msalConfig;
+}
+
+function MSALAngularConfigFactory(): MsalAngularConfiguration {
+  return msalAngularConfig;
+}
 
 @NgModule({
   declarations: [
@@ -39,7 +58,8 @@ import { CachingComponent } from './products/caching/caching.component';
     ContactComponent,
     HomeComponent,
     LoginComponent,
-    CachingComponent
+    CachingComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +70,25 @@ import { CachingComponent } from './products/caching/caching.component';
     HttpClientXsrfModule.withOptions({
       cookieName: 'Cookie',
       headerName: 'CookieHeader'
-    })
+    }),
+    MsalModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MsalInterceptor,
+      multi: true
+    },
+    {
+      provide: MSAL_CONFIG,
+      useFactory: MSALConfigFactory
+    },
+    {
+      provide: MSAL_CONFIG_ANGULAR,
+      useFactory: MSALAngularConfigFactory
+    },
+    MsalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

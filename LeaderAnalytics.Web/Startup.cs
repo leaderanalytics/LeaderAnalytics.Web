@@ -11,6 +11,7 @@ using Serilog;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Identity.Web;
 using LeaderAnalytics.Core.Azure;
 
 namespace LeaderAnalytics.Web
@@ -50,6 +51,28 @@ namespace LeaderAnalytics.Web
         public void ConfigureServices(IServiceCollection services)
         {
             Log.Information("ConfigureServices started.");
+
+
+            // This is required to be instantiated before the OpenIdConnectOptions starts getting configured.
+            // By default, the claims mapping will map claim names in the old format to accommodate older SAML applications.
+            // 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role' instead of 'roles'
+            // This flag ensures that the ClaimsIdentity claims collection will be built from the claims in the token
+            // JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+            // Adds Microsoft Identity platform (AAD v2.0) support to protect this Api
+            services.AddProtectedWebApi(options =>
+            {
+                Configuration.Bind("AzureAdB2C", options);
+
+                options.TokenValidationParameters.NameClaimType = "name";
+            },
+                options => { Configuration.Bind("AzureAdB2C", options); });
+
+
+
+
+
+
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
@@ -110,11 +133,11 @@ namespace LeaderAnalytics.Web
                 }
             });
 
-            // With endpoint routing, the CORS middleware must be configured to execute between the calls to UseRouting and UseEndpoints.
-            app.UseCors(policy =>
-            {
-                policy.WithOrigins(new string[] 
-                {
+           // With endpoint routing, the CORS middleware must be configured to execute between the calls to UseRouting and UseEndpoints.
+           app.UseCors(policy =>
+           {
+               policy.WithOrigins(new string[]
+               {
                     "http://www.leaderanalytics.com",
                     "https://www.leaderanalytics.com",
                     "http://leaderanalytics.com",
@@ -128,11 +151,11 @@ namespace LeaderAnalytics.Web
                     "https://localhost:5031",
                     "https://localhost:44381",
                     "https://leaderanalyticstweb-staging.azurewebsites.net"
-                }).AllowAnyMethod().AllowAnyHeader();
-            });
+               }).AllowAnyMethod().AllowAnyHeader();
+           });
 
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
             app.UseAuthentication();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
             Log.Information("Configure Completed.");
 
         }

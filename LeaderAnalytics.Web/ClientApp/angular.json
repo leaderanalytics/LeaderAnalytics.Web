@@ -43,6 +43,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/environments/msal-config.ts",
+                  "with": "src/environments/msal-config.prod.ts"
                 }
               ],
               "optimization": true,

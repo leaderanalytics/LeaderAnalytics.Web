@@ -14,8 +14,8 @@ import { RenewalsComponent } from './products/renewals/renewals.component';
 import { VyntixComponent } from './products/vyntix/vyntix.component';
 import { VyntixDownloaderComponent } from './products/vyntix-downloader/vyntix-downloader.component';
 import { VyntixFredClientComponent } from './products/vyntix-fred-client/vyntix-fred-client.component';
-
-
+import { ProfileComponent } from './profile/profile.component';
+import { MsalGuard } from '@azure/msal-angular';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'apps/vyntix-fred-client', component: VyntixFredClientComponent },
   { path: 'support/community', component: CommunityComponent },
   { path: 'support/documentation', component: DocumentationComponent },
-  { path: 'support/downloads', component: DownloadsComponent }
+  { path: 'support/downloads', component: DownloadsComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [ MsalGuard ] }
 ];
 
 @NgModule({

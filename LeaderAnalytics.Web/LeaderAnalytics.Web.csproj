@@ -15,9 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel" Version="4.3.0" />
     <PackageReference Include="LeaderAnalytics.Core" Version="1.0.55" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="0.1.5-preview" />
     <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
   </ItemGroup>
@@ -31,10 +31,11 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\model\Model.ts" />
+    <None Remove="ClientApp\src\app\msal-config.ts" />
+    <None Remove="ClientApp\src\environments\msal-config.prod.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\services\" />
     <Folder Include="ClientApp\src\app\support\" />
     <Folder Include="ClientApp\src\app\products\" />
     <Folder Include="wwwroot\" />
@@ -42,6 +43,10 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\model\model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\environments\msal-config.prod.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\environments\msal-config.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

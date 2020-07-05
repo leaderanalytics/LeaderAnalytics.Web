@@ -1,4 +1,4 @@
-﻿
+
 @charset "UTF-8";
 /*--------------------------------------------------------------
 # General
@@ -1459,7 +1459,44 @@ input:-internal-autofill-selected {
   }
 
 
+/*--------------------------------------------------------------
+# User Profile
+--------------------------------------------------------------*/
+.profile-banner {
+  background-color: #333337;
+  padding: 3vw;
+  margin-top: -1.5vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-radius: 3px;
+}
 
+.profile-banner > .rh4 {
+    color:whitesmoke;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns:auto auto;
+  grid-template-rows:auto auto auto auto;
+  align-content:center;
+}
+
+.profile-grid > div {
+  padding: 2vw;
+  border: 1px solid black;
+  margin: 0 -1px -1px 0;
+}
+
+
+.profile-label {
+  justify-content: flex-end;
+  
+}
+
+.profile-data {
+  
+}
 
   /*--------------------------------------------------------------
 # Dialogs
