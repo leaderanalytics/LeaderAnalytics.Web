@@ -51,13 +51,15 @@ export class ContactComponent implements OnInit {
 
   CallbackHandler(result: AsyncResult) {
     this.dialogs.CloseDialog(Dialog.Wait, true);
-    // todo:  result should never be null. Fix emailservice.
-    if (result === null || result.Success) {
+    
+    if (result !== null && result.Success) {
       this.ClearContactForm();
       this.dialogs.ShowDialog(Dialog.Info, "Your message was sent successfully.", null);
     }
     else {
       this.dialogs.ShowDialog(Dialog.ErrorMsg, "An error occurred while processing your message.  Please wait at least 5 minutes and try again.", null);
+      console.log("Error sending contact email.");
+      console.log(result.ErrorMessage);
     }
   }
 }
