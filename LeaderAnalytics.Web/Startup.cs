@@ -92,6 +92,7 @@ namespace LeaderAnalytics.Web
             Log.Information("ConfigureServices completed.");
         }
 
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -112,13 +113,35 @@ namespace LeaderAnalytics.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
             app.UseRouting();
-            
+
+            // With endpoint routing, the CORS middleware must be configured to execute between the calls to UseRouting and UseEndpoints.
+            app.UseCors(policy =>
+            {
+                policy.WithOrigins(new string[]
+                {
+                    "http://www.leaderanalytics.com",
+                    "https://www.leaderanalytics.com",
+                    "http://leaderanalytics.com",
+                    "https://leaderanalytics.com",
+                    "http://localhost",
+                    "http://localhost:80",
+                    "http://localhost:63284",
+                    "http://dev.leaderanalytics.com",
+                    "http://leaderanalyticsweb.azurewebsites.net",
+                    "https://leaderanalyticsweb.azurewebsites.net",
+                    "https://localhost:5031",
+                    "https://localhost:44381",
+                    "https://leaderanalyticstweb-staging.azurewebsites.net"
+                }).AllowAnyMethod().AllowAnyHeader();
+            });
+
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
@@ -133,31 +156,14 @@ namespace LeaderAnalytics.Web
                 }
             });
 
-           // With endpoint routing, the CORS middleware must be configured to execute between the calls to UseRouting and UseEndpoints.
-           app.UseCors(policy =>
-           {
-               policy.WithOrigins(new string[]
-               {
-                    "http://www.leaderanalytics.com",
-                    "https://www.leaderanalytics.com",
-                    "http://leaderanalytics.com",
-                    "https://leaderanalytics.com",
-                    "http://localhost",
-                    "http://localhost:80",
-                    "http://localhost:63284",
-                    "http://dev.leaderanalytics.com",
-                    "http://leaderanalyticsweb.azurewebsites.net",
-                    "https://leaderanalyticsweb.azurewebsites.net",
-                    "https://localhost:5031",
-                    "https://localhost:44381",
-                    "https://leaderanalyticstweb-staging.azurewebsites.net"
-               }).AllowAnyMethod().AllowAnyHeader();
-           });
+
 
             app.UseAuthentication();
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+
             Log.Information("Configure Completed.");
 
         }
+
+
     }
 }

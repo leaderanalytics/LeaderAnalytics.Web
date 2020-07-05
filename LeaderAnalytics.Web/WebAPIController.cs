@@ -40,9 +40,10 @@ namespace LeaderAnalytics.Web
             }
         }
 
-        public async Task<IActionResult> Get()
+        [HttpGet]
+        public ActionResult<string> Identity()
         {
-            return Ok();
+            return "Leader Analytics Web";
         }
 
 
