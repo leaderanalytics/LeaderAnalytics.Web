@@ -90,7 +90,7 @@ exports.protectedResourceMap = [
 exports.msalAngularConfig = {
     popUp: !exports.isIE,
     consentScopes: __spreadArrays(exports.loginRequest.scopes, exports.tokenRequest.scopes),
-    unprotectedResources: [],
+    unprotectedResources: ["https://leaderanalytics.com/webapi/sendemail"],
     protectedResourceMap: exports.protectedResourceMap,
     extraQueryParameters: {}
 };

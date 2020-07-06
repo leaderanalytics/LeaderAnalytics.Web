@@ -100,7 +100,7 @@ export const msalAngularConfig: MsalAngularConfiguration = {
     ...loginRequest.scopes,
     ...tokenRequest.scopes,
   ],
-  unprotectedResources: [], // API calls to these coordinates will NOT activate MSALGuard
+  unprotectedResources: ["https://leaderanalytics.com/webapi/sendemail"], // API calls to these coordinates will NOT activate MSALGuard
   protectedResourceMap,     // API calls to these coordinates will activate MSALGuard
   extraQueryParameters: {}
 }
