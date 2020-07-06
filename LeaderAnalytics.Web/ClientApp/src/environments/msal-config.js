@@ -43,7 +43,7 @@ exports.b2cPolicies = {
  * The current application coordinates were pre-registered in a B2C tenant.
  */
 exports.apiConfig = {
-    b2cScopes: ['https://LeaderAnalytics.onmicrosoft.com/api/read', 'https://LeaderAnalytics.onmicrosoft.com/api/write'],
+    b2cScopes: ['https://LeaderAnalytics.onmicrosoft.com/eb373a05-0053-49c4-aba1-a7630fedfef7/read', 'https://LeaderAnalytics.onmicrosoft.com/eb373a05-0053-49c4-aba1-a7630fedfef7/Write'],
     webApi: 'https://localhost:5010/'
 };
 // #endregion
@@ -54,8 +54,8 @@ exports.apiConfig = {
  */
 exports.msalConfig = {
     auth: {
-        clientId: "78a660e6-8d4d-48bb-bb01-b3964241101c",
-        authority: "https://leaderanalytics.b2clogin.com/leaderanalytics.onmicrosoft.com/B2C_1_susi",
+        clientId: "9ea79dd6-d8c9-48da-8f54-6394a953f003",
+        authority: "https://leaderanalytics.b2clogin.com/LeaderAnalytics.onmicrosoft.com/B2C_1_susi",
         redirectUri: "https://localhost:5031",
         postLogoutRedirectUri: "https://localhost:5031/",
         navigateToLoginRequestUrl: true,
@@ -81,7 +81,7 @@ exports.tokenRequest = {
 // #region 4) MSAL-Angular Configuration
 // here you can define the coordinates and required permissions for your protected resources
 exports.protectedResourceMap = [
-    [exports.apiConfig.webApi, ['https://LeaderAnalytics.onmicrosoft.com/api/read', 'https://LeaderAnalytics.onmicrosoft.com/api/write']]
+    [exports.apiConfig.webApi, ['https://LeaderAnalytics.onmicrosoft.com/eb373a05-0053-49c4-aba1-a7630fedfef7/read', 'https://LeaderAnalytics.onmicrosoft.com/eb373a05-0053-49c4-aba1-a7630fedfef7/Write']]
 ];
 /**
  * MSAL-Angular specific authentication parameters. For a full list of available options,
