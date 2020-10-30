@@ -4,6 +4,7 @@ export class ContactRequest {
   public Phone: string;
   public Requirement: string;
   public Message: string;
+  public Captcha: string;
 }
 
 export class AsyncResult {

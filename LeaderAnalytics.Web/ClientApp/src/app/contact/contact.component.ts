@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DialogsComponent, Dialog } from '../dialogs/dialogs.component';
 import { ContactRequest, AsyncResult } from '../model/model';
-import { EmailServiceService } from '../services/email-service.service';
+import { SiteServicesService } from '../services/site-services.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -12,8 +13,9 @@ export class ContactComponent implements OnInit {
   @ViewChild(DialogsComponent) dialogs: DialogsComponent;
   public ContactRequest: ContactRequest;
   public ErrorMessage: string;
+  captchaImgUrl = environment.api_url + "/webapi/captchaImage" + '?d=' + new Date().getTime().toString();
 
-  constructor(private emailService: EmailServiceService) {
+  constructor(private siteServices: SiteServicesService) {
     this.ClearContactForm();
     this.ErrorMessage = "";
   }
@@ -35,7 +37,7 @@ export class ContactComponent implements OnInit {
     }
     this.dialogs.ShowDialog(Dialog.Wait, "", null);
     setTimeout(() => {
-      this.emailService.SendContactRequest(this.ContactRequest).subscribe(x => this.CallbackHandler(x));
+      this.siteServices.SendContactRequest(this.ContactRequest).subscribe(x => this.CallbackHandler(x));
     }, 1500);
   }
 
@@ -45,7 +47,9 @@ export class ContactComponent implements OnInit {
     this.ContactRequest.EMail = '';
     this.ContactRequest.Phone = '';
     this.ContactRequest.Requirement = 'custom';
-    this.ContactRequest.Message = ''
+    this.ContactRequest.Message = '';
+    this.ContactRequest.Captcha = '';
+    this.captchaImgUrl = environment.api_url + "/webapi/captchaImage" + '?d=' + new Date().getTime().toString();
   }
 
 
@@ -57,7 +61,7 @@ export class ContactComponent implements OnInit {
       this.dialogs.ShowDialog(Dialog.Info, "Your message was sent successfully.", null);
     }
     else {
-      this.dialogs.ShowDialog(Dialog.ErrorMsg, "An error occurred while processing your message.  Please wait at least 5 minutes and try again.", null);
+      this.dialogs.ShowDialog(Dialog.ErrorMsg, result.ErrorMessage, null);
       console.log("Error sending contact email.");
       console.log(result.ErrorMessage);
     }

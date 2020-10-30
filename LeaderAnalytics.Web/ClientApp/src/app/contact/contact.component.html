@@ -80,10 +80,18 @@
             <textarea class="form-control" name="comments" id="comments" [(ngModel)]="ContactRequest.Message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
             <div class="validate"></div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Enter the numbers shown:&nbsp;</label>
+              <img id="captchaImage" src={{captchaImgUrl}} />
+              <input type="text" class="form-control" [(ngModel)]="ContactRequest.Captcha" name="captcha" id="captcha" required />
+            </div>
+          </div>
           <div class="mb-3">
           </div>
-          <div class="text-center"><button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-primary" >Send Message</button></div>
-        </form>
+          <div class="text-center"><button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-primary">Send Message</button></div>
+</form>
       </div>
     </div>
   </div>

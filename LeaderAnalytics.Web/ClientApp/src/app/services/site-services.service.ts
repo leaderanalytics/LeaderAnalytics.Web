@@ -8,7 +8,7 @@ import { ContactRequest, AsyncResult } from '../model/model';
 @Injectable({
   providedIn: 'root'
 })
-export class EmailServiceService {
+export class SiteServicesService {
 
   constructor(private httpClient: HttpClient)  {
   }
@@ -16,15 +16,15 @@ export class EmailServiceService {
   SendContactRequest(request: ContactRequest): Observable<AsyncResult> {
     const url = environment.api_url + '/webapi/sendemail';
     const msg = 'Name: ' + request.Name + '\r\nPhone: ' + request.Phone + '\r\nEmail: ' + request.EMail + '\r\nRequirement: ' + request.Requirement + '\r\nComment: ' + request.Message;
-    const json = JSON.stringify({ "To": "leaderanalytics@outlook.com", "Msg": msg });
+    const json = JSON.stringify({ "To": "leaderanalytics@outlook.com", "Msg": msg, "CaptchaCode": request.Captcha });
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
 
-    // todo: use an interceptor to handle sucess and error conditions.
-    return this.httpClient.post<AsyncResult>(url, json, options).pipe(catchError(this.handleError))
+    // todo: use an interceptor to handle success and error conditions.
+    return this.httpClient.post<AsyncResult>(url, json, options).pipe(catchError(this.handleError));
   }
 
 
@@ -42,7 +42,7 @@ export class EmailServiceService {
     let result: AsyncResult = new AsyncResult();
 
     if (error.status !== 201) {
-      result.ErrorMessage = "Status: " + error.status + " Message: " + error.message;
+      result.ErrorMessage = "Status: " + error.status + " Message: " + error.error;
     }
     else
       result.Success = true;
