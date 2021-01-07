@@ -30,23 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\model\Model.ts" />
-    <None Remove="ClientApp\src\app\msal-config.ts" />
-    <None Remove="ClientApp\src\environments\msal-config.prod.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="ClientApp\src\app\support\" />
     <Folder Include="ClientApp\src\app\products\" />
     <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\model\model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\environments\msal-config.prod.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\environments\msal-config.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
@@ -76,5 +62,4 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
-
 </Project>

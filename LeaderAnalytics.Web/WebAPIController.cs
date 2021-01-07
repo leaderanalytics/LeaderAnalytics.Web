@@ -43,17 +43,17 @@ namespace LeaderAnalytics.Web
 
 
         [HttpPost]
-        public async Task<IActionResult> SendEMail(EmailMsg msg)
+        public async Task<IActionResult> SendContactRequest(ContactRequest msg)
         {
             IActionResult result = null;
             msg.IP_Address = accessor.ActionContext.HttpContext.Connection.RemoteIpAddress.ToString();        
             
             try
             {
-                var apiResult = await apiClient.PostAsync("api/Message/SendEmail", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
+                var apiResult = await apiClient.PostAsync("api/Message/SendContactRequest", new StringContent(JsonSerializer.Serialize(msg), Encoding.UTF8, "application/json"));
                 string errorMsg = await apiResult.Content.ReadAsStringAsync();
                 if (apiResult.StatusCode == System.Net.HttpStatusCode.Created)
-                    result = CreatedAtAction("SendEMail", "email") as IActionResult;
+                    result = CreatedAtAction("SendContactRequest", "email") as IActionResult;
                 else
                 {
                     result = BadRequest(errorMsg ?? "Failed to send contact email.");

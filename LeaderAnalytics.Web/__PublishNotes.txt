@@ -17,6 +17,14 @@ Great color schemes page:  https://visme.co/blog/website-color-schemes/
 Content creator: https://www.visme.co/
 Another Content creator: https://www.canva.com/
 
+--- Azure DevOps Pipeline:
+To enable nuget package download in Azure DevOps:
+Go to project: Project Settings -> Settings -> Disable BOTH  of the following:
+Limit job authorization scope to current project for non-release pipelines
+Limit job authorization scope to current project for release pipelines
+
+
+
 -- Security
 See example project in:
 C:\Projects\Identity - Azure AD B2C\Client Credentials Flow\2-Call-OwnApi
