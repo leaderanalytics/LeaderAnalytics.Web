@@ -21,24 +21,35 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CachingComponent } from './products/caching/caching.component';
 import { ProfileComponent } from './profile/profile.component';
-import { Configuration } from 'msal';
-import {
-  MsalModule,
-  MsalInterceptor,
-  MSAL_CONFIG,
-  MSAL_CONFIG_ANGULAR,
-  MsalService,
-  MsalAngularConfiguration
-} from '@azure/msal-angular';
+import { MsalGuard, MsalInterceptor, MsalBroadcastService, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalRedirectComponent } from '@azure/msal-angular';
+import { MSALInstanceFactory, apiConfig } from '../environments/msal-config';
+import { InteractionType, LogLevel } from '@azure/msal-browser';
 
-import { msalConfig, msalAngularConfig } from '../environments/msal-config';
+const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
-function MSALConfigFactory(): Configuration {
-  return msalConfig;
+export function loggerCallback(logLevel: LogLevel, message: string) {
+  console.log(message);
 }
 
-function MSALAngularConfigFactory(): MsalAngularConfiguration {
-  return msalAngularConfig;
+
+export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
+  const protectedResourceMap = new Map<string, Array<string>>();
+  protectedResourceMap.set(apiConfig.uri, apiConfig.scopes);
+
+  return {
+    interactionType: InteractionType.Redirect,
+    protectedResourceMap,
+  };
+}
+
+export function MSALGuardConfigFactory(): MsalGuardConfiguration {
+  return {
+    interactionType: InteractionType.Redirect,
+    authRequest: {
+      scopes: [...apiConfig.scopes],
+    },
+    loginFailedRoute: 'login-failed'
+  };
 }
 
 @NgModule({
@@ -80,15 +91,21 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
       multi: true
     },
     {
-      provide: MSAL_CONFIG,
-      useFactory: MSALConfigFactory
+      provide: MSAL_INSTANCE,
+      useFactory: MSALInstanceFactory
     },
     {
-      provide: MSAL_CONFIG_ANGULAR,
-      useFactory: MSALAngularConfigFactory
+      provide: MSAL_GUARD_CONFIG,
+      useFactory: MSALGuardConfigFactory
     },
-    MsalService
+    {
+      provide: MSAL_INTERCEPTOR_CONFIG,
+      useFactory: MSALInterceptorConfigFactory
+    },
+    MsalService,
+    MsalGuard,
+    MsalBroadcastService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, MsalRedirectComponent]
 })
 export class AppModule { }

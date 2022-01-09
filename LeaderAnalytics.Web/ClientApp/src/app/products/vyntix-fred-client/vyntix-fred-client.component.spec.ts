@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VyntixFredClientComponent } from './vyntix-fred-client.component';
 
@@ -6,7 +6,7 @@ describe('VyntixFredClientComponent', () => {
   let component: VyntixFredClientComponent;
   let fixture: ComponentFixture<VyntixFredClientComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VyntixFredClientComponent ]
     })

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MsalService, BroadcastService } from '@azure/msal-angular';
-import { InteractionRequiredAuthError, AuthError, Account } from 'msal';
+import { EventMessage, EventType, InteractionType, InteractionStatus, PopupRequest, RedirectRequest, AuthenticationResult, AuthError, AccountInfo } from '@azure/msal-browser';
+import { MsalService, MsalBroadcastService } from '@azure/msal-angular';
 import { apiConfig } from '../../environments/msal-config';
-
+import { Subject } from 'rxjs';
+import { UserProfile } from '../model/model';
 
 @Component({
   selector: 'app-profile',
@@ -12,53 +13,30 @@ import { apiConfig } from '../../environments/msal-config';
 })
 export class ProfileComponent implements OnInit {
 
-  Profile: Account;
-  Email: string;
-  ApiVerification: string;
+  Profile: UserProfile;
+  
 
-  constructor(private broadcastService: BroadcastService, private authService: MsalService, private http: HttpClient)
+  constructor(private http: HttpClient, private authService: MsalService,)
   {
-    this.Profile = new Account('','','unknown','unknown',null,'','');
-    this.Email = 'unknown';
-    this.ApiVerification = 'Not verified';
+    this.Profile = new UserProfile();
   }
 
   ngOnInit(): void {
-    this.callAPI(apiConfig.webApi + 'api/status/SecureIdentity');
+    const url = apiConfig.uri + 'api/status/SecureIdentity';
+    this.http.get(url).subscribe(response => {
+      this.Profile.API_Verified = response.toString();
+      let activeAccount: AccountInfo = this.authService.instance.getActiveAccount();
 
-    this.broadcastService.subscribe('msal:acquireTokenSuccess', (payload) => {
-      console.log('access token acquired at: ' + new Date().toString());
-      console.log(payload);
-      this.Profile = payload.account;
-      this.Email = payload.account.idTokenClaims.emails[0];
-    });
-
-    this.broadcastService.subscribe('msal:acquireTokenFailure', (payload) => {
-      console.log('access token acquisition fails');
-      console.log(payload);
-    });
-  }
-
-  callAPI(url: string) {
-    this.http.get(url).subscribe({
-      next: (response) => {
-        this.ApiVerification = response.toString();
-      },
-      error: (err: AuthError) => {
-        // If there is an interaction required error,
-        // call one of the interactive methods and then make the request again.
-        if (InteractionRequiredAuthError.isInteractionRequiredError(err.errorCode)) {
-          
-          this.authService.acquireTokenPopup({
-            scopes: this.authService.getScopesForEndpoint(url)
-          }).then(() => {
-            this.http.get(url).toPromise()
-              .then(response => {
-                this.ApiVerification = response.toString();
-              });
-          });
-        }
+      if (activeAccount) {
+        this.Profile.ID = activeAccount.localAccountId;
+        this.Profile.Name = activeAccount.name;
+        this.Profile.Email = activeAccount.idTokenClaims?.['emails']?.[0] ?? "No email address found.";
       }
+      else {
+        this.Profile.ID = "Unable to retrieve profile.";
+      }
+    }, err => {
+      this.Profile.ID = "Error contacting API";
     });
   }
 }

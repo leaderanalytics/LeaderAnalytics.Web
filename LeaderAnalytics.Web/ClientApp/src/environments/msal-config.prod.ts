@@ -1,5 +1,5 @@
-import { Configuration } from 'msal';
-import { MsalAngularConfiguration } from '@azure/msal-angular';
+import { IPublicClientApplication, PublicClientApplication, LogLevel, BrowserCacheLocation } from '@azure/msal-browser';
+import { loggerCallback } from '../app/app.module';
 
 // this checks if the app is running on IE
 export const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -20,17 +20,18 @@ export const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.n
  */
 export const b2cPolicies = {
   names: {
-    signUpSignIn: "B2C_1_susi",
+    signUpSignIn: "B2C_1_susi2",
     resetPassword: "b2c_1_password_reset",
   },
   authorities: {
     signUpSignIn: {
-      authority: "https://leaderanalytics.b2clogin.com/leaderanalytics.onmicrosoft.com/B2C_1_susi"
+      authority: "https://leaderanalytics.b2clogin.com/leaderanalytics.onmicrosoft.com/B2C_1_susi2"
     },
     resetPassword: {
       authority: "https://leaderanalytics.b2clogin.com/leaderanalytics.onmicrosoft.com/b2c_1_password_reset"
     }
-  }
+  },
+  authorityDomain: "https://leaderanalytics.b2clogin.com"
 }
 // #endregion
 
@@ -40,9 +41,11 @@ export const b2cPolicies = {
  * Enter here the coordinates of your Web API and scopes for access token request
  * The current application coordinates were pre-registered in a B2C tenant.
  */
-export const apiConfig: { b2cScopes: string[], webApi: string } = {
-  b2cScopes: ['https://LeaderAnalytics.onmicrosoft.com/api/read', 'https://LeaderAnalytics.onmicrosoft.com/api/write'],
-  webApi: 'https://leaderanalytics.com/api/'
+export const apiConfig: { scopes: string[], uri: string } = {
+  scopes: ['https://LeaderAnalytics.onmicrosoft.com/api/read',
+    'https://LeaderAnalytics.onmicrosoft.com/api/write',
+    'https://LeaderAnalytics.onmicrosoft.com/api/access_as_user'  ],
+  uri: 'https://leaderanalytics.com/api/'
 };
 // #endregion
 
@@ -53,55 +56,25 @@ export const apiConfig: { b2cScopes: string[], webApi: string } = {
  * Config object to be passed to Msal on creation. For a full list of msal.js configuration parameters,
  * visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_configuration_.html
  */
-export const msalConfig: Configuration = {
-  auth: {
-    clientId: "78a660e6-8d4d-48bb-bb01-b3964241101c",
-    authority: "https://leaderanalytics.b2clogin.com/leaderanalytics.onmicrosoft.com/B2C_1_susi",
-    redirectUri: "https://leaderanalytics.com",
-    postLogoutRedirectUri: "https://leaderanalytics.com/",
-    navigateToLoginRequestUrl: true,
-    validateAuthority: false,
-  },
-  cache: {
-    cacheLocation: "localStorage",
-    storeAuthStateInCookie: isIE, // Set this to "true" to save cache in cookies to address trusted zones limitations in IE
-  },
+export function MSALInstanceFactory(): IPublicClientApplication {
+  return new PublicClientApplication({
+    auth: {
+      clientId: "78a660e6-8d4d-48bb-bb01-b3964241101c",
+      authority: b2cPolicies.authorities.signUpSignIn.authority,
+      redirectUri: "https://leaderanalytics.com/",
+      postLogoutRedirectUri: "https://leaderanalytics.com/",
+      knownAuthorities: [b2cPolicies.authorityDomain]
+    },
+    cache: {
+      cacheLocation: BrowserCacheLocation.LocalStorage,
+      storeAuthStateInCookie: isIE, // Set this to "true" to save cache in cookies to address trusted zones limitations in IE
+    },
+    system: {
+      loggerOptions: {
+        loggerCallback,
+        logLevel: LogLevel.Info,
+        piiLoggingEnabled: false
+      }
+    }
+  });
 }
-
-/** 
- * Scopes you enter here will be consented once you authenticate. For a full list of available authentication parameters, 
- * visit https://azuread.github.io/microsoft-authentication-library-for-js/docs/msal/modules/_authenticationparameters_.html
- */
-export const loginRequest: { scopes: string[] } = {
-  scopes: ['openid', 'profile'],
-};
-
-// Scopes you enter will be used for the access token request for your web API
-export const tokenRequest: { scopes: string[] } = {
-  scopes: apiConfig.b2cScopes // i.e. [https://leaderanalytics.onmicrosoft.com/api/read]
-};
-// #endregion
-
-
-
-// #region 4) MSAL-Angular Configuration
-// here you can define the coordinates and required permissions for your protected resources
-export const protectedResourceMap: [string, string[]][] = [
-  [apiConfig.webApi, ['https://LeaderAnalytics.onmicrosoft.com/api/read', 'https://LeaderAnalytics.onmicrosoft.com/api/write']]
-];
-
-/** 
- * MSAL-Angular specific authentication parameters. For a full list of available options,
- * visit https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular#config-options-for-msal-initialization
-*/
-export const msalAngularConfig: MsalAngularConfiguration = {
-  popUp: !isIE,
-  consentScopes: [
-    ...loginRequest.scopes,
-    ...tokenRequest.scopes,
-  ],
-  unprotectedResources: ["https://leaderanalytics.com/webapi/sendContactRequest"], // API calls to these coordinates will NOT activate MSALGuard
-  protectedResourceMap,     // API calls to these coordinates will activate MSALGuard
-  extraQueryParameters: {}
-}
-// #endregion

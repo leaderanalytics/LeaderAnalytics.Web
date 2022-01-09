@@ -56,11 +56,11 @@
         </li>
 
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" *ngIf="!(stateService.IsLoggedIn | async)">
-          <a style="cursor:pointer;" class="nav-link" (click)="LogIn()"><i class="icofont-login"></i>&nbsp;Log in</a>
+          <a style="cursor:pointer;" class="nav-link" (click)="login()"><i class="icofont-login"></i>&nbsp;Log in</a>
         </li>
 
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" *ngIf="stateService.IsLoggedIn | async">
-          <a style="cursor:pointer;" class="nav-link" (click)="LogOut()"><i class="icofont-logout"></i>&nbsp;Log Out</a>
+          <a style="cursor:pointer;" class="nav-link" (click)="logout()"><i class="icofont-logout"></i>&nbsp;Log Out</a>
         </li>
       </ul>
     </div>
