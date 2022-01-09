@@ -67,7 +67,6 @@ public class Program
             {
                 webBuilder
                 .UseStartup<Startup>(x => new Startup(config))
-                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseSetting("detailedErrors", "true")
                 .CaptureStartupErrors(true);
             });
