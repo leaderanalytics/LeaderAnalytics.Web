@@ -1,19 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Text;
-using System.Text.Json;
-using LeaderAnalytics.Core.Azure;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.WebUtilities;
-
-namespace LeaderAnalytics.Web
+﻿namespace LeaderAnalytics.Web
 {
     [ApiController]
     [Route("[controller]/[action]")]
@@ -69,8 +54,6 @@ namespace LeaderAnalytics.Web
             return result;
         }
 
-        
-
         [HttpGet]
         public async Task<IActionResult> CaptchaImage()
         {
@@ -88,6 +71,4 @@ namespace LeaderAnalytics.Web
             }
         }
     }
-
-    
 }

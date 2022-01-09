@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VyntixDownloaderComponent } from './vyntix-downloader.component';
 
@@ -6,7 +6,7 @@ describe('VyntixDownloaderComponent', () => {
   let component: VyntixDownloaderComponent;
   let fixture: ComponentFixture<VyntixDownloaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VyntixDownloaderComponent ]
     })

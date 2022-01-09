@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VyntixComponent } from './vyntix.component';
 
@@ -6,7 +6,7 @@ describe('VyntixComponent', () => {
   let component: VyntixComponent;
   let fixture: ComponentFixture<VyntixComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VyntixComponent ]
     })
