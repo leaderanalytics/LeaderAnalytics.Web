@@ -14,6 +14,7 @@ import { RenewalsComponent } from './products/renewals/renewals.component';
 import { VyntixComponent } from './products/vyntix/vyntix.component';
 import { VyntixDownloaderComponent } from './products/vyntix-downloader/vyntix-downloader.component';
 import { VyntixFredClientComponent } from './products/vyntix-fred-client/vyntix-fred-client.component';
+import { LeaderPivotComponent } from './products/leader-pivot/leader-pivot.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MsalGuard } from '@azure/msal-angular';
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'apps/vyntix', component: VyntixComponent },
   { path: 'apps/vyntix-downloader', component: VyntixDownloaderComponent },
   { path: 'apps/vyntix-fred-client', component: VyntixFredClientComponent },
+  { path: 'apps/leader-pivot', component: LeaderPivotComponent },
   { path: 'support/community', component: CommunityComponent },
   { path: 'support/documentation', component: DocumentationComponent },
   { path: 'support/downloads', component: DownloadsComponent },

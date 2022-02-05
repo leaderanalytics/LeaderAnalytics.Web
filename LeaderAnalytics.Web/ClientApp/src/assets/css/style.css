@@ -299,7 +299,11 @@ div#preloader {
       color: white;
     }
 
-
+.legal {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:small;
+    font-weight:700;
+}
 /*--------------------------------------------------------------
 # Action
 --------------------------------------------------------------*/
@@ -1419,6 +1423,12 @@ input:-internal-autofill-selected {
       font-size: clamp(14pt,2.5vw,16pt);
       font-weight: 600;
     }
+
+    .product-article ul {
+      list-style: disc;
+      margin-left: 4vw;
+    }
+
 
   .link-container {
     margin: 2vw 10vw 2vw 10vw;

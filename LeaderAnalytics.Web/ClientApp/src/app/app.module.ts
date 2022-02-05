@@ -24,6 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MsalGuard, MsalInterceptor, MsalBroadcastService, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG, MsalGuardConfiguration, MsalRedirectComponent } from '@azure/msal-angular';
 import { MSALInstanceFactory, apiConfig } from '../environments/msal-config';
 import { InteractionType, LogLevel } from '@azure/msal-browser';
+import { LeaderPivotComponent } from './products/leader-pivot/leader-pivot.component';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -70,7 +71,8 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     HomeComponent,
     LoginComponent,
     CachingComponent,
-    ProfileComponent
+    ProfileComponent,
+    LeaderPivotComponent
   ],
   imports: [
     BrowserModule,
