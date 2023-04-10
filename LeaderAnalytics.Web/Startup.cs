@@ -92,7 +92,9 @@ public class Startup
                     "https://leaderanalyticsweb.azurewebsites.net",
                     "https://localhost:5031",
                     "https://localhost:44381",
-                    "https://leaderanalyticstweb-staging.azurewebsites.net"
+                    "https://leaderanalyticstweb-staging.azurewebsites.net",
+                    "https://www.leaderanalytics.com/blazor",
+                    "https://leaderanalytics.com/blazor",
             }).AllowAnyMethod().AllowAnyHeader();
         });
 

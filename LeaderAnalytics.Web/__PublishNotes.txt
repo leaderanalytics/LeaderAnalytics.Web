@@ -23,7 +23,8 @@ Go to project: Project Settings -> Settings -> Disable BOTH  of the following:
 Limit job authorization scope to current project for non-release pipelines
 Limit job authorization scope to current project for release pipelines
 
-
-
--- Security
-SSL Cert instructions are here: C:\Users\sam\Documents\SSL\PoshACME\notes.txt
+--- Publish
+Open version.json and set version variable to n.n.n
+Open a command window in .sln folder:
+git tag release/n.n.n
+git push origin release/n.n.n
